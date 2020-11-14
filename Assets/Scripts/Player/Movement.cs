@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Collision coll;
+    private AnimationScript anim;
 
     [Space]
 
@@ -31,10 +32,18 @@ public class Movement : MonoBehaviour
     //Facing side
     public int side = 1;
 
+    [Space]
+    [Header("Particle System")]
+    public ParticleSystem dashPS;
+    public ParticleSystem jumpPS;
+    public ParticleSystem wallJumpPS;
+    public ParticleSystem slidePS;
+
     void Start()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<AnimationScript>();
     }
 
     void Update()
@@ -48,7 +57,7 @@ public class Movement : MonoBehaviour
 
         //Walk
         Walk(dir);
-        //anim.SetHorizontalMovement(x, y, rb.velocity.y);
+        anim.SetHorizontalMovement(x, y, rb.velocity.y);
 
         //WallGrab - ButtonHold
         if (coll.onWall && Input.GetButton("Fire3") && canMove)
@@ -59,6 +68,11 @@ public class Movement : MonoBehaviour
             wallGrab = true;
             wallSlide = false;
 		}
+
+
+        /////////////////////////////////////////////////////////////////////
+        // Wall Actions 
+
 
         //WallGrab - ButtonRelease
         if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
@@ -90,24 +104,13 @@ public class Movement : MonoBehaviour
             rb.gravityScale = 3f;
 		}
 
-        //Jumps
-        if (Input.GetButtonDown("Jump"))
-        {
-            //anim.SetTrigger("jump");
-
-            if (coll.onGround) {
-                Jump(Vector2.up, false);
-            }
-            if (coll.onWall && !coll.onGround)
-			{
-                WallJump();
-            }
-        }
-
         if (coll.onWall && !coll.onGround)
 		{
-            wallSlide = true;
-            WallSlide();
+            if (x != 0 && !wallGrab)
+			{
+                wallSlide = true;
+                WallSlide();
+            }
 		}
 
         if (!coll.onWall || coll.onGround)
@@ -115,15 +118,47 @@ public class Movement : MonoBehaviour
             wallSlide = false;
 		}
 
+        ///End Wall Actions
+        ///------------------------------------------------------------------------------------------------------
+
+        //Jumps
+        if (Input.GetButtonDown("Jump"))
+        {
+            anim.SetTrigger("jump");
+
+            if (coll.onGround)
+            {
+                Jump(Vector2.up, false);
+            }
+            if (coll.onWall && !coll.onGround)
+            {
+                WallJump();
+            }
+        }
+
+        //Dash
+        if (Input.GetButtonDown("Fire1") && !hasDashed)
+		{
+            if (xRaw!= 0 || yRaw != 0)
+			{
+                Dash(xRaw, yRaw);
+			}
+		}
+
+
+        //Sprite Facing
+        if (wallGrab || wallSlide || !canMove)
+            return;
+
         if (x > 0)
         {
             side = 1;
-            //anim.Flip(side);
+            anim.Flip(side);
         }
         if (x < 0)
         {
             side = -1;
-           //anim.Flip(side);
+            anim.Flip(side);
         }
 
     }
@@ -163,7 +198,7 @@ public class Movement : MonoBehaviour
         if ((side == 1 && coll.onRightWall) || side == -1 && !coll.onRightWall)
 		{
             side *= -1;
-            //anim.Flip(side);
+            anim.Flip(side);
 		}
 
         StopCoroutine(DisableMovement(0));
@@ -178,7 +213,7 @@ public class Movement : MonoBehaviour
 	{
         if(coll.wallSide != side)
 		{
-            //anim.Flip(side * -1);
+            anim.Flip(side * -1);
 		}
 
         if (!canMove)
@@ -193,10 +228,48 @@ public class Movement : MonoBehaviour
 
         float push = pushingWall ? 0 : rb.velocity.x;
 
-        //rb.velocity = new Vector2(0, -slideSpeed);
         rb.velocity = new Vector2(push, -slideSpeed);
+    }
+
+    private void Dash(float x, float y)
+	{
+        //To complete later
+        hasDashed = true;
+        anim.SetTrigger("dash");
+
+
+        rb.velocity = Vector2.zero;
+        Vector2 dir = new Vector2(x, y);
+
+        rb.velocity += dir.normalized * dashSpeed;
+        StartCoroutine(DashWait());
+	}
+
+    IEnumerator DashWait()
+	{
+        //To complete later
+        StartCoroutine(GroundDash());
+
+        rb.gravityScale = 0;
+        GetComponent<BetterJumping>().enabled = false;
+        wallJumped = true;
+        isDashing = true;
+
+        yield return new WaitForSeconds(.3f);
+
+        rb.gravityScale = 3;
+        GetComponent<BetterJumping>().enabled = true;
+        wallJumped = false;
+        isDashing = false;
 
     }
+
+    IEnumerator GroundDash()
+	{
+        yield return new WaitForSeconds(.15f);
+        if (coll.onGround)
+            hasDashed = false;
+	}
 
     IEnumerator DisableMovement(float time)
 	{
