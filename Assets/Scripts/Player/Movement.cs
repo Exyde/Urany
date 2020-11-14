@@ -48,6 +48,47 @@ public class Movement : MonoBehaviour
 
         //Walk
         Walk(dir);
+        //anim.SetHorizontalMovement(x, y, rb.velocity.y);
+
+        //WallGrab - ButtonHold
+        if (coll.onWall && Input.GetButton("Fire3") && canMove)
+		{
+            if (side != coll.wallSide)
+                print("flipSide"); //Add later
+
+            wallGrab = true;
+            wallSlide = false;
+		}
+
+        //WallGrab - ButtonRelease
+        if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
+		{
+            wallGrab = false;
+            wallSlide = false;
+		}
+
+        //Grounded ?
+        if (coll.onGround && !isDashing)
+        {
+            wallJumped = false;
+            GetComponent<BetterJumping>().enabled = true;
+        }
+
+        if(wallGrab && !isDashing)
+		{
+            rb.gravityScale = 0;
+            if (x > .2f || x < -.2f)
+			{
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+			}
+
+            float speedModifier = y > 0 ? .5f : 1;
+
+            rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
+		} else
+		{
+            rb.gravityScale = 3f;
+		}
 
         //Jumps
         if (Input.GetButtonDown("Jump"))
@@ -63,11 +104,16 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (coll.onGround && !isDashing)
-        {
-            wallJumped = false;
-            GetComponent<BetterJumping>().enabled = true;
-        }
+        if (coll.onWall && !coll.onGround)
+		{
+            wallSlide = true;
+            WallSlide();
+		}
+
+        if (!coll.onWall || coll.onGround)
+		{
+            wallSlide = false;
+		}
 
         if (x > 0)
         {
@@ -120,11 +166,42 @@ public class Movement : MonoBehaviour
             //anim.Flip(side);
 		}
 
-        //StopCoroutine(DisableMovement(0));
-        //StartCoroutine(DisableMovement(.1f));
+        StopCoroutine(DisableMovement(0));
+        StartCoroutine(DisableMovement(.1f));
 
         Vector2 wallDir = coll.onRightWall ? Vector2.left : Vector2.right;
         Jump((Vector2.up / 1.5f + wallDir / 1.5f), true);
         wallJumped = true;
     }
+
+    private void WallSlide()
+	{
+        if(coll.wallSide != side)
+		{
+            //anim.Flip(side * -1);
+		}
+
+        if (!canMove)
+            return;
+
+        bool pushingWall = false;
+
+        if((rb.velocity.x > 0 && coll.onRightWall)|| (rb.velocity.x < 0 && coll.onLeftWall))
+		{
+            pushingWall = true;
+		}
+
+        float push = pushingWall ? 0 : rb.velocity.x;
+
+        //rb.velocity = new Vector2(0, -slideSpeed);
+        rb.velocity = new Vector2(push, -slideSpeed);
+
+    }
+
+    IEnumerator DisableMovement(float time)
+	{
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
+	}
 }
