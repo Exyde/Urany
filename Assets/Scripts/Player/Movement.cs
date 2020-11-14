@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
+    [HideInInspector]
+    public Vector2 inputs;
 
     [Space]
 
@@ -39,7 +41,7 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpPS;
     public ParticleSystem slidePS;
 
-    void Start()
+    void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +55,8 @@ public class Movement : MonoBehaviour
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
+        inputs = new Vector2(xRaw, yRaw);
+        
 
 
         //Walk
@@ -63,7 +67,7 @@ public class Movement : MonoBehaviour
         if (coll.onWall && Input.GetButton("Fire3") && canMove)
 		{
             if (side != coll.wallSide)
-                print("flipSide"); //Add later
+                anim.Flip(side * -1);
 
             wallGrab = true;
             wallSlide = false;
