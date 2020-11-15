@@ -6,20 +6,17 @@ using DG.Tweening;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public GameObject PostProcessing;
     private Collision coll;
     private AnimationScript anim;
 
-    public GameObject PostProcessing;
-
     [Space]
-
     [Header ("Stats")]
     public float speed = 10;
     public float jumpForce = 5;
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
     public float dashSpeed = 20;
-
 
     [Space]
     [Header("Booleans")]
@@ -56,133 +53,58 @@ public class Movement : MonoBehaviour
 
     [HideInInspector]
     public Vector2 inputs;
+    Vector2 dir;
+    float x, y, xRaw, yRaw;
 
     void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
-        PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
+        //PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
     }
 
 	void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float xRaw = Input.GetAxisRaw("Horizontal");
-        float yRaw = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(x, y);
+        //Get Input
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
+        xRaw = Input.GetAxisRaw("Horizontal");
+        yRaw = Input.GetAxisRaw("Vertical");
+        dir = new Vector2(x, y);
         inputs = new Vector2(xRaw, yRaw);
         
-        //Walk
         Walk(dir);
-        anim.SetHorizontalMovement(x, y, rb.velocity.y);
+        HandleWalls();
+        HandleJump();
+        HandleDash();
+        HandleAnim();
+    }
 
-        //WallGrab - ButtonHold
-        if (coll.onWall && Input.GetButton("Fire3") && canMove)
-		{
-            if (side != coll.wallSide)
-                anim.Flip(side * -1);
-
-            wallGrab = true;
-            wallSlide = false;
-		}
-
-
-        /////////////////////////////////////////////////////////////////////
-        // Wall Actions 
-
-        //WallGrab - ButtonRelease
-        if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
-		{
-            wallGrab = false;
-            wallSlide = false;
-		}
-
-        //Grounded ?
-        if (coll.onGround && !isDashing)
-        {
-            wallJumped = false;
-            GetComponent<BetterJumping>().enabled = true;
-        }
-
-        if(wallGrab && !isDashing)
-		{
-            rb.gravityScale = 0;
-            if (x > .2f || x < -.2f)
-			{
-                rb.velocity = new Vector2(rb.velocity.x, 0);
-			}
-
-            float speedModifier = y > 0 ? .5f : 1;
-
-            rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-            anim.SetAnimationState(WALL_GRAB);
-
-        }
-        else
-		{
-            rb.gravityScale = 3f;
-		}
-
-        if (coll.onWall && !coll.onGround)
-		{
-            if (x != 0 && !wallGrab)
-			{
-                wallSlide = true;
-                WallSlide();
-                anim.SetAnimationState(WALL_SLIDE);
-
-            }
-        }
-
-        if (!coll.onWall || coll.onGround)
-		{
-            wallSlide = false;
-		}
-
-        ///End Wall Actions
-        ///------------------------------------------------------------------------------------------------------
-
-        //Jumps
-        if (Input.GetButtonDown("Jump"))
-        {
-            anim.SetTrigger("jump");
-
-            if (coll.onGround)
-            {
-                Jump(Vector2.up, false);
-                anim.SetAnimationState(JUMP);
-
-            }
-            if (coll.onWall && !coll.onGround)
-            {
-                WallJump();
-                anim.SetAnimationState(JUMP);
-            }
-        }
-
-        //Dash
+	#region Handlers
+	void HandleDash()
+	{
         if (Input.GetButtonDown("Fire1") && !hasDashed)
-		{
-            if (xRaw!= 0 || yRaw != 0)
-			{
+        {
+            if (xRaw != 0 || yRaw != 0)
+            {
                 Dash(xRaw, yRaw);
-			}
-		}
+            }
+        }
 
         if (coll.onGround && !groundTouch)
-		{
+        {
             GroundTouch();
             groundTouch = true;
-		}
+        }
 
         if (!coll.onGround && groundTouch)
-		{
+        {
             groundTouch = false;
-		}
-
-
+        }
+    }
+    void HandleAnim()
+	{
         //Sprite Facing
         if (wallGrab || wallSlide || !canMove)
             return;
@@ -201,20 +123,98 @@ public class Movement : MonoBehaviour
         }
 
         if ((x > 0 || x < 0) && coll.onGround)
-		{
+        {
             anim.SetAnimationState(WALK);
             return;
-		}
+        }
 
         if (x == 0 && coll.onGround)
-		{
+        {
             anim.SetAnimationState(IDLE);
             return;
-		}
+        }
+    }
+    void HandleJump()
+	{
+        if (Input.GetButtonDown("Jump"))
+        {
+            anim.SetTrigger("jump");
+
+            if (coll.onGround)
+            {
+                Jump(Vector2.up, false);
+                anim.SetAnimationState(JUMP);
+
+            }
+            if (coll.onWall && !coll.onGround)
+            {
+                WallJump();
+                anim.SetAnimationState(JUMP);
+            }
+        }
+    }
+    void HandleWalls()
+	{
+
+        //WallGrab - ButtonHold
+        if (coll.onWall && Input.GetButton("Fire3") && canMove)
+        {
+            if (side != coll.wallSide)
+                anim.Flip(side * -1);
+
+            wallGrab = true;
+            wallSlide = false;
+        }
+
+
+        /////////////////////////////////////////////////////////////////////
+        // Wall Actions 
+
+        //WallGrab - ButtonRelease
+        if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
+        {
+            wallGrab = false;
+            wallSlide = false;
+        }
+
+        //Grounded ?
+        if (coll.onGround && !isDashing)
+        {
+            wallJumped = false;
+            GetComponent<BetterJumping>().enabled = true;
+        }
+
+        if (wallGrab && !isDashing)
+        {
+            WallGrab();
+        }
+        else
+        {
+            rb.gravityScale = 3f;
+        }
+
+        if (coll.onWall && !coll.onGround)
+        {
+            if (x != 0 && !wallGrab)
+            {
+                wallSlide = true;
+                WallSlide();
+                anim.SetAnimationState(WALL_SLIDE);
+            }
+        }
+
+        if (!coll.onWall || coll.onGround)
+        {
+            wallSlide = false;
+        }
     }
 
-    private void Walk(Vector2 dir)
+	#endregion
+
+	private void Walk(Vector2 dir)
     {
+        anim.SetHorizontalMovement(x, y, rb.velocity.y);
+
         if (!canMove)
             return;
 
@@ -282,6 +282,20 @@ public class Movement : MonoBehaviour
 
     }
 
+    private void WallGrab()
+	{
+        rb.gravityScale = 0;
+        if (x > .2f || x < -.2f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+        }
+
+        float speedModifier = y > 0 ? .5f : 1;
+
+        rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
+        anim.SetAnimationState(WALL_GRAB);
+    }
+
     private void Dash(float x, float y)
 	{
         //Todo : Camera  Shaking
@@ -290,7 +304,7 @@ public class Movement : MonoBehaviour
 
         //Animations
         anim.SetTrigger("dash");
-        anim.SetAnimationState(DASH);
+        anim.SetAnimationState(JUMP);
 
         //Velocity
         rb.velocity = Vector2.zero;
@@ -312,6 +326,7 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
+        PostProcessing.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(.3f);
 
@@ -320,6 +335,12 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
+        PostProcessing.gameObject.SetActive(false);
+
+
+        //Cheat mode
+        //hasDashed = false;
+
     }
 
     IEnumerator GroundDash()
