@@ -10,7 +10,9 @@ public class AnimationScript : MonoBehaviour
     [HideInInspector]
     public SpriteRenderer sr;
 
-    void Start()
+    private string currentState;
+
+	void Start()
     {
         anim = GetComponent<Animator>();
         coll = GetComponentInParent<Collision>();
@@ -38,6 +40,13 @@ public class AnimationScript : MonoBehaviour
     public void SetTrigger (string trigger)
 	{
         anim.SetTrigger(trigger);
+	}
+
+    public void SetAnimationState(string state)
+	{
+        if (currentState == state) return;
+        anim.Play(state);
+        currentState = state;
 	}
 
     public void Flip(int side)

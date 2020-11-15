@@ -7,8 +7,6 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
-    [HideInInspector]
-    public Vector2 inputs;
 
     [Space]
 
@@ -41,6 +39,21 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpPS;
     public ParticleSystem slidePS;
 
+    #region Animation Names
+
+    public const string IDLE = "idle";
+    public const string WALK = "walk";
+    public const string JUMP = "jump";
+    public const string FALL = "fall";
+    public const string WALL_SLIDE = "wall_slide";
+    public const string WALL_GRAB = "wall_grab";
+    public const string DASH = "dash";
+
+    #endregion
+
+    [HideInInspector]
+    public Vector2 inputs;
+
     void Awake()
     {
         coll = GetComponent<Collision>();
@@ -48,7 +61,7 @@ public class Movement : MonoBehaviour
         anim = GetComponentInChildren<AnimationScript>();
     }
 
-    void Update()
+	void Update()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -57,8 +70,6 @@ public class Movement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
         inputs = new Vector2(xRaw, yRaw);
         
-
-
         //Walk
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
@@ -76,7 +87,6 @@ public class Movement : MonoBehaviour
 
         /////////////////////////////////////////////////////////////////////
         // Wall Actions 
-
 
         //WallGrab - ButtonRelease
         if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
@@ -103,7 +113,10 @@ public class Movement : MonoBehaviour
             float speedModifier = y > 0 ? .5f : 1;
 
             rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-		} else
+            anim.SetAnimationState(WALL_GRAB);
+
+        }
+        else
 		{
             rb.gravityScale = 3f;
 		}
@@ -114,8 +127,10 @@ public class Movement : MonoBehaviour
 			{
                 wallSlide = true;
                 WallSlide();
+                anim.SetAnimationState(WALL_SLIDE);
+
             }
-		}
+        }
 
         if (!coll.onWall || coll.onGround)
 		{
@@ -133,10 +148,14 @@ public class Movement : MonoBehaviour
             if (coll.onGround)
             {
                 Jump(Vector2.up, false);
+                anim.SetAnimationState(JUMP);
+
             }
             if (coll.onWall && !coll.onGround)
             {
                 WallJump();
+                anim.SetAnimationState(JUMP);
+
             }
         }
 
@@ -158,13 +177,26 @@ public class Movement : MonoBehaviour
         {
             side = 1;
             anim.Flip(side);
+
         }
+
         if (x < 0)
         {
             side = -1;
             anim.Flip(side);
         }
 
+        if ((x > 0 || x < 0) && coll.onGround)
+		{
+            anim.SetAnimationState(WALK);
+            return;
+		}
+
+        if (x == 0 && coll.onGround)
+		{
+            anim.SetAnimationState(IDLE);
+            return;
+		}
     }
 
     private void Walk(Vector2 dir)
@@ -233,6 +265,7 @@ public class Movement : MonoBehaviour
         float push = pushingWall ? 0 : rb.velocity.x;
 
         rb.velocity = new Vector2(push, -slideSpeed);
+
     }
 
     private void Dash(float x, float y)
