@@ -1591,7 +1591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1239456951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,11 +1925,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  PostProcessing: {fileID: 0}
   speed: 7
   jumpForce: 10
   slideSpeed: 2
   wallJumpLerp: 10
-  dashSpeed: 20
+  dashSpeed: 30
   canMove: 1
   wallGrab: 0
   wallJumped: 0

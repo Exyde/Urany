@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
+
+    public GameObject PostProcessing;
 
     [Space]
 
@@ -59,6 +62,7 @@ public class Movement : MonoBehaviour
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+        PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
     }
 
 	void Update()
@@ -155,7 +159,6 @@ public class Movement : MonoBehaviour
             {
                 WallJump();
                 anim.SetAnimationState(JUMP);
-
             }
         }
 
@@ -166,6 +169,17 @@ public class Movement : MonoBehaviour
 			{
                 Dash(xRaw, yRaw);
 			}
+		}
+
+        if (coll.onGround && !groundTouch)
+		{
+            GroundTouch();
+            groundTouch = true;
+		}
+
+        if (!coll.onGround && groundTouch)
+		{
+            groundTouch = false;
 		}
 
 
@@ -270,23 +284,30 @@ public class Movement : MonoBehaviour
 
     private void Dash(float x, float y)
 	{
-        //To complete later
+        //Todo : Camera  Shaking
+
         hasDashed = true;
+
+        //Animations
         anim.SetTrigger("dash");
+        anim.SetAnimationState(DASH);
 
-
+        //Velocity
         rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
-
         rb.velocity += dir.normalized * dashSpeed;
+
+        //Follow Up
         StartCoroutine(DashWait());
 	}
 
     IEnumerator DashWait()
 	{
-        //To complete later
+    
         StartCoroutine(GroundDash());
+        DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
+        //dashPS.Play();
         rb.gravityScale = 0;
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
@@ -294,11 +315,11 @@ public class Movement : MonoBehaviour
 
         yield return new WaitForSeconds(.3f);
 
+        //dashPS.Stop();
         rb.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
-
     }
 
     IEnumerator GroundDash()
@@ -313,5 +334,21 @@ public class Movement : MonoBehaviour
         canMove = false;
         yield return new WaitForSeconds(time);
         canMove = true;
+	}
+
+    void RigidbodyDrag(float x)
+	{
+        //Function used in DashWait by DotWeen to animate a float.
+        rb.drag = x;
+	}
+
+    void GroundTouch()
+	{
+        hasDashed = false;
+        isDashing = false;
+
+        side = anim.sr.flipX ? -1 : 1;
+
+        //jumpPS.Play();
 	}
 }
