@@ -138,7 +138,7 @@ public class Movement : MonoBehaviour
 	{
         if (Input.GetButtonDown("Jump"))
         {
-            anim.SetTrigger("jump");
+           // anim.SetTrigger("jump");
 
             if (coll.onGround)
             {
@@ -235,12 +235,13 @@ public class Movement : MonoBehaviour
     {
         //slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
         //ParticleSystem particle = wall ? wallJumpParticle : jumpParticle;
+        ParticleSystem particle = jumpPS;
 
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += dir * jumpForce;
 
-        //particle.Play();
+        particle.Play();
     }
 
     private void WallJump()
