@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameObject PostProcessing;
     private Collision coll;
     private AnimationScript anim;
 
@@ -38,6 +39,8 @@ public class Movement : MonoBehaviour
     public ParticleSystem jumpPS;
     public ParticleSystem wallJumpPS;
     public ParticleSystem slidePS;
+    public ParticleSystem groundImpactPS;
+
 
     #region Animation Names
 
@@ -55,16 +58,27 @@ public class Movement : MonoBehaviour
     public Vector2 inputs;
     Vector2 dir;
     float x, y, xRaw, yRaw;
+    float grab;
+
+    [Header ("PostProcessing")]
+    public GameObject PostProcessing;
+    public Volume volume;
+    Bloom bloom;
+    ChromaticAberration chrom;
 
     void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
-        //PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
+        PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
+        volume = PostProcessing.GetComponent<Volume>();
+        volume.profile.TryGet(out bloom);
+        volume.profile.TryGet(out chrom);
+
     }
 
-	void Update()
+    void Update()
     {
         //Get Input
         x = Input.GetAxis("Horizontal");
@@ -73,6 +87,7 @@ public class Movement : MonoBehaviour
         yRaw = Input.GetAxisRaw("Vertical");
         dir = new Vector2(x, y);
         inputs = new Vector2(xRaw, yRaw);
+        grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
         
         Walk(dir);
         HandleWalls();
@@ -150,6 +165,7 @@ public class Movement : MonoBehaviour
             {
                 WallJump();
                 anim.SetAnimationState(JUMP);
+                
             }
         }
     }
@@ -157,7 +173,7 @@ public class Movement : MonoBehaviour
 	{
 
         //WallGrab - ButtonHold
-        if (coll.onWall && Input.GetButton("Fire3") && canMove)
+        if (coll.onWall && grab != 0 && canMove)
         {
             if (side != coll.wallSide)
                 anim.Flip(side * -1);
@@ -171,7 +187,7 @@ public class Movement : MonoBehaviour
         // Wall Actions 
 
         //WallGrab - ButtonRelease
-        if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
+        if (grab == 0 || !coll.onWall || !canMove)
         {
             wallGrab = false;
             wallSlide = false;
@@ -234,11 +250,11 @@ public class Movement : MonoBehaviour
     private void Jump(Vector2 dir, bool wall)
     {
         //slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
-        //ParticleSystem particle = wall ? wallJumpParticle : jumpParticle;
-        ParticleSystem particle = jumpPS;
-
+        ParticleSystem particle = wall ? wallJumpPS : jumpPS;
+   
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
+
         rb.velocity += dir * jumpForce;
 
         particle.Play();
@@ -279,13 +295,14 @@ public class Movement : MonoBehaviour
 
         float push = pushingWall ? 0 : rb.velocity.x;
 
-        rb.velocity = new Vector2(push, -slideSpeed);
+        rb.velocity = new Vector2(0, -slideSpeed);
 
     }
 
     private void WallGrab()
 	{
         rb.gravityScale = 0;
+
         if (x > .2f || x < -.2f)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -322,21 +339,25 @@ public class Movement : MonoBehaviour
         StartCoroutine(GroundDash());
         DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
-        //dashPS.Play();
+        dashPS.Play();
         rb.gravityScale = 0;
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
-        PostProcessing.gameObject.SetActive(true);
+        //PostProcessing.gameObject.SetActive(true);
+        chrom.active = true;
 
         yield return new WaitForSeconds(.3f);
 
-        //dashPS.Stop();
+        dashPS.Stop();
         rb.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
-        PostProcessing.gameObject.SetActive(false);
+        // PostProcessing.gameObject.SetActive(false);
+        chrom.active = false;
+        
+        
 
 
         //Cheat mode
@@ -368,9 +389,8 @@ public class Movement : MonoBehaviour
 	{
         hasDashed = false;
         isDashing = false;
-
         side = anim.sr.flipX ? -1 : 1;
 
-        //jumpPS.Play();
+        groundImpactPS.Play();
 	}
 }
