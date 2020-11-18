@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private AnimationScript anim;
 
     [Space]
-    [Header ("Stats")]
+    [Header("Stats")]
     public float speed = 10;
     public float jumpForce = 5;
     public float slideSpeed = 5;
@@ -26,6 +26,10 @@ public class Movement : MonoBehaviour
     public bool wallJumped;
     public bool wallSlide;
     public bool isDashing;
+
+    [Space] 
+    [Header ("Debug / Cheating")]
+    public bool infiniteDash = true;
 
     [Space] 
     private bool groundTouch;
@@ -60,11 +64,20 @@ public class Movement : MonoBehaviour
     float x, y, xRaw, yRaw;
     float grab;
 
-    [Header ("PostProcessing")]
+	#region PostProcessing
+
+	[Header ("PostProcessing")]
     public GameObject PostProcessing;
     public Volume volume;
     Bloom bloom;
     ChromaticAberration chrom;
+
+    LensDistortion lensDist;
+    ColorAdjustments colorAdj;
+
+
+    #endregion
+
 
     void Awake()
     {
@@ -75,20 +88,11 @@ public class Movement : MonoBehaviour
         volume = PostProcessing.GetComponent<Volume>();
         volume.profile.TryGet(out bloom);
         volume.profile.TryGet(out chrom);
-
     }
 
     void Update()
     {
-        //Get Input
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-        xRaw = Input.GetAxisRaw("Horizontal");
-        yRaw = Input.GetAxisRaw("Vertical");
-        dir = new Vector2(x, y);
-        inputs = new Vector2(xRaw, yRaw);
-        grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
-        
+        HandleInputs();
         Walk(dir);
         HandleWalls();
         HandleJump();
@@ -97,83 +101,21 @@ public class Movement : MonoBehaviour
     }
 
 	#region Handlers
-	void HandleDash()
+
+    void HandleInputs()
 	{
-        if (Input.GetButtonDown("Fire1") && !hasDashed)
-        {
-            if (xRaw != 0 || yRaw != 0)
-            {
-                Dash(xRaw, yRaw);
-            }
-        }
-
-        if (coll.onGround && !groundTouch)
-        {
-            GroundTouch();
-            groundTouch = true;
-        }
-
-        if (!coll.onGround && groundTouch)
-        {
-            groundTouch = false;
-        }
-    }
-    void HandleAnim()
-	{
-        //Sprite Facing
-        if (wallGrab || wallSlide || !canMove)
-            return;
-
-        if (x > 0)
-        {
-            side = 1;
-            anim.Flip(side);
-
-        }
-
-        if (x < 0)
-        {
-            side = -1;
-            anim.Flip(side);
-        }
-
-        if ((x > 0 || x < 0) && coll.onGround)
-        {
-            anim.SetAnimationState(WALK);
-            return;
-        }
-
-        if (x == 0 && coll.onGround)
-        {
-            anim.SetAnimationState(IDLE);
-            return;
-        }
-    }
-    void HandleJump()
-	{
-        if (Input.GetButtonDown("Jump"))
-        {
-           // anim.SetTrigger("jump");
-
-            if (coll.onGround)
-            {
-                Jump(Vector2.up, false);
-                anim.SetAnimationState(JUMP);
-
-            }
-            if (coll.onWall && !coll.onGround)
-            {
-                WallJump();
-                anim.SetAnimationState(JUMP);
-                
-            }
-        }
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
+        xRaw = Input.GetAxisRaw("Horizontal");
+        yRaw = Input.GetAxisRaw("Vertical");
+        dir = new Vector2(x, y);
+        inputs = new Vector2(xRaw, yRaw);
+        grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
     }
     void HandleWalls()
 	{
-
         //WallGrab - ButtonHold
-        if (coll.onWall && grab != 0 && canMove)
+        if (coll.onWall && grab == -1 && canMove)
         {
             if (side != coll.wallSide)
                 anim.Flip(side * -1);
@@ -181,10 +123,6 @@ public class Movement : MonoBehaviour
             wallGrab = true;
             wallSlide = false;
         }
-
-
-        /////////////////////////////////////////////////////////////////////
-        // Wall Actions 
 
         //WallGrab - ButtonRelease
         if (grab == 0 || !coll.onWall || !canMove)
@@ -215,13 +153,85 @@ public class Movement : MonoBehaviour
             {
                 wallSlide = true;
                 WallSlide();
-                anim.SetAnimationState(WALL_SLIDE);
             }
         }
 
         if (!coll.onWall || coll.onGround)
         {
             wallSlide = false;
+        }
+    }
+    void HandleJump()
+	{
+        if (Input.GetButtonDown("Jump"))
+        {
+           // anim.SetTrigger("jump");
+
+            if (coll.onGround)
+            {
+                Jump(Vector2.up, false);
+                anim.SetAnimationState(JUMP);
+
+            }
+            if (coll.onWall && !coll.onGround)
+            {
+                WallJump();
+                anim.SetAnimationState(JUMP);
+                
+            }
+        }
+    }
+	void HandleDash()
+	{
+        if ((Input.GetButtonDown("Fire1") || grab == 1) && !hasDashed)
+        {
+            if (xRaw != 0 || yRaw != 0)
+            {
+                Dash(xRaw, yRaw);
+            }
+        }
+
+        if (coll.onGround && !groundTouch)
+        {
+            GroundTouch();
+            groundTouch = true;
+        }
+
+        if (!coll.onGround && groundTouch)
+        {
+            groundTouch = false;
+        }
+    }
+    void HandleAnim()
+	{
+        dbgInput();
+
+        //Sprite Facing
+        if (wallGrab || wallSlide || !canMove)
+            return;
+
+        if (x > 0)
+        {
+            side = 1;
+            anim.Flip(side);
+        }
+
+        if (x < 0)
+        {
+            side = -1;
+            anim.Flip(side);
+        }
+
+        if ((x > 0 || x < 0) && coll.onGround)
+        {
+            anim.SetAnimationState(WALK);
+            return;
+        } 
+
+        if (x == 0 && coll.onGround)
+        {
+            anim.SetAnimationState(IDLE);
+            return;
         }
     }
 
@@ -246,11 +256,11 @@ public class Movement : MonoBehaviour
             rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * speed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
     }
-
     private void Jump(Vector2 dir, bool wall)
     {
         //slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
         ParticleSystem particle = wall ? wallJumpPS : jumpPS;
+        particle.transform.localScale = new Vector3(side, 1, 1);
    
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -278,7 +288,8 @@ public class Movement : MonoBehaviour
 
     private void WallSlide()
 	{
-        if(coll.wallSide != side)
+
+        if (coll.wallSide != side)
 		{
             anim.Flip(side * -1);
 		}
@@ -291,11 +302,14 @@ public class Movement : MonoBehaviour
         if((rb.velocity.x > 0 && coll.onRightWall)|| (rb.velocity.x < 0 && coll.onLeftWall))
 		{
             pushingWall = true;
-		}
+            anim.SetAnimationState(WALL_SLIDE);
+        }
 
+        //Push Allow moving out of the flow while sliding
         float push = pushingWall ? 0 : rb.velocity.x;
 
-        rb.velocity = new Vector2(0, -slideSpeed);
+        rb.velocity = new Vector2(push, -slideSpeed);
+        //slidePS.Play();
 
     }
 
@@ -344,7 +358,6 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
-        //PostProcessing.gameObject.SetActive(true);
         chrom.active = true;
 
         yield return new WaitForSeconds(.3f);
@@ -354,14 +367,7 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
-        // PostProcessing.gameObject.SetActive(false);
         chrom.active = false;
-        
-        
-
-
-        //Cheat mode
-        //hasDashed = false;
 
     }
 
@@ -393,4 +399,13 @@ public class Movement : MonoBehaviour
 
         groundImpactPS.Play();
 	}
+
+	#region Debug
+
+    void dbgInput()
+	{
+        print("X :" + x + " / Y : " + y);
+    }
+
+	#endregion
 }

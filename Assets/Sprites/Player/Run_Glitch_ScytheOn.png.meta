@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: 1f16e112f31719a438d5e982d0f10e01
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -506960751470490363
+    second: Run_Glitch_ScytheOn_0
+  - first:
+      213: 2763836068660446474
+    second: Run_Glitch_ScytheOn_1
+  - first:
+      213: -2417603667904834194
+    second: Run_Glitch_ScytheOn_2
+  - first:
+      213: 7871502248988181402
+    second: Run_Glitch_ScytheOn_3
+  - first:
+      213: -8011132672631704872
+    second: Run_Glitch_ScytheOn_4
+  - first:
+      213: -633746752455770579
+    second: Run_Glitch_ScytheOn_5
+  - first:
+      213: 9090964408721087394
+    second: Run_Glitch_ScytheOn_6
+  - first:
+      213: 2338786354944902986
+    second: Run_Glitch_ScytheOn_7
+  - first:
+      213: -7193766823324227015
+    second: Run_Glitch_ScytheOn_8
+  - first:
+      213: 4468594365685140412
+    second: Run_Glitch_ScytheOn_9
+  - first:
+      213: 5859893397748551988
+    second: Run_Glitch_ScytheOn_10
+  - first:
+      213: -706229600881743998
+    second: Run_Glitch_ScytheOn_11
+  - first:
+      213: 5049255252305102857
+    second: Run_Glitch_ScytheOn_12
+  - first:
+      213: -2742543344027783376
+    second: Run_Glitch_ScytheOn_13
+  - first:
+      213: -7955497215815658385
+    second: Run_Glitch_ScytheOn_14
+  - first:
+      213: -809784604809899954
+    second: Run_Glitch_ScytheOn_15
+  - first:
+      213: 6234067090021268701
+    second: Run_Glitch_ScytheOn_16
+  - first:
+      213: -2108113396322178231
+    second: Run_Glitch_ScytheOn_17
+  - first:
+      213: -5545266761209607107
+    second: Run_Glitch_ScytheOn_18
+  - first:
+      213: 6332280047334136054
+    second: Run_Glitch_ScytheOn_19
+  - first:
+      213: -3906402703126670227
+    second: Run_Glitch_ScytheOn_20
+  - first:
+      213: -5913203904363588527
+    second: Run_Glitch_ScytheOn_21
+  - first:
+      213: -1701845329524515939
+    second: Run_Glitch_ScytheOn_22
+  - first:
+      213: -1888015108877966915
+    second: Run_Glitch_ScytheOn_23
+  - first:
+      213: 5045075239321920880
+    second: Run_Glitch_ScytheOn_24
+  - first:
+      213: -1146308976524698720
+    second: Run_Glitch_ScytheOn_25
+  - first:
+      213: 5858968764545076698
+    second: Run_Glitch_ScytheOn_26
+  - first:
+      213: 51538563283303996
+    second: Run_Glitch_ScytheOn_27
+  - first:
+      213: -3138895877156519328
+    second: Run_Glitch_ScytheOn_28
+  - first:
+      213: 2739002791635993832
+    second: Run_Glitch_ScytheOn_29
+  - first:
+      213: -3208447648018979114
+    second: Run_Glitch_ScytheOn_30
+  - first:
+      213: 25797183535709627
+    second: Run_Glitch_ScytheOn_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d498de1e9e6f8f0800000000000000
+      internalID: -506960751470490363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a050be1d24e1b5620800000000000000
+      internalID: 2763836068660446474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65d9d6e542f27ed0800000000000000
+      internalID: -2417603667904834194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9301a727913d3d60800000000000000
+      internalID: 7871502248988181402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2f24f674db2d090800000000000000
+      internalID: -8011132672631704872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ef056bfaa7437f0800000000000000
+      internalID: -633746752455770579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab1a87b6f7992e70800000000000000
+      internalID: 9090964408721087394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4785046cc9057020800000000000000
+      internalID: 2338786354944902986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

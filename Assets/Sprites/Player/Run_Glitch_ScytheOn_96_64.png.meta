@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 34ac7c4cf0b086849baf8c67dc119fad
+guid: 90ccacacfdaa66d4d8e1321ed26a4a3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1357161422539895605
-    second: jumpSmoke1_0
+      213: 3799787359809401344
+    second: Run_Glitch_ScytheOn_96_64_0
   - first:
-      213: 4123441430794413646
-    second: jumpSmoke1_1
+      213: -116417465901023787
+    second: Run_Glitch_ScytheOn_96_64_1
   - first:
-      213: 7562104752929665481
-    second: jumpSmoke1_2
+      213: 2967369103917336242
+    second: Run_Glitch_ScytheOn_96_64_2
   - first:
-      213: -5028319662776942404
-    second: jumpSmoke1_3
+      213: 1978346063548663091
+    second: Run_Glitch_ScytheOn_96_64_3
   - first:
-      213: 8507532104188942924
-    second: jumpSmoke1_4
+      213: 5872241557286517363
+    second: Run_Glitch_ScytheOn_96_64_4
   - first:
-      213: -3124810913003427441
-    second: jumpSmoke1_0
+      213: -5915645787817143056
+    second: Run_Glitch_ScytheOn_96_64_5
   - first:
-      213: -4536338063219376955
-    second: jumpSmoke1_1
+      213: -3301994185581427383
+    second: Run_Glitch_ScytheOn_96_64_6
   - first:
-      213: -1619396595591517217
-    second: jumpSmoke1_2
-  - first:
-      213: -5259559156705828193
-    second: jumpSmoke1_3
-  - first:
-      213: 7946716300094290368
-    second: jumpSmoke1_4
+      213: -2208055007958449828
+    second: Run_Glitch_ScytheOn_96_64_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jumpSmoke1_0
+      name: Run_Glitch_ScytheOn_96_64_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,62 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89aa24d70172a4d0800000000000000
-      internalID: -3124810913003427441
+      spriteID: 002757bb87e8bb430800000000000000
+      internalID: 3799787359809401344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jumpSmoke1_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ccb9b8e090bb01c0800000000000000
-      internalID: -4536338063219376955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jumpSmoke1_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdb6a41506fb689e0800000000000000
-      internalID: -1619396595591517217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jumpSmoke1_3
+      name: Run_Glitch_ScytheOn_96_64_1
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f92656530da4207b0800000000000000
-      internalID: -5259559156705828193
+      spriteID: 5dd715b7ee6626ef0800000000000000
+      internalID: -116417465901023787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jumpSmoke1_4
+      name: Run_Glitch_ScytheOn_96_64_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,8 +169,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c93de51f58684e60800000000000000
-      internalID: 7946716300094290368
+      spriteID: 2b6467c6a763e2920800000000000000
+      internalID: 2967369103917336242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_96_64_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3354c98534f747b10800000000000000
+      internalID: 1978346063548663091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_96_64_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a795975946e7150800000000000000
+      internalID: 5872241557286517363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_96_64_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f49f189f7767eda0800000000000000
+      internalID: -5915645787817143056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_96_64_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945830e68c5fc22d0800000000000000
+      internalID: -3301994185581427383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_Glitch_ScytheOn_96_64_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c514d164ba96b51e0800000000000000
+      internalID: -2208055007958449828
       vertices: []
       indices: 
       edges: []
