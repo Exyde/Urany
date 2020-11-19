@@ -7,6 +7,7 @@ TagManager:
   - PostProcessing
   - Breach
   - hackPlayer
+  - HackGameObjective
   layers:
   - Default
   - TransparentFX

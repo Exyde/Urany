@@ -25,7 +25,6 @@ public class Breach : MonoBehaviour
     public Vector3 newScale;
     public Vector3 newRotation;
     public Vector3 newPosition;
-    public float morphTime;
 
 
     void Start()
@@ -95,9 +94,9 @@ public class Breach : MonoBehaviour
 	{
         //Vector3.Lerp(transform.position, transform.position + newPosition, morphTime);
         //Vector3.Lerp(transform.localScale, newScale, morphTime);
-        //transform.position = transform.position + newPosition;
-        //transform.localScale = newScale;
-        //transform.Rotate(newRotation);
+        transform.position = transform.position + newPosition;
+        transform.localScale = newScale;
+        transform.Rotate(newRotation);
         //At the end of the transform, destroy the script.
         //Destroy(this);
     }

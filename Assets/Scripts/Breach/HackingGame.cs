@@ -30,13 +30,4 @@ public class HackingGame : MonoBehaviour
             }
         }
     }
-
-	private void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.gameObject.tag == "hackPlayer")
-		{
-            transform.parent.GetComponent<Breach>().BreachHacked();
-            this.gameObject.SetActive(false);
-        }
-    }
 }
