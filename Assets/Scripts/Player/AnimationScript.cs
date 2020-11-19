@@ -11,7 +11,6 @@ public class AnimationScript : MonoBehaviour
     public SpriteRenderer sr;
 
     private string currentState;
-
 	void Start()
     {
         anim = GetComponent<Animator>();

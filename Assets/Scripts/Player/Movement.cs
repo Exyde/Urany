@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 
 public class Movement : MonoBehaviour
 {
+    [HideInInspector]
     public Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
@@ -58,6 +59,7 @@ public class Movement : MonoBehaviour
 
     #endregion
 
+    //Inputs
     [HideInInspector]
     public Vector2 inputs;
     Vector2 dir;
@@ -67,23 +69,25 @@ public class Movement : MonoBehaviour
 	#region PostProcessing
 
 	[Header ("PostProcessing")]
+    [HideInInspector]
     public GameObject PostProcessing;
+    [HideInInspector]
     public Volume volume;
     Bloom bloom;
     ChromaticAberration chrom;
-
+    //To Add
     LensDistortion lensDist;
     ColorAdjustments colorAdj;
 
-
     #endregion
-
 
     void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+
+        //PostProcessing
         PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
         volume = PostProcessing.GetComponent<Volume>();
         volume.profile.TryGet(out bloom);
@@ -112,9 +116,11 @@ public class Movement : MonoBehaviour
         inputs = new Vector2(xRaw, yRaw);
         grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
     }
+
     void HandleWalls()
 	{
         //WallGrab - ButtonHold
+        //if (coll.onWall && Input.GetButtonDown("Fire 3") && canMove)
         if (coll.onWall && grab == -1 && canMove)
         {
             if (side != coll.wallSide)
@@ -125,6 +131,7 @@ public class Movement : MonoBehaviour
         }
 
         //WallGrab - ButtonRelease
+        //if (Input.GetButtonUp("Fire 3") || !coll.onWall || !canMove)
         if (grab == 0 || !coll.onWall || !canMove)
         {
             wallGrab = false;
@@ -183,7 +190,7 @@ public class Movement : MonoBehaviour
     }
 	void HandleDash()
 	{
-        if ((Input.GetButtonDown("Fire1") || grab == 1) && !hasDashed)
+        if ((Input.GetButtonDown("Dash") || grab == 1) && !hasDashed)
         {
             if (xRaw != 0 || yRaw != 0)
             {
@@ -204,8 +211,6 @@ public class Movement : MonoBehaviour
     }
     void HandleAnim()
 	{
-        dbgInput();
-
         //Sprite Facing
         if (wallGrab || wallSlide || !canMove)
             return;
@@ -330,7 +335,8 @@ public class Movement : MonoBehaviour
 
     private void Dash(float x, float y)
 	{
-        //Todo : Camera  Shaking
+        //Not working right now
+        //CameraShake.Shake(.15f, .0001f);
 
         hasDashed = true;
 
@@ -360,7 +366,7 @@ public class Movement : MonoBehaviour
         isDashing = true;
         chrom.active = true;
 
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.15f);
 
         dashPS.Stop();
         rb.gravityScale = 3;
@@ -396,7 +402,6 @@ public class Movement : MonoBehaviour
         hasDashed = false;
         isDashing = false;
         side = anim.sr.flipX ? -1 : 1;
-
         groundImpactPS.Play();
 	}
 

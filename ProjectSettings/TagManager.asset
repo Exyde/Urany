@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PostProcessing
+  - Breach
+  - hackPlayer
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-
     //Class for handling side and bottom collisions.
     //You have to tweak the Offsets Vector2 to get it working properly.
 
