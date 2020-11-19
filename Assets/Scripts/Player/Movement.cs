@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -45,6 +46,12 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpPS;
     public ParticleSystem slidePS;
     public ParticleSystem groundImpactPS;
+
+    [Space]
+    [Header("Juice Elements Prefabs")]
+    public GameObject jumpSmoke;
+    public GameObject wallJumpSmoke;
+    public GameObject groundImpactSmoke;
 
 
     #region Animation Names
@@ -263,16 +270,31 @@ public class Movement : MonoBehaviour
     }
     private void Jump(Vector2 dir, bool wall)
     {
+        
         //slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
-        ParticleSystem particle = wall ? wallJumpPS : jumpPS;
-        particle.transform.localScale = new Vector3(side, 1, 1);
+        //ParticleSystem particle = wall ? wallJumpPS : jumpPS;
+        //particle.transform.localScale = new Vector3(side, 1, 1);
    
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
 
         rb.velocity += dir * jumpForce;
 
-        particle.Play();
+        //particle.Play();
+
+        if(!wall) {
+            GameObject smoke = Instantiate(jumpSmoke, transform.position, Quaternion.identity);
+            smoke.transform.localScale = new Vector3(side, 1, 1); 
+        } else {
+            // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
+            Vector3 temp = new Vector3((int)Math.Round(transform.position.x), transform.position.y, transform.position.z);
+            
+            GameObject smoke = Instantiate(wallJumpSmoke, temp, Quaternion.identity);
+            smoke.transform.localScale = new Vector3(side, 1, 1);
+        }
+        
+            
+            
     }
 
     private void WallJump()
@@ -402,7 +424,13 @@ public class Movement : MonoBehaviour
         hasDashed = false;
         isDashing = false;
         side = anim.sr.flipX ? -1 : 1;
-        groundImpactPS.Play();
+        //groundImpactPS.Play();
+
+        // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
+        Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+
+        GameObject smoke = Instantiate(groundImpactSmoke, temp, Quaternion.identity);
+        smoke.transform.localScale = new Vector3(side, 1, 1);
 	}
 
 	#region Debug

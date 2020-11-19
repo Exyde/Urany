@@ -3,7 +3,18 @@ guid: 2487349ff6744794c83379f3c536e8a1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - dashPS: {instanceID: 0}
+  - jumpPS: {instanceID: 0}
+  - wallJumpPS: {instanceID: 0}
+  - slidePS: {instanceID: 0}
+  - groundImpactPS: {instanceID: 0}
+  - jumpSmoke: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
+  - wallJumpSmoke: {instanceID: 0}
+  - groundImpactSmoke: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+  - PostProcessing: {instanceID: 0}
+  - volume: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

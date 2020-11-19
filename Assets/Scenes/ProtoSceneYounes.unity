@@ -18002,6 +18002,9 @@ MonoBehaviour:
   wallJumpPS: {fileID: 1673252502}
   slidePS: {fileID: 285616037}
   groundImpactPS: {fileID: 532192561}
+  jumpSmoke: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
+  wallJumpSmoke: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
+  groundImpactSmoke: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
   inputs: {x: 0, y: 0}
   PostProcessing: {fileID: 1239456950}
   volume: {fileID: 0}
