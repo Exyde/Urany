@@ -129,7 +129,7 @@ public class Movement : MonoBehaviour
 		{
            x =  Mathf.Clamp(x, .2f, 1);
 		} else if ( x < 0 ) {
-            x = Mathf.Clamp(x, -.2f, -1);
+            x = Mathf.Clamp(x, -1f, -.2f);
         }
     }
 
