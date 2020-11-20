@@ -283,7 +283,9 @@ public class Movement : MonoBehaviour
         //particle.Play();
 
         if(!wall) {
-            GameObject smoke = Instantiate(jumpSmoke, transform.position, Quaternion.identity);
+            Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+
+            GameObject smoke = Instantiate(jumpSmoke, temp, Quaternion.identity);
             smoke.transform.localScale = new Vector3(side, 1, 1); 
         } else {
             // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
