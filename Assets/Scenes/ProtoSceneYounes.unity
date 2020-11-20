@@ -5612,7 +5612,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 0.9811321, g: 0.124955505, b: 0.55150914, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -11802,7 +11802,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 0.9811321, g: 0.124955505, b: 0.55150914, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -17196,7 +17196,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 0.9811321, g: 0.124955505, b: 0.55150914, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -17876,7 +17876,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.12927198, g: 0.27499932, b: 0.3301887, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -18538,7 +18538,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 0.9811321, g: 0.124955505, b: 0.55150914, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -18827,7 +18827,7 @@ MonoBehaviour:
   bottomOffset: {x: 0, y: -0.4}
   rightOffset: {x: 0.2, y: 0}
   leftOffset: {x: -0.2, y: 0}
-  verticalOffset: {x: 0, y: -0.4}
+  verticalOffset: {x: 0, y: -0.3}
 --- !u!114 &1546736443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18906,7 +18906,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 0.9811321, g: 0.124955505, b: 0.55150914, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -29218,7 +29218,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.508
-  m_Color: {r: 0.25342646, g: 0.8018868, b: 0.76969695, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.07060623, a: 1}
   m_Intensity: 1.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -29298,6 +29298,10 @@ PrefabInstance:
     - target: {fileID: 3298438056890265588, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270860094182258332, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8485543582114033931, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
       propertyPath: m_Materials.Array.data[0]

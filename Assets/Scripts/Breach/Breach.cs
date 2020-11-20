@@ -86,7 +86,6 @@ public class Breach : MonoBehaviour
         Destroy(hackingGame.gameObject);
         Destroy(GetComponent<CircleCollider2D>());
         TransformBreach();
-
 	}
 
     public void TransformBreach()
@@ -102,10 +101,11 @@ public class Breach : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        //Breach Acces Range
         Gizmos.color = new Color(255, 69, 0, 120);
-
         Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
 
+        //Hack Limit Range
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, maxHackRange);
     }

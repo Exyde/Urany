@@ -385,7 +385,6 @@ public class Movement : MonoBehaviour
 
     IEnumerator DashWait()
 	{
-    
         StartCoroutine(GroundDash());
         DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
@@ -404,7 +403,6 @@ public class Movement : MonoBehaviour
         wallJumped = false;
         isDashing = false;
         chrom.active = false;
-
     }
 
     IEnumerator GroundDash()
@@ -438,6 +436,8 @@ public class Movement : MonoBehaviour
         Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
 
         GameObject smoke = Instantiate(groundImpactSmoke, temp, Quaternion.identity);
+        //GameObject smoke = Instantiate(groundImpactSmoke, transform.position, Quaternion.identity);
+
         smoke.transform.localScale = new Vector3(side, 1, 1);
 	}
 
