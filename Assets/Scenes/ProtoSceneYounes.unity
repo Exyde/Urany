@@ -11171,7 +11171,7 @@ GameObject:
   - component: {fileID: 550734537}
   - component: {fileID: 550734536}
   - component: {fileID: 550734541}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BreachPrefab
   m_TagString: Breach
   m_Icon: {fileID: 0}
@@ -11223,7 +11223,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550734535}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
