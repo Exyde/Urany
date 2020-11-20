@@ -36,15 +36,13 @@ public class Breach : MonoBehaviour
 
     void Update()
     {
+
         if (!hackDone)
 		{
-            if (hack.isHacking)
-		    {
-                if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange){
-                    ResetHackGame();
-                }
+            if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange){
+                ResetHackGame();
             }
-		}
+	    }
     }
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -70,6 +68,7 @@ public class Breach : MonoBehaviour
         sr.color = defaultColor;
         hack.onBreach = false;
         hack.currentBreach = null;
+        hack.isHacking = false;
     }
 
     void ResetHackGame()
@@ -99,5 +98,15 @@ public class Breach : MonoBehaviour
         transform.Rotate(newRotation);
         //At the end of the transform, destroy the script.
         //Destroy(this);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(255, 69, 0, 120);
+
+        Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
+
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, maxHackRange);
     }
 }

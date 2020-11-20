@@ -35,6 +35,7 @@ public class Hacking : MonoBehaviour
 		{
             isHacking = false;
             return;
+
 		} else
 		{
             currentBreach.gameObject.GetComponent<Breach>().hackingGame.gameObject.SetActive(true);
