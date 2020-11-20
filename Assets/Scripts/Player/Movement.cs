@@ -122,6 +122,15 @@ public class Movement : MonoBehaviour
         dir = new Vector2(x, y);
         inputs = new Vector2(xRaw, yRaw);
         grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
+
+
+        //Rough fix for inputs dead zone :x
+        if (x > 0)
+		{
+           x =  Mathf.Clamp(x, .2f, 1);
+		} else if ( x < 0 ) {
+            x = Mathf.Clamp(x, -.2f, -1);
+        }
     }
 
     void HandleWalls()
@@ -179,19 +188,18 @@ public class Movement : MonoBehaviour
 	{
         if (Input.GetButtonDown("Jump"))
         {
-           // anim.SetTrigger("jump");
+            anim.SetTrigger("jump");
 
             if (coll.onGround)
             {
                 Jump(Vector2.up, false);
-                anim.SetAnimationState(JUMP);
+                //anim.SetAnimationState(JUMP);
 
             }
             if (coll.onWall && !coll.onGround)
             {
                 WallJump();
-                anim.SetAnimationState(JUMP);
-                
+                //anim.SetAnimationState(JUMP);
             }
         }
     }
@@ -236,14 +244,14 @@ public class Movement : MonoBehaviour
 
         if ((x > 0 || x < 0) && coll.onGround)
         {
-            anim.SetAnimationState(WALK);
-            return;
+            //anim.SetAnimationState(WALK);
+            //return;
         } 
 
         if (x == 0 && coll.onGround)
         {
-            anim.SetAnimationState(IDLE);
-            return;
+            //anim.SetAnimationState(IDLE);
+            //return;
         }
     }
 
@@ -252,6 +260,7 @@ public class Movement : MonoBehaviour
 	private void Walk(Vector2 dir)
     {
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
+        print(x);
 
         if (!canMove)
             return;
@@ -293,10 +302,7 @@ public class Movement : MonoBehaviour
             
             GameObject smoke = Instantiate(wallJumpSmoke, temp, Quaternion.identity);
             smoke.transform.localScale = new Vector3(side, 1, 1);
-        }
-        
-            
-            
+        }     
     }
 
     private void WallJump()
@@ -331,7 +337,7 @@ public class Movement : MonoBehaviour
         if((rb.velocity.x > 0 && coll.onRightWall)|| (rb.velocity.x < 0 && coll.onLeftWall))
 		{
             pushingWall = true;
-            anim.SetAnimationState(WALL_SLIDE);
+            //anim.SetAnimationState(WALL_SLIDE);
         }
 
         //Push Allow moving out of the flow while sliding
@@ -354,7 +360,7 @@ public class Movement : MonoBehaviour
         float speedModifier = y > 0 ? .5f : 1;
 
         rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-        anim.SetAnimationState(WALL_GRAB);
+        //anim.SetAnimationState(WALL_GRAB);
     }
 
     private void Dash(float x, float y)
@@ -366,7 +372,7 @@ public class Movement : MonoBehaviour
 
         //Animations
         anim.SetTrigger("dash");
-        anim.SetAnimationState(JUMP);
+        //anim.SetAnimationState(JUMP);
 
         //Velocity
         rb.velocity = Vector2.zero;
