@@ -9,6 +9,7 @@ public class AnimationScript : MonoBehaviour
     private Collision coll;
     [HideInInspector]
     public SpriteRenderer sr;
+    public SpriteRenderer scytheRendered;
 
     private string currentState;
 	void Start()
@@ -54,5 +55,6 @@ public class AnimationScript : MonoBehaviour
 
         bool state = (side == 1) ? false : true;
         sr.flipX = state;
+        scytheRendered.flipX = state;
 	}
 }

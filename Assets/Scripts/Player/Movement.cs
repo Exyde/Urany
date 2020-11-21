@@ -214,7 +214,6 @@ public class Movement : MonoBehaviour
 	private void Walk(Vector2 dir)
     {
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
-        print(x);
 
         if (!canMove)
             return;
