@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 4
+  interactionType: 1
 --- !u!61 &65283280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5811,7 +5811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 2
+  interactionType: 1
 --- !u!61 &353994222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5897,7 +5897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353994220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.93, y: 8.63, z: 0}
+  m_LocalPosition: {x: 15.11, y: 8.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17908,7 +17908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045904523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.68, y: 8.63, z: 0}
+  m_LocalPosition: {x: 12.89, y: 8.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18746,7 +18746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 3
+  interactionType: 1
 --- !u!61 &1359806511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19418,6 +19418,7 @@ MonoBehaviour:
   isDashing: 0
   infiniteDash: 1
   side: 1
+  interactionPoint: {fileID: 671575086}
   dashPS: {fileID: 813801273}
   jumpPS: {fileID: 1777856309}
   wallJumpPS: {fileID: 1673252502}
@@ -19484,6 +19485,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   currentObject: {fileID: 0}
+  pickedItems: []
 --- !u!1 &1561099590
 GameObject:
   m_ObjectHideFlags: 0

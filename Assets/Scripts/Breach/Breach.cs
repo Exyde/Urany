@@ -112,7 +112,7 @@ public class Breach : MonoBehaviour
             //Hack Limit Range
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, maxHackRange);
-        }
+        } 
     }
 
     private void OnDrawGizmosSelected()

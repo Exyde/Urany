@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interract : MonoBehaviour
+public class InteractionSystem : MonoBehaviour
 {
+
+    [Header ("Detection settings")]
     public Transform interractionPoint;
     public float interractionRadius;
     public LayerMask interractionLayer;
 
+    [Header ("Item Info")]
     public GameObject currentObject;
+
+    [Header("Temporary Inventory")]
+    public List<GameObject> pickedItems = new List<GameObject>();
 
     void Start()
     {
@@ -17,11 +23,11 @@ public class Interract : MonoBehaviour
 
     void Update()
     {
-        if (DetectObject())
+        if (DetectObject()) //If in range
 		{
-			if (InterractInput())
+			if (InterractInput()) // and player input
 			{
-                currentObject.GetComponent<Item>().Interact();
+                currentObject.GetComponent<Interactable>().Interact();
 			}
 		}
     }
@@ -51,4 +57,9 @@ public class Interract : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(interractionPoint.position, interractionRadius); 
  	}
+
+    public void PickUpItem(GameObject item)
+	{
+        pickedItems.Add(item);
+	}
 }

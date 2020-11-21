@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
     private bool hasDashed;
     //Facing side
     public int side = 1;
+    public Transform interactionPoint;
 
     [Space]
     [Header("Particle System")]
@@ -207,6 +208,10 @@ public class Movement : MonoBehaviour
             side = -1;
             anim.Flip(side);
         }
+
+        //Update the side of the interraction.
+        interactionPoint.localPosition = new Vector3(side * .5f, 0, 0);
+
     }
 
 	#endregion

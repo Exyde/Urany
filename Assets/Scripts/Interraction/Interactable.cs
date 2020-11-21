@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent (typeof (BoxCollider2D))]
-public class Item : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
 	public enum InteractionType
 	{
@@ -28,7 +28,9 @@ public class Item : MonoBehaviour
 		switch (interactionType)
 		{
 			case InteractionType.PickUp:
-				Debug.Log("Pick up !");
+				//This is temporary, for the proto. Maybe this will be updated if we setup an inventory.
+				FindObjectOfType<InteractionSystem>().PickUpItem(this.gameObject);
+				gameObject.SetActive(false);
 				break;
 
 			case InteractionType.Examine:
