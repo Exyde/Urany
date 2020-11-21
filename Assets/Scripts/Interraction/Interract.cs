@@ -8,9 +8,11 @@ public class Interract : MonoBehaviour
     public float interractionRadius;
     public LayerMask interractionLayer;
 
+    public GameObject currentObject;
+
     void Start()
     {
-        
+        currentObject = null;
     }
 
     void Update()
@@ -19,7 +21,7 @@ public class Interract : MonoBehaviour
 		{
 			if (InterractInput())
 			{
-                print("Interraction !");
+                currentObject.GetComponent<Item>().Interact();
 			}
 		}
     }
@@ -31,13 +33,22 @@ public class Interract : MonoBehaviour
 
     bool DetectObject()
 	{
-        bool isDetected = Physics2D.OverlapCircle(interractionPoint.position, interractionRadius, interractionLayer);
-        return isDetected;
+        Collider2D coll = Physics2D.OverlapCircle(interractionPoint.position, interractionRadius, interractionLayer);
+        
+        if(coll == null)
+		{
+            currentObject = null;
+            return false;
+		} else
+		{
+            currentObject = coll.gameObject;
+            return true;
+		}
 	}
 
 	private void OnDrawGizmos()
 	{
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(interractionPoint.position, interractionRadius); 
-	}
+ 	}
 }
