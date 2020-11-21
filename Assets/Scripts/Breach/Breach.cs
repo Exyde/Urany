@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Breach : MonoBehaviour
 {
+    public bool alwaysDrawGizmos;
+
     SpriteRenderer sr;
     Hacking hack;
     Rigidbody2D rb;
@@ -100,6 +102,20 @@ public class Breach : MonoBehaviour
     }
 
     private void OnDrawGizmos()
+    {
+        if (alwaysDrawGizmos)
+		{
+            //Breach Acces Range
+            Gizmos.color = new Color(255, 69, 0, 120);
+            Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
+
+            //Hack Limit Range
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(transform.position, maxHackRange);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
     {
         //Breach Acces Range
         Gizmos.color = new Color(255, 69, 0, 120);

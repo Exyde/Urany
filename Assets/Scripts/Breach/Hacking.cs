@@ -9,6 +9,8 @@ public class Hacking : MonoBehaviour
     // Also check is the player is hacking it or not.
     // Allow the game inside the breach to start or not.
 
+    public PostProcessController pp;
+
     public bool isHacking;
     public bool onBreach;
 

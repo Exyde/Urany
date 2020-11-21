@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
+    public PostProcessController pp;
 
     [Space]
     [Header("Stats")]
@@ -53,19 +54,6 @@ public class Movement : MonoBehaviour
     public GameObject wallJumpSmoke;
     public GameObject groundImpactSmoke;
 
-
-    #region Animation Names
-
-    public const string IDLE = "idle";
-    public const string WALK = "walk";
-    public const string JUMP = "jump";
-    public const string FALL = "fall";
-    public const string WALL_SLIDE = "wall_slide";
-    public const string WALL_GRAB = "wall_grab";
-    public const string DASH = "dash";
-
-    #endregion
-
     //Inputs
     [HideInInspector]
     public Vector2 inputs;
@@ -73,32 +61,12 @@ public class Movement : MonoBehaviour
     float x, y, xRaw, yRaw;
     float grab;
 
-	#region PostProcessing
-
-	[Header ("PostProcessing")]
-    [HideInInspector]
-    public GameObject PostProcessing;
-    [HideInInspector]
-    public Volume volume;
-    Bloom bloom;
-    ChromaticAberration chrom;
-    //To Add
-    LensDistortion lensDist;
-    ColorAdjustments colorAdj;
-
-    #endregion
 
     void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
-
-        //PostProcessing
-        PostProcessing = GameObject.FindGameObjectWithTag("PostProcessing");
-        volume = PostProcessing.GetComponent<Volume>();
-        volume.profile.TryGet(out bloom);
-        volume.profile.TryGet(out chrom);
     }
 
     void Update()
@@ -193,13 +161,11 @@ public class Movement : MonoBehaviour
             if (coll.onGround)
             {
                 Jump(Vector2.up, false);
-                //anim.SetAnimationState(JUMP);
 
             }
             if (coll.onWall && !coll.onGround)
             {
                 WallJump();
-                //anim.SetAnimationState(JUMP);
             }
         }
     }
@@ -240,18 +206,6 @@ public class Movement : MonoBehaviour
         {
             side = -1;
             anim.Flip(side);
-        }
-
-        if ((x > 0 || x < 0) && coll.onGround)
-        {
-            //anim.SetAnimationState(WALK);
-            //return;
-        } 
-
-        if (x == 0 && coll.onGround)
-        {
-            //anim.SetAnimationState(IDLE);
-            //return;
         }
     }
 
@@ -337,7 +291,6 @@ public class Movement : MonoBehaviour
         if((rb.velocity.x > 0 && coll.onRightWall)|| (rb.velocity.x < 0 && coll.onLeftWall))
 		{
             pushingWall = true;
-            //anim.SetAnimationState(WALL_SLIDE);
         }
 
         //Push Allow moving out of the flow while sliding
@@ -360,7 +313,6 @@ public class Movement : MonoBehaviour
         float speedModifier = y > 0 ? .5f : 1;
 
         rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-        //anim.SetAnimationState(WALL_GRAB);
     }
 
     private void Dash(float x, float y)
@@ -368,11 +320,8 @@ public class Movement : MonoBehaviour
         //Not working right now
         //CameraShake.Shake(.15f, .0001f);
 
-        hasDashed = true;
-
-        //Animations
+        hasDashed = true; 
         anim.SetTrigger("dash");
-        //anim.SetAnimationState(JUMP);
 
         //Velocity
         rb.velocity = Vector2.zero;
@@ -393,7 +342,7 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
-        chrom.active = true;
+        pp.SetDashPostProcess();
 
         yield return new WaitForSeconds(.15f);
 
@@ -402,7 +351,7 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
-        chrom.active = false;
+        pp.ResetPostProcess();
     }
 
     IEnumerator GroundDash()

@@ -41,13 +41,6 @@ public class AnimationScript : MonoBehaviour
         anim.SetTrigger(trigger);
 	}
 
-    public void SetAnimationState(string state)
-	{
-        if (currentState == state) return;
-        anim.Play(state);
-        currentState = state;
-	}
-
     public void Flip(int side)
 	{
         if (move.wallGrab || move.wallSlide)
