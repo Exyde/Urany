@@ -34,10 +34,14 @@ public class Movement : MonoBehaviour
     [Header ("Debug / Cheating")]
     public bool infiniteDash = true;
 
-    [Space] 
+    [Space]
+    [Header ("Other bools")]
+    [SerializeField]
     private bool groundTouch;
+    [SerializeField]
     private bool hasDashed;
-    //Facing side
+
+    [Space]
     public int side = 1;
     public Transform interactionPoint;
 
@@ -172,7 +176,7 @@ public class Movement : MonoBehaviour
     }
 	void HandleDash()
 	{
-        if ((Input.GetButtonDown("Dash") || grab == 1) && !hasDashed)
+        if ((Input.GetButtonDown("Dash") || grab == 1) && !hasDashed && !isDashing)
         {
             if (xRaw != 0 || yRaw != 0)
             {
@@ -348,7 +352,7 @@ public class Movement : MonoBehaviour
         isDashing = true;
         pp.SetDashPostProcess();
 
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(.3f);
 
         dashPS.Stop();
         rb.gravityScale = 3;
@@ -360,7 +364,8 @@ public class Movement : MonoBehaviour
 
     IEnumerator GroundDash()
 	{
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(2f);
+
         if (coll.onGround)
             hasDashed = false;
 	}
