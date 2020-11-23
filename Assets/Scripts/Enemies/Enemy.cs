@@ -42,6 +42,14 @@ public class Enemy : MonoBehaviour
 
 
         //Disable Enemy - Stock the corpse
-        this.enabled = false;
+        StartCoroutine(WaitDie());
+        //Destroy(this.gameObject);
 	}
+
+    IEnumerator WaitDie()
+	{
+        yield return new WaitForSeconds(.3f);
+        anim.enabled = false;
+        this.enabled = false;
+    }
 }
