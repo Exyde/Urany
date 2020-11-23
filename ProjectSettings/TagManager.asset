@@ -8,6 +8,7 @@ TagManager:
   - Breach
   - hackPlayer
   - HackGameObjective
+  - Deadly
   layers:
   - Default
   - TransparentFX
