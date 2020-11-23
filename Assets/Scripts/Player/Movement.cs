@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
     [Space]
     public int side = 1;
     public Transform interactionPoint;
+    public Transform attackPoints;
 
     [Space]
     [Header("Particle System")]
@@ -215,6 +216,7 @@ public class Movement : MonoBehaviour
 
         //Update the side of the interraction.
         interactionPoint.localPosition = new Vector3(side * .5f, 0, 0);
+        attackPoints.localScale = new Vector3(side , 1, 1);
 
     }
 
