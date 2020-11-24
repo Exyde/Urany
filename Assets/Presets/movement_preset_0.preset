@@ -29,6 +29,10 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: pp
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: speed
     value: 7
     objectReference: {fileID: 0}
@@ -47,6 +51,14 @@ Preset:
   - target: {fileID: 0}
     propertyPath: dashSpeed
     value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: wallClimbOffsetX
+    value: 0.75
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: wallClimbOffsetY
+    value: 0.75
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: canMove
@@ -73,8 +85,24 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: groundTouch
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: hasDashed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: side
     value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: interactionPoint
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackPoints
+    value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: dashPS
@@ -97,19 +125,23 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: jumpSmoke
+    value: 
+    objectReference: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
+  - target: {fileID: 0}
+    propertyPath: wallJumpSmoke
+    value: 
+    objectReference: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
+  - target: {fileID: 0}
+    propertyPath: groundImpactSmoke
+    value: 
+    objectReference: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+  - target: {fileID: 0}
     propertyPath: inputs.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: inputs.y
     value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PostProcessing
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: volume
-    value: 
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

@@ -20307,15 +20307,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2487349ff6744794c83379f3c536e8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   pp: {fileID: 1239456953}
   speed: 7
   jumpForce: 10
   slideSpeed: 2
   wallJumpLerp: 10
   dashSpeed: 30
-  wallClimbOffsetX: 1
-  wallClimbOffsetY: 1
+  ascentClimbSpeed: 7
+  downClimbSpeed: 12
   canMove: 1
   wallGrab: 0
   wallJumped: 0
@@ -20361,8 +20360,8 @@ MonoBehaviour:
   bottomOffset: {x: 0, y: -0.4}
   rightOffset: {x: 0.2, y: 0}
   leftOffset: {x: -0.2, y: 0}
-  rightTopOffset: {x: 0.2, y: 0}
-  leftTopOffset: {x: -0.2, y: 0}
+  rightTopOffset: {x: 0.2, y: 0.1}
+  leftTopOffset: {x: -0.2, y: 0.1}
   verticalOffset: {x: 0, y: -0.3}
 --- !u!114 &1546736443
 MonoBehaviour:

@@ -8,8 +8,8 @@ using System;
 
 public class Movement : MonoBehaviour
 {
-    [HideInInspector]
-    public Rigidbody2D rb;
+	#region Fields
+    private Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
     public PostProcessController pp;
@@ -21,10 +21,11 @@ public class Movement : MonoBehaviour
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
     public float dashSpeed = 20;
+    public float ascentClimbSpeed;
+    public float downClimbSpeed;
 
     private float wallClimbOffsetX = .75f;
     private float wallClimbOffsetY = .75f;
-
 
     [Space]
 
@@ -74,8 +75,9 @@ public class Movement : MonoBehaviour
     float grabInput;
     float dashInput;
 
+	#endregion
 
-    void Awake()
+	void Awake()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
@@ -173,7 +175,7 @@ public class Movement : MonoBehaviour
             rb.gravityScale = 3f;
         }
 
-        if (coll.onWall && !coll.onGround)
+        if (coll.onWall && !coll.onGround && (coll.onRightWall || coll.onLeftWall))
         {
             if (x != 0 && !wallGrab)
             {
@@ -182,7 +184,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (!coll.onWall || coll.onGround)
+        if (!coll.onWall || coll.onGround || (!coll.onRightWall && !coll.onLeftWall))
         {
             wallSlide = false;
         }
@@ -337,7 +339,6 @@ public class Movement : MonoBehaviour
 
         rb.velocity = new Vector2(push, -slideSpeed);
         //slidePS.Play();
-
     }
 
     private void WallGrab()
@@ -350,8 +351,11 @@ public class Movement : MonoBehaviour
         }
 
         float speedModifier = y > 0 ? .5f : 1;
+        float _speed = y > 0 ? ascentClimbSpeed : downClimbSpeed;
 
-        rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
+        //rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
+        rb.velocity = new Vector2(rb.velocity.x, y * _speed);
+
     }
 
     private void Dash(float x, float y)
