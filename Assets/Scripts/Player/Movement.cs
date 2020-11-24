@@ -22,6 +22,11 @@ public class Movement : MonoBehaviour
     public float wallJumpLerp = 10;
     public float dashSpeed = 20;
 
+    [Header ("WallClimb")]
+    public float wallClimbOffsetX = .9f;
+    public float wallClimbOffsetY = .9f;
+
+
     [Space]
     [Header("Booleans")]
     public bool canMove;
@@ -65,7 +70,9 @@ public class Movement : MonoBehaviour
     public Vector2 inputs;
     Vector2 dir;
     float x, y, xRaw, yRaw;
-    float grab;
+
+    float grabInput;
+    float dashInput;
 
 
     void Awake()
@@ -95,7 +102,8 @@ public class Movement : MonoBehaviour
         yRaw = Input.GetAxisRaw("Vertical");
         dir = new Vector2(x, y);
         inputs = new Vector2(xRaw, yRaw);
-        grab = Input.GetAxis("Trigger"); // -1 = Left Trigger / 1 = Right Trigger 
+        grabInput = Input.GetAxisRaw("Grab");
+        dashInput = Input.GetAxisRaw("Dash");
 
 
         //Rough fix for inputs dead zone :x
@@ -111,7 +119,7 @@ public class Movement : MonoBehaviour
 	{
         //WallGrab - ButtonHold
         //if (coll.onWall && Input.GetButtonDown("Fire 3") && canMove)
-        if (coll.onWall && grab == -1 && canMove)
+        if (coll.onWall && grabInput == 1 && canMove)
         {
             if (side != coll.wallSide)
                 anim.Flip(side * -1);
@@ -122,10 +130,19 @@ public class Movement : MonoBehaviour
 
         //WallGrab - ButtonRelease
         //if (Input.GetButtonUp("Fire 3") || !coll.onWall || !canMove)
-        if (grab == 0 || !coll.onWall || !canMove)
+        if (grabInput == 0 || !coll.onWall || !canMove)
         {
             wallGrab = false;
             wallSlide = false;
+        }
+
+        // arrive en haut du mur
+        if (coll.onWall && wallGrab && !coll.onWallTop)
+        {
+            print("top of wall");
+            rb.MovePosition(transform.position + new Vector3(-coll.wallSide * wallClimbOffsetX, wallClimbOffsetY, 0));
+            //StartCoroutine(DisableMovement(.2f));
+            //rb.MovePosition(transform.position + new Vector3(-coll.wallSide *  wallClimbOffsetX , 0, 0));
         }
 
         //Grounded ?
@@ -177,7 +194,7 @@ public class Movement : MonoBehaviour
     }
 	void HandleDash()
 	{
-        if ((Input.GetButtonDown("Dash") || grab == 1) && !hasDashed && !isDashing)
+        if ((Input.GetButtonDown("Dash") || dashInput == 1) && !hasDashed && !isDashing)
         {
             if (xRaw != 0 || yRaw != 0)
             {

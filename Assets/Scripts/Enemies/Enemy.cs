@@ -9,17 +9,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int currentHealth;
 
-    public Animator anim;
+    Animator anim;
 
     void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void TakeDamage(int amount)

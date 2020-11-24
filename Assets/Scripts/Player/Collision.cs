@@ -16,10 +16,12 @@ public class Collision : MonoBehaviour
     public bool onRightWall;
     public bool onLeftWall;
     public int wallSide;
+    public bool onWallTop;
 
     [Header("Collision")]
     public float collisionRadius = .25f;
     public Vector2 bottomOffset, rightOffset, leftOffset;
+    public Vector2 rightTopOffset, leftTopOffset;
     public Vector2 verticalOffset;
     private Color debugCollisionColor = Color.red;
 
@@ -34,6 +36,9 @@ public class Collision : MonoBehaviour
         onLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset + verticalOffset, collisionRadius, groundLayer);
 
         wallSide = onRightWall ? -1 : 1;
+
+        onWallTop = Physics2D.OverlapCircle((Vector2)transform.position + rightTopOffset, collisionRadius, groundLayer)
+        || Physics2D.OverlapCircle((Vector2)transform.position + leftTopOffset, collisionRadius, groundLayer);
     }
 
 	private void OnDrawGizmos()
@@ -41,7 +46,14 @@ public class Collision : MonoBehaviour
         Gizmos.color = Color.red;
 
         Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset, collisionRadius);
+
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset + verticalOffset, collisionRadius);
         Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset + verticalOffset, collisionRadius);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere((Vector2)transform.position + rightTopOffset, collisionRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + leftTopOffset, collisionRadius);
+
     }
 }

@@ -60,7 +60,6 @@ public class Attack : MonoBehaviour
             //anim.SetTrigger("downAttack");
             print("Attack Down !");
 
-
             //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(downAttackPoint.position, downAttackRange, enemyLayer);
             Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(downAttackBottomLeft.position, downAttackTopRight.position, enemyLayer);
 
@@ -72,8 +71,6 @@ public class Attack : MonoBehaviour
                     enemy.GetComponent<Enemy>().TakeDamage(downAttackDamage);
                 }
             }
-
-
         }
 
         else
