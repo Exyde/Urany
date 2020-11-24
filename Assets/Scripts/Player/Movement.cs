@@ -22,12 +22,12 @@ public class Movement : MonoBehaviour
     public float wallJumpLerp = 10;
     public float dashSpeed = 20;
 
-    [Header ("WallClimb")]
-    public float wallClimbOffsetX = .9f;
-    public float wallClimbOffsetY = .9f;
+    private float wallClimbOffsetX = .75f;
+    private float wallClimbOffsetY = .75f;
 
 
     [Space]
+
     [Header("Booleans")]
     public bool canMove;
     public bool wallGrab;
@@ -115,6 +115,20 @@ public class Movement : MonoBehaviour
         }
     }
 
+    IEnumerator ClimbWallTop()
+	{
+        int direction = coll.wallSide;
+        canMove = false;
+
+        rb.MovePosition(transform.position + new Vector3( -direction * wallClimbOffsetX, wallClimbOffsetY, 0));
+
+        yield return new WaitForSeconds(.1f);
+
+        //rb.MovePosition(transform.position + new Vector3( -direction * wallClimbOffsetX, .1f, 0));
+
+        canMove = true;
+	}
+
     void HandleWalls()
 	{
         //WallGrab - ButtonHold
@@ -139,10 +153,8 @@ public class Movement : MonoBehaviour
         // arrive en haut du mur
         if (coll.onWall && wallGrab && !coll.onWallTop)
         {
-            print("top of wall");
-            rb.MovePosition(transform.position + new Vector3(-coll.wallSide * wallClimbOffsetX, wallClimbOffsetY, 0));
-            //StartCoroutine(DisableMovement(.2f));
-            //rb.MovePosition(transform.position + new Vector3(-coll.wallSide *  wallClimbOffsetX , 0, 0));
+            StopCoroutine(ClimbWallTop());
+            StartCoroutine(ClimbWallTop());
         }
 
         //Grounded ?
