@@ -206,7 +206,6 @@ public class Movement : MonoBehaviour
 	{
         if (Input.GetButtonDown("Jump") && canMove)
         {
-            anim.SetTrigger("jump");
 
             if (coll.onGround)
             {
@@ -287,11 +286,13 @@ public class Movement : MonoBehaviour
     }
     private void Jump(Vector2 dir, bool wall)
     {
-        
+
         //slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
         //ParticleSystem particle = wall ? wallJumpPS : jumpPS;
         //particle.transform.localScale = new Vector3(side, 1, 1);
-   
+
+        anim.SetTrigger("jump");
+
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
 
@@ -315,6 +316,9 @@ public class Movement : MonoBehaviour
 
     private void WallJump()
 	{
+
+        anim.SetTrigger("jump");
+
         if ((side == 1 && coll.onRightWall) || side == -1 && !coll.onRightWall)
 		{
             side *= -1;
@@ -377,7 +381,7 @@ public class Movement : MonoBehaviour
         //CameraShake.Shake(.15f, .0001f);
 
         hasDashed = true; 
-        anim.SetTrigger("dash");
+        //anim.SetTrigger("dash");
 
         //Velocity
         rb.velocity = Vector2.zero;
@@ -399,10 +403,11 @@ public class Movement : MonoBehaviour
         wallJumped = true;
         isDashing = true;
         pp.SetDashPostProcess();
+        anim.SetTrigger("dashBegin");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.7f);
 
-        anim.SetTrigger("jump");
+        anim.SetTrigger("dashEnd");
         dashPS.Stop();
         rb.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
