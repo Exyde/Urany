@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 [RequireComponent (typeof (BoxCollider2D))]
 public class Interactable : MonoBehaviour
@@ -19,7 +19,12 @@ public class Interactable : MonoBehaviour
 
 	[Header("Examine Type")]
 	public string descriptionText;
-	public Sprite image; 
+	public Sprite image;
+
+	[Space]
+
+	[Header("Custom Event")]
+	public UnityEvent customEvent;
 
 	private void Reset()
 	{
@@ -53,5 +58,7 @@ public class Interactable : MonoBehaviour
 				Debug.Log("Null item");
 				break;
 		}
+
+		customEvent.Invoke();
 	}
 }

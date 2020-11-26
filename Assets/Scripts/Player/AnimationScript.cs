@@ -19,9 +19,12 @@ public class AnimationScript : MonoBehaviour
         move = GetComponentInParent<Movement>();
         sr = GetComponent<SpriteRenderer>();
     }
-    public void SetHorizontalMovement(float x, float y, float yVel)
+    public void SetHorizontalMovement(int xRaw, float y, float yVel)
     {
-        anim.SetFloat("HorizontalAxis", x);
+
+        anim.SetInteger("HorizontalAxis", xRaw);   
+
+        //anim.SetFloat("HorizontalAxis", x);
         anim.SetFloat("VerticalAxis", y);
         anim.SetFloat("VerticalVelocity", yVel);
     }

@@ -86,15 +86,12 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        
         HandleInputs();
         Walk(inputs);
         HandleWalls();
         HandleJump();
         HandleDash();
         HandleAnim();
-
-        print(rb.velocity);
     }
 
 	#region Handlers
@@ -266,7 +263,7 @@ public class Movement : MonoBehaviour
 
 	private void Walk(Vector2 dir)
     {
-        anim.SetHorizontalMovement(x, y, rb.velocity.y);
+        anim.SetHorizontalMovement((int)xRaw, y, rb.velocity.y);
 
         if (!canMove)
             return;
@@ -361,11 +358,11 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
-        float speedModifier = y > 0 ? .5f : 1;
-        float _speed = y > 0 ? ascentClimbSpeed : downClimbSpeed;
+        //float speedModifier = y > 0 ? .5f : 1;
+        float _speed = yRaw > 0 ? ascentClimbSpeed : downClimbSpeed;
 
         //rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-        rb.velocity = new Vector2(rb.velocity.x, y * _speed);
+        rb.velocity = new Vector2(rb.velocity.x, yRaw * _speed);
 
     }
 
