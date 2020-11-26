@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Collision coll;
     private AnimationScript anim;
+    private Animator animator;
     public PostProcessController pp;
 
     [Space]
@@ -82,6 +83,7 @@ public class Movement : MonoBehaviour
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+        animator = GetComponentInChildren<Animator>();
         
     }
 
@@ -386,7 +388,12 @@ public class Movement : MonoBehaviour
         //Velocity
         rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
-        rb.velocity += dir.normalized * dashSpeed;
+        rb.gravityScale = 0;
+
+        //rb.velocity += dir.normalized * dashSpeed;
+
+        // Dash TP
+        rb.velocity = new Vector2(xRaw * dashSpeed * 2, yRaw * dashSpeed);
 
         //Follow Up
         StartCoroutine(DashWait());
@@ -397,18 +404,21 @@ public class Movement : MonoBehaviour
         StartCoroutine(GroundDash());
         DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
-        dashPS.Play();
-        rb.gravityScale = 0;
+        //dashPS.Play();
+        
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
-        isDashing = true;
         pp.SetDashPostProcess();
         anim.SetTrigger("dashBegin");
+        isDashing = true;
 
-        yield return new WaitForSeconds(.7f);
-
+        yield return new WaitForSeconds(.2f);
+        
         anim.SetTrigger("dashEnd");
-        dashPS.Stop();
+        yield return new WaitForSeconds(.2f);
+        animator.ResetTrigger("dashEnd");
+        
+        //dashPS.Stop();
         rb.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
