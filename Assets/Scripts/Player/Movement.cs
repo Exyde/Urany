@@ -86,6 +86,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        
         HandleInputs();
         Walk(dir);
         HandleWalls();
@@ -191,7 +192,7 @@ public class Movement : MonoBehaviour
     }
     void HandleJump()
 	{
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && canMove)
         {
             anim.SetTrigger("jump");
 
@@ -208,7 +209,7 @@ public class Movement : MonoBehaviour
     }
 	void HandleDash()
 	{
-        if ((Input.GetButtonDown("Dash") || dashInput == 1) && !hasDashed && !isDashing)
+        if ((Input.GetButtonDown("Dash") || dashInput == 1) && !hasDashed && !isDashing && canMove)
         {
             if (xRaw != 0 || yRaw != 0)
             {

@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
+    [Header("Examine Fields")]
+    public GameObject examineWindow;
+    public Image examineImage;
+    public Text examineText;
+    public bool isExamining;
 
     [Header ("Detection settings")]
     public Transform interractionPoint;
@@ -15,6 +21,8 @@ public class InteractionSystem : MonoBehaviour
 
     [Header("Temporary Inventory")]
     public List<GameObject> pickedItems = new List<GameObject>();
+
+    public UIManager ui;
 
     void Start()
     {
@@ -28,6 +36,13 @@ public class InteractionSystem : MonoBehaviour
 			if (InterractInput()) // and player input
 			{
                 currentObject.GetComponent<Interactable>().Interact();
+			}
+		} else
+		{
+            if (isExamining)
+			{
+                CloseExamineWindow();
+                print("out of range)");
 			}
 		}
     }
@@ -62,4 +77,35 @@ public class InteractionSystem : MonoBehaviour
 	{
         pickedItems.Add(item);
 	}
+    public void ExamineItem(Interactable item)
+    {
+        if (isExamining)
+		{
+            CloseExamineWindow();
+        }
+        else
+		{
+            OpenExamineWindow(item);
+        }
+    }
+
+    public void OpenExamineWindow(Interactable item)
+	{
+        isExamining = true;
+        GetComponent<Movement>().canMove = false;
+
+
+        examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
+        examineImage.color = item.GetComponent<SpriteRenderer>().color;
+        examineText.text = item.descriptionText;
+
+        examineWindow.SetActive(true);
+    }
+
+    public void CloseExamineWindow()
+	{
+        examineWindow.SetActive(false);
+        isExamining = false;
+        GetComponent<Movement>().canMove = true;
+    }
 }

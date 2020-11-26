@@ -17,6 +17,10 @@ public class Interactable : MonoBehaviour
 
 	public InteractionType interactionType;
 
+	[Header("Examine Type")]
+	public string descriptionText;
+	public Sprite image; 
+
 	private void Reset()
 	{
 		GetComponent<Collider2D>().isTrigger = true;
@@ -25,16 +29,17 @@ public class Interactable : MonoBehaviour
 
 	public void Interact()
 	{
+		InteractionSystem interractionSystem = FindObjectOfType<InteractionSystem>();
 		switch (interactionType)
 		{
 			case InteractionType.PickUp:
 				//This is temporary, for the proto. Maybe this will be updated if we setup an inventory.
-				FindObjectOfType<InteractionSystem>().PickUpItem(this.gameObject);
+				interractionSystem.PickUpItem(this.gameObject);
 				gameObject.SetActive(false);
 				break;
 
 			case InteractionType.Examine:
-				Debug.Log("Examine !");
+				interractionSystem.ExamineItem(this);
 				break;
 
 			case InteractionType.Hack:

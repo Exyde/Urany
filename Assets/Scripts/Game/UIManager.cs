@@ -13,15 +13,6 @@ public class UIManager : MonoBehaviour
     public Image life3;
     public Image life4;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void SetLife(int hp)
 	{

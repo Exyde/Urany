@@ -126,7 +126,6 @@ public class Attack : MonoBehaviour
         Vector3 bottomRight = new Vector3(topRight.x, bottomLeft.y, bottomLeft.z);
         Vector3 topLeft = new Vector3(bottomLeft.x, topRight.y, bottomLeft.z);
 
-
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(downAttackBottomLeft.position, downAttackTopRight.position);
         Gizmos.color = Color.cyan;
