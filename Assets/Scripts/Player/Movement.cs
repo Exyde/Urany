@@ -88,11 +88,13 @@ public class Movement : MonoBehaviour
     {
         
         HandleInputs();
-        Walk(dir);
+        Walk(inputs);
         HandleWalls();
         HandleJump();
         HandleDash();
         HandleAnim();
+
+        print(rb.velocity);
     }
 
 	#region Handlers
@@ -109,11 +111,19 @@ public class Movement : MonoBehaviour
         dashInput = Input.GetAxisRaw("Dash");
 
 
+        //MapX();
+    }
+
+    public void MapX()
+	{
         //Rough fix for inputs dead zone :x
+
         if (x > 0)
-		{
-           x =  Mathf.Clamp(x, .2f, 1);
-		} else if ( x < 0 ) {
+        {
+            x = Mathf.Clamp(x, .2f, 1);
+        }
+        else if (x < 0)
+        {
             x = Mathf.Clamp(x, -1f, -.2f);
         }
     }
