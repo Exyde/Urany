@@ -22,9 +22,8 @@ public class AnimationScript : MonoBehaviour
     public void SetHorizontalMovement(int xRaw, float y, float yVel)
     {
 
-        anim.SetInteger("HorizontalAxis", xRaw);   
-
-        //anim.SetFloat("HorizontalAxis", x);
+       // anim.SetInteger("HorizontalAxis", xRaw);   
+        anim.SetFloat("HorizontalAxis", xRaw);
         anim.SetFloat("VerticalAxis", y);
         anim.SetFloat("VerticalVelocity", yVel);
     }

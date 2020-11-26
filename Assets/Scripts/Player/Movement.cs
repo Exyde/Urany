@@ -126,7 +126,7 @@ public class Movement : MonoBehaviour
         if (yRaw > 0) yRaw = 1;
         if (yRaw < 0) yRaw = -1f;
 
-        print(inputs);
+        //print(inputs);
 
     }
 
@@ -400,8 +400,9 @@ public class Movement : MonoBehaviour
         isDashing = true;
         pp.SetDashPostProcess();
 
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(1f);
 
+        anim.SetTrigger("jump");
         dashPS.Stop();
         rb.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
