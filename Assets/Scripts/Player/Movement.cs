@@ -82,8 +82,13 @@ public class Movement : MonoBehaviour
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+        
     }
 
+    void Start()
+	{
+        pp = FindObjectOfType<PostProcessController>();
+	}
     void Update()
     {
         HandleInputs();
@@ -103,26 +108,26 @@ public class Movement : MonoBehaviour
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
         dir = new Vector2(x, y);
-        inputs = new Vector2(xRaw, yRaw);
         grabInput = Input.GetAxisRaw("Grab");
         dashInput = Input.GetAxisRaw("Dash");
 
-
+        MapRaw();
         //MapX();
+
+        inputs = new Vector2(xRaw, yRaw);
+
     }
 
-    public void MapX()
+    public void MapRaw()
 	{
-        //Rough fix for inputs dead zone :x
+        if (xRaw > 0) xRaw = 1;
+        if (xRaw < 0) xRaw = -1f;
 
-        if (x > 0)
-        {
-            x = Mathf.Clamp(x, .2f, 1);
-        }
-        else if (x < 0)
-        {
-            x = Mathf.Clamp(x, -1f, -.2f);
-        }
+        if (yRaw > 0) yRaw = 1;
+        if (yRaw < 0) yRaw = -1f;
+
+        print(inputs);
+
     }
 
     IEnumerator ClimbWallTop()
@@ -261,7 +266,7 @@ public class Movement : MonoBehaviour
 
 	#endregion
 
-	private void Walk(Vector2 dir)
+	private void Walk(Vector2 movement)
     {
         anim.SetHorizontalMovement((int)xRaw, y, rb.velocity.y);
 
@@ -273,7 +278,7 @@ public class Movement : MonoBehaviour
 
         if (!wallJumped)
         {
-            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+            rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
         }
         else
         {
