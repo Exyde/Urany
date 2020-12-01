@@ -84,9 +84,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.P) && isTalking && !textIsWriting)
+		if (TalkingInput() && isTalking && !textIsWriting)
 		{
             DisplayNextSentence();
 		}
 	}
+
+    bool TalkingInput()
+    {
+        return (Input.GetKeyDown(KeyCode.P) ^ Input.GetButtonDown("Attack"));
+    }
+
 }
