@@ -35,6 +35,7 @@ public class Interactable : MonoBehaviour
 	public void Interact()
 	{
 		InteractionSystem interractionSystem = FindObjectOfType<InteractionSystem>();
+
 		switch (interactionType)
 		{
 			case InteractionType.PickUp:
@@ -52,7 +53,7 @@ public class Interactable : MonoBehaviour
 				break;
 
 			case InteractionType.Talk:
-				Debug.Log("Talking");
+				GetComponent<Talking>().TriggerDialogue();
 				break;
 			default:
 				Debug.Log("Null item");

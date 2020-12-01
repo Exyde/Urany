@@ -383,17 +383,17 @@ public class Movement : MonoBehaviour
         //CameraShake.Shake(.15f, .0001f);
 
         hasDashed = true; 
-        //anim.SetTrigger("dash");
+        anim.SetTrigger("dash");
 
         //Velocity
         rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
         rb.gravityScale = 0;
 
-        //rb.velocity += dir.normalized * dashSpeed;
+        rb.velocity += dir.normalized * dashSpeed;
 
         // Dash TP
-        rb.velocity = new Vector2(xRaw * dashSpeed * 2, yRaw * dashSpeed);
+        //rb.velocity = new Vector2(xRaw * dashSpeed * 2, yRaw * dashSpeed);
 
         //Follow Up
         StartCoroutine(DashWait());
@@ -409,14 +409,14 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         pp.SetDashPostProcess();
-        anim.SetTrigger("dashBegin");
+        //anim.SetTrigger("dashBegin");
         isDashing = true;
 
         yield return new WaitForSeconds(.2f);
         
-        anim.SetTrigger("dashEnd");
-        yield return new WaitForSeconds(.2f);
-        animator.ResetTrigger("dashEnd");
+        //anim.SetTrigger("dashEnd");
+        //yield return new WaitForSeconds(.2f);
+        /// animator.ResetTrigger("dashEnd");
         
         //dashPS.Stop();
         rb.gravityScale = 3;

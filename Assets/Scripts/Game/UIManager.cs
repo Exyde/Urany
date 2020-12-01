@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     public void SetLife(int hp)
 	{
+        //One day I'll refactor this.
 		switch (hp)
 		{
             case 0:
