@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int currentHealth;
 
+    public LayerMask deadLayer;
     Animator anim;
 
     protected void Start()
@@ -34,16 +35,8 @@ public class Enemy : MonoBehaviour
 	{
         //Die Animation && fx
         anim.SetBool("isDead", true);
-
-        //Disable Enemy - Stock the corpse
-        //StartCoroutine(WaitDie());
-        Destroy(this.gameObject);
-	}
-
-    protected IEnumerator WaitDie()
-	{
-        yield return new WaitForSeconds(.3f);
-        anim.enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("Dead Layer");
         this.enabled = false;
-    }
+	}
 }

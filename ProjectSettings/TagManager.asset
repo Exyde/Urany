@@ -9,6 +9,7 @@ TagManager:
   - hackPlayer
   - HackGameObjective
   - Deadly
+  - Savant
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Interractable
   - Enemies
   - Player
-  - 
+  - Dead Layer
   - 
   - 
   - 

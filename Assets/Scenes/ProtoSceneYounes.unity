@@ -2049,7 +2049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642011879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.560732, y: -1.3196373, z: 0}
+  m_LocalPosition: {x: 14.2, y: -4.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 638678640}
@@ -3001,7 +3001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &958485250
 Animator:
   serializedVersion: 3
@@ -3084,7 +3084,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &958485254
 BoxCollider2D:
@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958485249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0298d819f0a5924ba4f3dcab5068dad, type: 3}
   m_Name: 
@@ -3164,6 +3164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  deadLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &971803758
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,7 +3201,7 @@ Transform:
   - {fileID: 1314643198}
   - {fileID: 987767160}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987767159
 GameObject:
@@ -4182,7 +4185,7 @@ GameObject:
   - component: {fileID: 1386488974}
   m_Layer: 10
   m_Name: SavantPrefab
-  m_TagString: Untagged
+  m_TagString: Savant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4285,6 +4288,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  deadLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  hitForce: 20
 --- !u!61 &1386488975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6583,6 +6590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5174923350378392693, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
 --- !u!1001 &5715453491148027228
@@ -6603,7 +6614,31 @@ PrefabInstance:
     - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4145012016663214081, guid: 4b8d7abbbecdabf47a94c06fc64c8d47, type: 3}
+      objectReference: {fileID: -2295878027690152530, guid: d3eef152af0ec8c44b4754320e6e7ef9, type: 3}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715453491189697853, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5715453491362676790, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.25
@@ -6744,6 +6779,14 @@ PrefabInstance:
     - target: {fileID: 8837395469115610706, guid: 90aea9a35c2aa8c4295510c55715a362, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837395469115610707, guid: 90aea9a35c2aa8c4295510c55715a362, type: 3}
+      propertyPath: AttackBloomIntensity.m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837395469115610707, guid: 90aea9a35c2aa8c4295510c55715a362, type: 3}
+      propertyPath: AttackBloomIntensity.min
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8837395469115610716, guid: 90aea9a35c2aa8c4295510c55715a362, type: 3}
       propertyPath: m_Name

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    PostProcessController pp;
     public bool drawGizmos;
 
     [Header("All Attack Stats")]
@@ -29,6 +30,7 @@ public class Attack : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<AnimationScript>();
+        pp = FindObjectOfType<PostProcessController>();
     }
 
     void Update()
@@ -102,6 +104,7 @@ public class Attack : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
+                pp.SetAttackPostProcess();
             }
         }
     }

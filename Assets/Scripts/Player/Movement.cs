@@ -441,6 +441,18 @@ public class Movement : MonoBehaviour
         canMove = true;
 	}
 
+    IEnumerator DisableMovementOnHit(float time)
+    {
+        canMove = false;
+        Time.timeScale = .5f;
+        pp.SetHitPostProcess();
+        yield return new WaitForSeconds(time);
+        canMove = true;
+        Time.timeScale = 1f;
+        pp.ResetPostProcess();
+
+    }
+
     void RigidbodyDrag(float x)
 	{
         //Function used in DashWait by DotWeen to animate a float.
@@ -462,6 +474,26 @@ public class Movement : MonoBehaviour
 
         smoke.transform.localScale = new Vector3(side, 1, 1);
 	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+        if (other.gameObject.tag == "Savant")
+		{
+            Bounce(other);
+		}
+	}
+
+    public void Bounce(Collision2D ennemy)
+	{
+        Vector3 direction = (ennemy.transform.position - transform.position);
+
+        StartCoroutine(DisableMovementOnHit(.12f));
+        anim.SetTrigger("hurt");
+
+        rb.velocity = Vector2.zero;
+        direction.y = Mathf.Sign(direction.y) / 2;
+        rb.AddForce(-direction * ennemy.gameObject.GetComponent<Savant>().hitForce, ForceMode2D.Impulse);
+    }
 
 	#region Debug
 
