@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     Animator anim;
 
-    void Start()
+    protected void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
@@ -30,18 +30,17 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-    void Die()
+    protected void Die()
 	{
         //Die Animation && fx
         anim.SetBool("isDead", true);
-
 
         //Disable Enemy - Stock the corpse
         //StartCoroutine(WaitDie());
         Destroy(this.gameObject);
 	}
 
-    IEnumerator WaitDie()
+    protected IEnumerator WaitDie()
 	{
         yield return new WaitForSeconds(.3f);
         anim.enabled = false;

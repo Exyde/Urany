@@ -41,7 +41,7 @@ public class Attack : MonoBehaviour
         {
             if (Input.GetButtonDown("Attack"))
             {
-                HandleAttack(direction);
+                SideAttack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
@@ -92,12 +92,26 @@ public class Attack : MonoBehaviour
         }
     }
 
+    public void SideAttack()
+	{
+        anim.SetTrigger("sideAttack");
+        Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(sideAttackBottomLeft.position, sideAttackTopRight.position, enemyLayer);
+
+        if (hitEnemies.Length > 0)
+        {
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (drawGizmos)
         {
             DrawSideAttackGizmos();
-            DrawDonwnAttackGizmos();
+           // DrawDonwnAttackGizmos();
         }
 
     }
