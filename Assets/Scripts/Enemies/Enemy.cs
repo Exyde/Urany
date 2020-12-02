@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour
 
 
         //Disable Enemy - Stock the corpse
-        StartCoroutine(WaitDie());
-        //Destroy(this.gameObject);
+        //StartCoroutine(WaitDie());
+        Destroy(this.gameObject);
 	}
 
     IEnumerator WaitDie()
