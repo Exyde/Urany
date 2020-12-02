@@ -5,4 +5,5 @@ using UnityEngine;
 public class Savant : Enemy
 {
 	public float hitForce;
+	public int hurtDamage = 1;
 }

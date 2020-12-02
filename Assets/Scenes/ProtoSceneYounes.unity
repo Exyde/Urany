@@ -4292,6 +4292,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   hitForce: 20
+  hurtDamage: 1
 --- !u!61 &1386488975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6236,6 +6237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5551652359953499636, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5551652359953499639, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6592,7 +6597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5174923350378392693, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}

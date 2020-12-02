@@ -479,20 +479,23 @@ public class Movement : MonoBehaviour
 	{
         if (other.gameObject.tag == "Savant")
 		{
-            Bounce(other);
+            HitSavant(other);
 		}
 	}
 
-    public void Bounce(Collision2D ennemy)
+    public void HitSavant(Collision2D other)
 	{
-        Vector3 direction = (ennemy.transform.position - transform.position);
+        Savant savant = other.gameObject.GetComponent<Savant>();
+        Vector3 direction = (savant.transform.position - transform.position);
 
         StartCoroutine(DisableMovementOnHit(.12f));
         anim.SetTrigger("hurt");
 
         rb.velocity = Vector2.zero;
         direction.y = Mathf.Sign(direction.y) / 2;
-        rb.AddForce(-direction * ennemy.gameObject.GetComponent<Savant>().hitForce, ForceMode2D.Impulse);
+        rb.AddForce(-direction * savant.hitForce, ForceMode2D.Impulse);
+
+        GetComponent<Health>().LooseLife(savant.hurtDamage);
     }
 
 	#region Debug

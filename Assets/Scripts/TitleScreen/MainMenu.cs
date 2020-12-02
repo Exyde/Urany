@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 	public LevelLoader levelLoader;
+
+	private void Start()
+	{
+		Time.timeScale = 1;
+	}
 	public void PlayGame()
 	{
 		levelLoader.OnNextLevel(SceneManager.GetActiveScene().buildIndex + 1);

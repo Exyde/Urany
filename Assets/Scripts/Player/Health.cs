@@ -32,16 +32,21 @@ public class Health : MonoBehaviour
            if (currentCheckpoint)
 		   {
                 transform.position = currentCheckpoint.position;
-                currentHealth -= 1;
-                CheckLife();
-		   }
-           else
+                LooseLife(1);
+            }
+            else
 		   {
+                LooseLife(1);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                currentHealth -= 1;
-                CheckLife();
+                
            }
         }
+	}
+
+    public void LooseLife(int amount)
+	{
+        currentHealth -= amount;
+        CheckLife();
 	}
 
     public void CheckLife()
@@ -50,12 +55,32 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
 		{
-            currentHealth = 0;
-            //uiManager.SetLife(currentHealth);
-            print("Game Over");
-            //Restart Game
-            SceneManager.LoadScene(0);
+            StartCoroutine(PlayerDie());
         }
+    }
+
+    IEnumerator PlayerDie()
+	{
+        Movement player = GetComponent<Movement>();
+        player.canMove = false;
+        player.enabled = false;
+
+        yield return new WaitForSeconds(1f);
+
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        Time.timeScale = 1;
+        currentHealth = 0;
+
+        uiManager.SetLife(currentHealth);
+
+        GetComponentInChildren<Animator>().SetBool("Dead", true);
+
+  
+
+
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(0);
     }
 
 }
