@@ -21,6 +21,11 @@ public class Savant : MonoBehaviour
     void Start()
     {
         waypoints = new Vector3[PathHolder.childCount];
+         for (int i  = 0; i < waypoints.Length; i++)
+		{
+            waypoints[i] = PathHolder.GetChild(i).position;
+		}
+        
         state = State.Patrol;
 
         StartCoroutine(FollowPath(waypoints));
@@ -35,6 +40,7 @@ public class Savant : MonoBehaviour
         while(true)
 		{
             transform.position = Vector2.MoveTowards(transform.position, targetWaypoint, moveSpeed * Time.deltaTime);
+            print(targetWaypoint);
 
             if (transform.position == targetWaypoint)
 			{
