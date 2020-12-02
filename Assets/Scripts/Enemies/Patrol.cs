@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Savant : MonoBehaviour
+public class Patrol : MonoBehaviour
 {
     public Transform PathHolder;
     Vector3[] waypoints;
@@ -14,7 +14,9 @@ public class Savant : MonoBehaviour
     public enum State
 	{
         Idle, 
-        Patrol
+        Patrol,
+        Chase,
+        Dead
 	}
 
     public State state;
@@ -24,6 +26,7 @@ public class Savant : MonoBehaviour
          for (int i  = 0; i < waypoints.Length; i++)
 		{
             waypoints[i] = PathHolder.GetChild(i).position;
+            waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
 		}
         
         state = State.Patrol;
@@ -46,12 +49,24 @@ public class Savant : MonoBehaviour
 			{
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 targetWaypoint = waypoints[targetWaypointIndex];
+
+                Turn(targetWaypoint);
+
                 yield return new WaitForSeconds(waitTime);
 			}
 
             yield return null;
 		}
 	}
+
+    public void Turn(Vector3 target)
+    {
+        Vector3 side = (target - transform.position).normalized;
+        GetComponent<SpriteRenderer>().flipX = (side.x == 1) ? true : false;
+    }
+        
+
+
 	private void OnDrawGizmos()
 	{
         Gizmos.color = Color.red;
