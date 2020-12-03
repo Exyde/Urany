@@ -66,6 +66,7 @@ public class Movement : MonoBehaviour
     public GameObject jumpSmoke;
     public GameObject wallJumpSmoke;
     public GameObject groundImpactSmoke;
+    public GameObject wallSlideSmoke;
 
     //Inputs
     [HideInInspector]
@@ -358,6 +359,9 @@ public class Movement : MonoBehaviour
 
         rb.velocity = new Vector2(push, -slideSpeed);
         //slidePS.Play();
+
+        GameObject smoke = Instantiate(wallSlideSmoke, transform.position, Quaternion.identity);
+        smoke.transform.localScale = new Vector3(side, 1, 1);
     }
 
     private void WallGrab()
