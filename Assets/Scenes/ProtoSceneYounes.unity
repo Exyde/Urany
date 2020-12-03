@@ -518,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breach: {fileID: 480893945}
   bpm: 120
+  hackPlayer: {fileID: 0}
   speed: 5
   points: {fileID: 549840696}
 --- !u!61 &113386649
