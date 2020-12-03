@@ -12,7 +12,7 @@ public class Breach : MonoBehaviour
 
     [Header("Hacking Game Data")]
     public Transform player;
-    public Transform hackingGame;
+    public HackingGame hackingGame;
     public float maxHackRange = 5f;
     bool hackDone = false;
 
@@ -26,6 +26,7 @@ public class Breach : MonoBehaviour
 
     void Start()
     {
+        hackingGame = GetComponentInChildren<HackingGame>();
         sr = GetComponent<SpriteRenderer>();
         interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();
@@ -91,7 +92,7 @@ public class Breach : MonoBehaviour
     public void StartHackGame()
 	{
         //Back
-        hackingGame.gameObject.SetActive(true);
+        hackingGame.StartGame();
 
 
         //Front
@@ -100,7 +101,7 @@ public class Breach : MonoBehaviour
 
     public void ResetHackGame()
 	{
-        hackingGame.gameObject.SetActive(false);
+        hackingGame.ResetGame();
         ResetBreach();
     }
 

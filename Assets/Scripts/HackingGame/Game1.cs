@@ -4,32 +4,63 @@ using UnityEngine;
 
 public class Game1 : HackingGame
 {
-    Transform hackPlayer;
-    Vector3 startPos;
-    public Transform player;
+    public Transform hackPlayer;
     public float speed;
+
+    public Transform points;
+    Vector3[] path;
 
     void Start()
     {
-        startPos = hackPlayer.position;
+        path = new Vector3[points.childCount];
+
+        GameInit();
     }
 
     void Update()
     {
         if (InputLB())
 		{
-            hackPlayer.Translate(Vector3.left * speed * Time.deltaTime);
-            
         }
 
         else if (InputRB())
 		{
-            hackPlayer.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+    }
+
+    public void GameInit()
+	{
+        for (int i = 0; i < path.Length; i++)
+		{
+            path[i] = points.GetChild(i).position;
+		}
+	}
+
+    protected override void LooseGame()
+	{
+        base.LooseGame();
+	}
+
+	public override void ResetGame()
+	{
+		base.ResetGame();
+
+	}
+
+	private void OnDrawGizmos()
+	{
+        Gizmos.color = Color.white;
+
+        Vector3 startPos = points.GetChild(0).position;
+        Vector3 previousPos = startPos;
+
+        foreach (Transform t in points)
+        {
+            Gizmos.DrawSphere(t.position, .1f);
+            Gizmos.DrawLine(previousPos, t.position);
+            previousPos = t.position;
         }
 
-        else if (InputLB() && InputRB())
-		{
-            hackPlayer.position = startPos;
-		}
+        //Gizmos.DrawLine(previousPos, startPos);
     }
 }
