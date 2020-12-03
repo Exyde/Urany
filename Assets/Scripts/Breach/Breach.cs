@@ -12,6 +12,8 @@ public class Breach : MonoBehaviour
 
     public Transform player;
     public Transform hackingGame;
+    public Transform inputDisplay;
+    public Animator iconDisplay;
 
     public float maxHackRange = 5f;
     bool hackDone = false;
@@ -26,6 +28,9 @@ public class Breach : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();
+
+        //inputDisplay.gameObject.SetActive(false);
+        iconDisplay = inputDisplay.GetComponent<Animator>();
     }
 
     void Update()
@@ -40,13 +45,17 @@ public class Breach : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-        if (other.tag == "Interaction Point" && !hackDone)
+        if (other.tag == "Interaction Point" && !hackDone && !hackingGame.gameObject.activeSelf)
 		{
             sr.color = onBreachColor;
             interactionSystem.onBreach = true;
             interactionSystem.currentBreach = this.transform;
-		}
-	}
+
+            iconDisplay.SetTrigger("y");
+            
+
+        }
+    }
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
@@ -55,8 +64,11 @@ public class Breach : MonoBehaviour
             if (!interactionSystem.isHacking)
 			{
                 ResetBreach();
-			}
-            
+			} else
+			{
+                iconDisplay.SetTrigger("y");
+            }
+
         }
     }
 
@@ -66,6 +78,9 @@ public class Breach : MonoBehaviour
         interactionSystem.onBreach = false;
         interactionSystem.currentBreach = null;
         interactionSystem.isHacking = false;
+
+        //inputDisplay.gameObject.SetActive(false);
+        iconDisplay.SetTrigger("empty");
     }
 
     void ResetHackGame()
@@ -84,6 +99,7 @@ public class Breach : MonoBehaviour
         
 
         Destroy(hackingGame.gameObject);
+        Destroy(inputDisplay.gameObject);
         Destroy(GetComponent<CircleCollider2D>());
 	}
 

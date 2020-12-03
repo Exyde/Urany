@@ -130,6 +130,7 @@ public class InteractionSystem : MonoBehaviour
         if (!isHacking)
 		{
             entity.GetComponent<Breach>().hackingGame.gameObject.SetActive(true);
+            entity.GetComponent<Breach>().iconDisplay.SetTrigger("lb");
             isHacking = true;
         }
     }
