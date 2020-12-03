@@ -20,16 +20,4 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 		}
     }
-
-	private void Start()
-	{
-        AudioProcessor processor = FindObjectOfType<AudioProcessor>();
-        processor.onBeat.AddListener(onOnBeatDetected);
-        
-	}
-    
-    void onOnBeatDetected()
-	{
-        print("Beat !");
-	}
 }

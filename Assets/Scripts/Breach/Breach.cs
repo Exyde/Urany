@@ -73,10 +73,10 @@ public class Breach : MonoBehaviour
 
         //Front end 
         sr.color = onBreachColor;
-        inputDisplayer.B();
+        inputDisplayer.Y();
     }
 
-    void ResetBreach()
+    public void ResetBreach()
 	{
         //Backend
         interactionSystem.onBreach = false;
@@ -98,7 +98,7 @@ public class Breach : MonoBehaviour
         inputDisplayer.Empty();
     }
 
-    void ResetHackGame()
+    public void ResetHackGame()
 	{
         hackingGame.gameObject.SetActive(false);
         ResetBreach();

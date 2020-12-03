@@ -4,31 +4,26 @@ using UnityEngine;
 
 public class HackingGame : MonoBehaviour
 {
-    Transform hackPlayer;
-    public Transform player;
-    public float speed;
+    Breach breach;
     public int bpm;
 
-    void Start()
-    {
-       hackPlayer = GetComponentInChildren<HackPlayer>().transform;
+    protected bool InputLB()
+	{
+        return Input.GetButtonDown("HackLeft");
     }
 
-    void Update()
+    protected bool InputRB()
     {
-        if (player.GetComponent<InteractionSystem>().isHacking)
-        {
-            if (Input.GetButton("HackLeft"))
-            {
-                //hackPlayer.transform.position += Vector3.left * speed;
-                hackPlayer.transform.Translate(Vector3.left * speed * Time.deltaTime);
-            }
-
-            if (Input.GetButton("HackRight"))
-            {
-                //hackPlayer.transform.position += Vector3.right * speed;
-                hackPlayer.transform.Translate(Vector3.right * speed * Time.deltaTime);
-            }
-        }
+        return Input.GetButtonDown("HackRight");
     }
+
+    protected void WinGame()
+	{
+        breach.BreachHacked();
+	}
+
+    protected void LooseGame()
+	{
+        breach.ResetHackGame();
+	}
 }
