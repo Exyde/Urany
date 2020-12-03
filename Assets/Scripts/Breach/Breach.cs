@@ -35,9 +35,9 @@ public class Breach : MonoBehaviour
     void Update()
     {
         // If player is hacking and too far from the limit range, disable the hack game.
-        if (hackingGame.gameObject.activeSelf  && !hackDone)
+        if (!hackDone)
 		{
-            if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange ){
+            if (hackingGame.gameObject.activeSelf && Vector3.Distance(transform.position, player.transform.position) > maxHackRange ){
                 ResetHackGame();
             }
 	    }
@@ -126,7 +126,7 @@ public class Breach : MonoBehaviour
 	#region Gizmos
 	private void OnDrawGizmos()
     {
-        if (alwaysDrawGizmos)
+        if (alwaysDrawGizmos && !hackDone)
 		{
             //Breach Acces Range
             Gizmos.color = new Color(255, 69, 0, 120);
