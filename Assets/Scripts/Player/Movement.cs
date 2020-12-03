@@ -67,6 +67,7 @@ public class Movement : MonoBehaviour
     public GameObject wallJumpSmoke;
     public GameObject groundImpactSmoke;
     public GameObject wallSlideSmoke;
+    public GameObject wallSlideSmokeInstance;
 
     //Inputs
     [HideInInspector]
@@ -76,6 +77,7 @@ public class Movement : MonoBehaviour
 
     float grabInput;
     float dashInput;
+    bool isWallSmokeInstantiated = false;
 
 	#endregion
 
@@ -203,6 +205,10 @@ public class Movement : MonoBehaviour
         if (!coll.onWall || coll.onGround || (!coll.onRightWall && !coll.onLeftWall))
         {
             wallSlide = false;
+            if(isWallSmokeInstantiated) {
+            isWallSmokeInstantiated = false;
+            wallSlideSmokeInstance = null;
+        }
         }
     }
     void HandleJump()
@@ -360,8 +366,18 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(push, -slideSpeed);
         //slidePS.Play();
 
-        GameObject smoke = Instantiate(wallSlideSmoke, transform.position, Quaternion.identity);
-        smoke.transform.localScale = new Vector3(side, 1, 1);
+        if(wallSlide && !isWallSmokeInstantiated) {
+            wallSlideSmokeInstance = Instantiate(wallSlideSmoke, transform.position, Quaternion.identity);
+            wallSlideSmokeInstance.transform.localScale = new Vector3(side, 1, 1);
+            isWallSmokeInstantiated = true;
+            Debug.Log("LA");
+        }
+
+        if(wallSlideSmokeInstance != null) {
+            
+            wallSlideSmokeInstance.transform.position = new Vector3(wallSlideSmokeInstance.transform.position.x, transform.position.y, wallSlideSmokeInstance.transform.position.z);
+        }
+
     }
 
     private void WallGrab()

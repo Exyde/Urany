@@ -113,6 +113,54 @@ TextureImporter:
   - first:
       213: -3821803124758144642
     second: wallSlideSmoke_36
+  - first:
+      213: -336130830027986022
+    second: wallSlideSmoke_0
+  - first:
+      213: 9124925732887667600
+    second: wallSlideSmoke_1
+  - first:
+      213: 2096417441206428853
+    second: wallSlideSmoke_2
+  - first:
+      213: -5058537402608215482
+    second: wallSlideSmoke_3
+  - first:
+      213: -8310587114785789131
+    second: wallSlideSmoke_4
+  - first:
+      213: -790026993652240577
+    second: wallSlideSmoke_5
+  - first:
+      213: 8451058146960150687
+    second: wallSlideSmoke_6
+  - first:
+      213: -2602485094528441884
+    second: wallSlideSmoke_7
+  - first:
+      213: 4921798330529728882
+    second: wallSlideSmoke_8
+  - first:
+      213: -6389570187925682084
+    second: wallSlideSmoke_9
+  - first:
+      213: 4428527135012927535
+    second: wallSlideSmoke_10
+  - first:
+      213: 6717140713346789661
+    second: wallSlideSmoke_11
+  - first:
+      213: -1847751553437342165
+    second: wallSlideSmoke_12
+  - first:
+      213: -8218171344233575248
+    second: wallSlideSmoke_13
+  - first:
+      213: -3122532658860469955
+    second: wallSlideSmoke_14
+  - first:
+      213: 8903364148135550596
+    second: wallSlideSmoke_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -214,8 +262,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05bd8dde744ec3170800000000000000
-      internalID: 8159647622472719184
+      spriteID: a9bef1e7ac2d55bf0800000000000000
+      internalID: -336130830027986022
       vertices: []
       indices: 
       edges: []
@@ -235,8 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b0396e23490fc670800000000000000
-      internalID: 8561071600800706737
+      spriteID: 093279eab9f32ae70800000000000000
+      internalID: 9124925732887667600
       vertices: []
       indices: 
       edges: []
@@ -256,8 +304,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d478e37134e91080800000000000000
-      internalID: -9216084261387864879
+      spriteID: 5b4ea043e88f71d10800000000000000
+      internalID: 2096417441206428853
       vertices: []
       indices: 
       edges: []
@@ -277,8 +325,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa7431a2b52de7530800000000000000
-      internalID: 3854749620065486767
+      spriteID: 64a928a98077cc9b0800000000000000
+      internalID: -5058537402608215482
       vertices: []
       indices: 
       edges: []
@@ -298,8 +346,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951db8dd4c253a850800000000000000
-      internalID: 6387039702025490777
+      spriteID: 53b214cec0ddaac80800000000000000
+      internalID: -8310587114785789131
       vertices: []
       indices: 
       edges: []
@@ -319,8 +367,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc3ab2bd5a8bc57f0800000000000000
-      internalID: -622419625997786163
+      spriteID: f3f636092a24905f0800000000000000
+      internalID: -790026993652240577
       vertices: []
       indices: 
       edges: []
@@ -340,8 +388,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8471dbeee76f6c0e0800000000000000
-      internalID: -2249839938793302200
+      spriteID: f901bb9eb90384570800000000000000
+      internalID: 8451058146960150687
       vertices: []
       indices: 
       edges: []
@@ -361,8 +409,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e8172c6e54046b0800000000000000
-      internalID: -5314170702890168828
+      spriteID: 4e12267589d12ebd0800000000000000
+      internalID: -2602485094528441884
       vertices: []
       indices: 
       edges: []
@@ -382,8 +430,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 279bc3d15392716c0800000000000000
-      internalID: -4172821221634950798
+      spriteID: 279c55b318dbd4440800000000000000
+      internalID: 4921798330529728882
       vertices: []
       indices: 
       edges: []
@@ -403,8 +451,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52dd515c2e3238220800000000000000
-      internalID: 2486870876114771237
+      spriteID: c58834974cfa357a0800000000000000
+      internalID: -6389570187925682084
       vertices: []
       indices: 
       edges: []
@@ -424,8 +472,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0add214817d6ed280800000000000000
-      internalID: -9016649069634593376
+      spriteID: f28bf9847f9457d30800000000000000
+      internalID: 4428527135012927535
       vertices: []
       indices: 
       edges: []
@@ -445,8 +493,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 555d70e1215360190800000000000000
-      internalID: -7996645736420223659
+      spriteID: d11795dc3e3183d50800000000000000
+      internalID: 6717140713346789661
       vertices: []
       indices: 
       edges: []
@@ -466,8 +514,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5020ae0c244d7be40800000000000000
-      internalID: 5672235638865920517
+      spriteID: b26e03080c77b56e0800000000000000
+      internalID: -1847751553437342165
       vertices: []
       indices: 
       edges: []
@@ -487,8 +535,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a69aa93783aff7e20800000000000000
-      internalID: 3350671768151566698
+      spriteID: 0bcc9a344b033fd80800000000000000
+      internalID: -8218171344233575248
       vertices: []
       indices: 
       edges: []
@@ -508,8 +556,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 198317a8b70fd0ee0800000000000000
-      internalID: -1293113104591144815
+      spriteID: d31d01537198aa4d0800000000000000
+      internalID: -3122532658860469955
       vertices: []
       indices: 
       edges: []
@@ -529,449 +577,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90986189b21a5300800000000000000
-      internalID: 241526117967106203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25c46620180ef55e0800000000000000
-      internalID: -1918568071540880302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7070cbd82a1c48340800000000000000
-      internalID: 4865226401373751047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_18
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94c0961e5b5fce7a0800000000000000
-      internalID: -6346427613352227767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_19
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4367ddb37e2381480800000000000000
-      internalID: -8928330292538804684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_20
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3383eddecf689f3a0800000000000000
-      internalID: -6631120555445700557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_21
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42ff62a445563d4c0800000000000000
-      internalID: -4263953009493999836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_22
-      rect:
-        serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c36e3a55f377c0620800000000000000
-      internalID: 2741697387065239100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_23
-      rect:
-        serializedVersion: 2
-        x: 1472
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53701a13a7ff18b30800000000000000
-      internalID: 4287989220517152565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_24
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9135d41df2bf0ed0800000000000000
-      internalID: -2445539272592903777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_25
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b58fd3b6d019b690800000000000000
-      internalID: -7586013583002073677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_26
-      rect:
-        serializedVersion: 2
-        x: 1664
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bfba42942980fa30800000000000000
-      internalID: 4247045238776577977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_27
-      rect:
-        serializedVersion: 2
-        x: 1728
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c0273ee5ea3badc0800000000000000
-      internalID: -3626740315698290487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_28
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 458a3f01e1d3a1b80800000000000000
-      internalID: -8423352953700374444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_29
-      rect:
-        serializedVersion: 2
-        x: 1856
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad705fa7996549ab0800000000000000
-      internalID: -5002278068908914726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_30
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a71a30cf5e6e8cb0800000000000000
-      internalID: -4859825590360205403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_31
-      rect:
-        serializedVersion: 2
-        x: 1984
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b18c8a36479556d0800000000000000
-      internalID: -3002327248686775887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_32
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3475bd5dff0aa1dd0800000000000000
-      internalID: -2514520421267974333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_33
-      rect:
-        serializedVersion: 2
-        x: 2112
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4cc7c08b147eeaf0800000000000000
-      internalID: -365226858296914868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_34
-      rect:
-        serializedVersion: 2
-        x: 2176
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 792cf7d98310658f0800000000000000
-      internalID: -552252561634114921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_35
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68d35f9d2cf8ddc80800000000000000
-      internalID: -8296316871503430266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallSlideSmoke_36
-      rect:
-        serializedVersion: 2
-        x: 2304
-        y: 0
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e79105b8e4a36fac0800000000000000
-      internalID: -3821803124758144642
+      spriteID: 48e519b458a1f8b70800000000000000
+      internalID: 8903364148135550596
       vertices: []
       indices: 
       edges: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4914042123555422372}
   - component: {fileID: 1543439001385964122}
   - component: {fileID: 8576332810558405092}
-  - component: {fileID: 2778487217503654914}
+  - component: {fileID: 9187067349982608327}
   m_Layer: 0
   m_Name: wallSlideSmoke
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8159647622472719184, guid: 4f0bf245138ab1e47a0402b89aedee0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2.5}
@@ -103,7 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2778487217503654914
+--- !u!114 &9187067349982608327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,8 +112,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 225430177194099038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f423df9d1b741c4cb73c5e28a3f98a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 626718d1419aa8442b1aa40e1aa1d235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  scytheRendered: {fileID: 0}
