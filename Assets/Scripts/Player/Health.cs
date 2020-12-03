@@ -55,7 +55,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
 		{
-            StartCoroutine(PlayerDie());
+            //StartCoroutine(PlayerDie());
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -74,9 +75,6 @@ public class Health : MonoBehaviour
         uiManager.SetLife(currentHealth);
 
         GetComponentInChildren<Animator>().SetBool("Dead", true);
-
-  
-
 
         yield return new WaitForSeconds(2f);
 

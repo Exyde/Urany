@@ -59,6 +59,12 @@ public class Interactable : MonoBehaviour
 				break;
 		}
 
+		//InvokeEvent();
+	}
+
+	public void InvokeEvent()
+	{
 		customEvent.Invoke();
 	}
+
 }

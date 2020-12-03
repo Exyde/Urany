@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
+    private UIManager ui;
+    private List<GameObject> pickedItems = new List<GameObject>();
+
     [Header("Detection settings")]
     public Transform interractionPoint;
     public float interractionRadius;
@@ -12,7 +15,6 @@ public class InteractionSystem : MonoBehaviour
 
     [Header("Item Info")]
     public GameObject currentObject;
-    public UIManager ui;
     [HideInInspector] public PostProcessController pp;
 
     [Header("Examine Fields")]
@@ -26,7 +28,6 @@ public class InteractionSystem : MonoBehaviour
     public bool isHacking;
     public Transform currentBreach;
 
-    private List<GameObject> pickedItems = new List<GameObject>();
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class InteractionSystem : MonoBehaviour
         currentBreach = null;
         isExamining = isHacking = false;
         pp = FindObjectOfType<PostProcessController>();
+        ui = FindObjectOfType<UIManager>();
     }
 
     void Update()
@@ -46,7 +48,7 @@ public class InteractionSystem : MonoBehaviour
 			}
 		} else
 		{
-            if (isExamining)
+            if (isExamining) // player too far when examining
 			{
                 CloseExamineWindow();
                 print("out of range)");
@@ -107,7 +109,7 @@ public class InteractionSystem : MonoBehaviour
         isExamining = true;
         GetComponent<Movement>().canMove = false;
 
-
+        //Assignation for UI.
         examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
         examineImage.color = item.GetComponent<SpriteRenderer>().color;
         examineText.text = item.descriptionText;
@@ -129,11 +131,9 @@ public class InteractionSystem : MonoBehaviour
     {
         if (!isHacking)
 		{
-            entity.GetComponent<Breach>().hackingGame.gameObject.SetActive(true);
-            entity.GetComponent<Breach>().iconDisplay.SetTrigger("lb");
             isHacking = true;
+            entity.GetComponent<Breach>().StartHackGame();
         }
     }
-
     #endregion
 }

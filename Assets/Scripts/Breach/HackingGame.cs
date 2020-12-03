@@ -7,6 +7,7 @@ public class HackingGame : MonoBehaviour
     Transform hackPlayer;
     public Transform player;
     public float speed;
+    public int bpm;
 
     void Start()
     {
