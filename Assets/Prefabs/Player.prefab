@@ -9755,7 +9755,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5715453490953894787
 Transform:
   m_ObjectHideFlags: 0
@@ -9785,7 +9785,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5715453491162685202
 Transform:
   m_ObjectHideFlags: 0
@@ -9874,12 +9874,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05179aa3ad55ce749b249bdf3e5b9031, type: 3}
+  m_Sprite: {fileID: -2295878027690152530, guid: d3eef152af0ec8c44b4754320e6e7ef9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9942,7 +9942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715453491362676789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.25, z: 0}
+  m_LocalPosition: {x: -0.25, y: -0.347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5715453492435077117}
@@ -14862,7 +14862,6 @@ GameObject:
   - component: {fileID: 5715453491751003749}
   - component: {fileID: 5715453491751003750}
   - component: {fileID: 5715453491751003751}
-  - component: {fileID: 5715453491751003753}
   - component: {fileID: 5715453491751003744}
   - component: {fileID: 5715453491751003745}
   - component: {fileID: 5715453491751003746}
@@ -15020,22 +15019,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
---- !u!114 &5715453491751003753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5715453491751003752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86bff84102986094c97a56df77a00a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pp: {fileID: 0}
-  isHacking: 0
-  onBreach: 0
-  currentBreach: {fileID: 0}
 --- !u!114 &5715453491751003744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15048,18 +15031,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61649d2ec538b743973fa9b16b964b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineWindow: {fileID: 0}
-  examineImage: {fileID: 0}
-  examineText: {fileID: 0}
-  isExamining: 0
   interractionPoint: {fileID: 5715453491550591346}
   interractionRadius: 0.5
   interractionLayer:
     serializedVersion: 2
     m_Bits: 512
   currentObject: {fileID: 0}
-  pickedItems: []
   ui: {fileID: 0}
+  pp: {fileID: 0}
+  examineWindow: {fileID: 0}
+  examineImage: {fileID: 0}
+  examineText: {fileID: 0}
+  isExamining: 0
+  isHacking: 0
+  onBreach: 0
+  currentBreach: {fileID: 0}
 --- !u!114 &5715453491751003745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15092,7 +15078,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  attackRate: 2
+  attackRate: 3.5
   sideAttackBottomLeft: {fileID: 5715453491362676790}
   sideAttackTopRight: {fileID: 5715453492648686244}
   sideAttackRange: 0.5
@@ -15241,7 +15227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715453492648686251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0.822, y: 0.395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5715453492435077117}

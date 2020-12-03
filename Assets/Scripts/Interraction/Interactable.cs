@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent (typeof (BoxCollider2D))]
 public class Interactable : MonoBehaviour
 {
 	public enum InteractionType
@@ -49,7 +48,7 @@ public class Interactable : MonoBehaviour
 				break;
 
 			case InteractionType.Hack:
-				Debug.Log("Hacking -- !");
+				interractionSystem.Hack(this.gameObject);
 				break;
 
 			case InteractionType.Talk:

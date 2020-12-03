@@ -5,15 +5,6 @@ using UnityEngine;
 public class HackPlayer : MonoBehaviour
 {
     public Breach breach;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{

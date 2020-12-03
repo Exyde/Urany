@@ -7,41 +7,32 @@ public class Breach : MonoBehaviour
     public bool alwaysDrawGizmos;
 
     SpriteRenderer sr;
-    Hacking hack;
+    InteractionSystem interactionSystem;
     Rigidbody2D rb;
-
-    public Transform targetTransform;
 
     public Transform player;
     public Transform hackingGame;
+
     public float maxHackRange = 5f;
     bool hackDone = false;
-
 
     [Header ("Colors")]
     public Color onBreachColor;
     public Color defaultColor;
     public Color hackColor;
 
-    [Header("Future Breach ")]
-    public Vector3 newScale;
-    public Vector3 newRotation;
-    public Vector3 newPosition;
-
-
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        hack = player.GetComponent<Hacking>();
+        interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-
         if (!hackDone)
 		{
-            if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange){
+            if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange && hackingGame.gameObject.activeSelf){
                 ResetHackGame();
             }
 	    }
@@ -49,57 +40,52 @@ public class Breach : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-        if (other.tag == "Player" && !hackDone)
+        if (other.tag == "Interaction Point" && !hackDone)
 		{
             sr.color = onBreachColor;
-            hack.onBreach = true;
-            hack.currentBreach = this.transform;
+            interactionSystem.onBreach = true;
+            interactionSystem.currentBreach = this.transform;
 		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-        if (other.tag == "Player" && !hackDone)
+        if (other.tag == "Interaction Point" && !hackDone)
         {
-            ResetBreach();
+            if (!interactionSystem.isHacking)
+			{
+                ResetBreach();
+			}
+            
         }
     }
 
     void ResetBreach()
 	{
         sr.color = defaultColor;
-        hack.onBreach = false;
-        hack.currentBreach = null;
-        hack.isHacking = false;
+        interactionSystem.onBreach = false;
+        interactionSystem.currentBreach = null;
+        interactionSystem.isHacking = false;
     }
 
     void ResetHackGame()
 	{
+        ResetBreach();
         hackingGame.gameObject.SetActive(false);
     }
 
     public void BreachHacked()
 	{
         hackDone = true;
-        hack.onBreach = false;
-        hack.currentBreach = null;
+        interactionSystem.onBreach = false;
+        interactionSystem.currentBreach = null;
+        interactionSystem.isHacking = false;
         sr.color = hackColor;
+        
 
         Destroy(hackingGame.gameObject);
         Destroy(GetComponent<CircleCollider2D>());
-        TransformBreach();
 	}
-
-    public void TransformBreach()
-	{
-        //Vector3.Lerp(transform.position, transform.position + newPosition, morphTime);
-        //Vector3.Lerp(transform.localScale, newScale, morphTime);
-        transform.position = transform.position + newPosition;
-        transform.localScale = newScale;
-        transform.Rotate(newRotation);
-        //At the end of the transform, destroy the script.
-        //Destroy(this);
-    }
 
     private void OnDrawGizmos()
     {

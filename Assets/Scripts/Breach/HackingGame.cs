@@ -10,12 +10,12 @@ public class HackingGame : MonoBehaviour
 
     void Start()
     {
-        hackPlayer = transform.GetChild(0);
+       hackPlayer = GetComponentInChildren<HackPlayer>().transform;
     }
 
     void Update()
     {
-        if (player.GetComponent<Hacking>().isHacking)
+        if (player.GetComponent<InteractionSystem>().isHacking)
         {
             if (Input.GetButton("HackLeft"))
             {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Uranie : MonoBehaviour
 {
-
     public Rigidbody2D rb;
     public SpriteRenderer sr;
 
