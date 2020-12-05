@@ -370,7 +370,6 @@ public class Movement : MonoBehaviour
             wallSlideSmokeInstance = Instantiate(wallSlideSmoke, transform.position, Quaternion.identity);
             wallSlideSmokeInstance.transform.localScale = new Vector3(side, 1, 1);
             isWallSmokeInstantiated = true;
-            Debug.Log("LA");
         }
 
         if(wallSlideSmokeInstance != null) {

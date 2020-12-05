@@ -21,6 +21,7 @@ public class Game1 : HackingGame
     {
         if (InputLB())
 		{
+            WinGame();
         }
 
         else if (InputRB())
@@ -45,6 +46,12 @@ public class Game1 : HackingGame
 	{
 		base.ResetGame();
 
+	}
+
+	protected override void WinGame()
+	{
+		base.WinGame();
+        GetComponentInParent<Interactable>().InvokeEvent();
 	}
 
 	private void OnDrawGizmos()
