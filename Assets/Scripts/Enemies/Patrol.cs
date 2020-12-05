@@ -11,17 +11,8 @@ public class Patrol : MonoBehaviour
     public float moveSpeed = 2f;
     public float waitTime = .1f;
 
-    Animator anim;
+    Enemy entity;
 
-    public enum State
-	{
-        Idle, 
-        Patrol,
-        Chase,
-        Dead
-	}
-
-    public State state;
     void Start()
     {
         waypoints = new Vector3[PathHolder.childCount];
@@ -30,11 +21,11 @@ public class Patrol : MonoBehaviour
             waypoints[i] = PathHolder.GetChild(i).position;
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
 		}
-        
-        state = State.Patrol;
-        anim = GetComponent<Animator>();
 
-        StartCoroutine(FollowPath(waypoints));
+        entity = GetComponent<Enemy>();
+
+        StartPatrol();
+
     }
 
     IEnumerator FollowPath(Vector3[] waypoints)
@@ -43,15 +34,17 @@ public class Patrol : MonoBehaviour
         int targetWaypointIndex = 1;
         Vector3 targetWaypoint = waypoints[targetWaypointIndex];
 
-        while(true)
+        Turn(targetWaypoint);
+
+        while (true)
 		{
             transform.position = Vector2.MoveTowards(transform.position, targetWaypoint, moveSpeed * Time.deltaTime);
-            anim.SetTrigger("Patrol");
+            entity.isMoving = true;
 
             if (transform.position == targetWaypoint)
 			{
-                anim.SetTrigger("Idle");
-
+                entity.isMoving = false;
+                GetComponent<Enemy>().isMoving = false;
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 targetWaypoint = waypoints[targetWaypointIndex];
 
@@ -62,7 +55,17 @@ public class Patrol : MonoBehaviour
 
             yield return null;
 		}
+	} 
+
+    public void Stop()
+	{
+        StopAllCoroutines();
 	}
+
+    public void StartPatrol()
+	{
+        StartCoroutine(FollowPath(waypoints));
+    }
 
     public void Turn(Vector3 target)
     {
@@ -70,8 +73,6 @@ public class Patrol : MonoBehaviour
         GetComponent<SpriteRenderer>().flipX = (side.x == 1) ? true : false;
     }
         
-
-
 	private void OnDrawGizmos()
 	{
         Gizmos.color = Color.red;

@@ -9,16 +9,35 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int currentHealth;
 
-    public LayerMask deadLayer;
-    Animator anim;
+    [Header ("Booleans")]
+    public bool isAlive;
+    public bool isMoving;
+    public bool isAttacking;
 
-    protected void Start()
+    public State state;
+
+    public enum State
+    {
+        Idle,
+        Patrol,
+        Attack,
+        Hurt,
+        Scan,
+        Dead
+    }
+
+    public LayerMask deadLayer;
+    public Animator anim;
+
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        state = State.Patrol;
+        isAlive = true;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
 	{
         currentHealth -= amount;
 
@@ -38,6 +57,13 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = false;
         GetComponent<BoxCollider2D>().isTrigger = false;
         gameObject.layer = LayerMask.NameToLayer("Dead Layer");
-        this.enabled = false;
+
+        //States
+        state = State.Dead;
+        isAlive = false;
+        isMoving = false;
+        isAttacking = false;
+
+        //this.enabled = false;
 	}
 }
