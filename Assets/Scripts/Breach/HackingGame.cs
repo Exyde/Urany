@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class HackingGame : MonoBehaviour
 {
-    public Breach breach;
 
+    [Header ("BASE")]
+    public Breach breach;
     public int bpm;
-    InputDisplayer iconDisplayerLeft;
-    InputDisplayer iconDisplayerRight;
+
+    [Header ("Display")]
+    public InputDisplayer iconDisplayerLeft;
+    public InputDisplayer iconDisplayerRight;
 
     protected bool HoldInputLB()
 	{
         return Input.GetButton("HackLeft");
     }
-
     protected bool InputLB()
     {
         return Input.GetButtonDown("HackLeft");
@@ -42,6 +44,7 @@ public class HackingGame : MonoBehaviour
     public virtual void ResetGame()
 	{
         gameObject.SetActive(false);
+       
 	}
 
     public virtual void StartGame()

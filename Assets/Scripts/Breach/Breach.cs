@@ -8,7 +8,7 @@ public class Breach : MonoBehaviour
     SpriteRenderer sr;
     InteractionSystem interactionSystem;
     Rigidbody2D rb;
-    InputDisplayer inputDisplayer;
+    public InputDisplayer inputDisplayer;
 
     [Header("Hacking Game Data")]
     public Transform player;
@@ -30,7 +30,7 @@ public class Breach : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();
-        inputDisplayer = GetComponentInChildren<InputDisplayer>();
+        //inputDisplayer = GetComponentInChildren<InputDisplayer>();
     }
 
     void Update()
@@ -118,7 +118,6 @@ public class Breach : MonoBehaviour
         sr.color = hackColor;
         inputDisplayer.Empty();
         
-
         //Cleaning
         Destroy(hackingGame.gameObject);
         Destroy(GetComponent<CircleCollider2D>());
