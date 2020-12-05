@@ -11,6 +11,8 @@ public class Patrol : MonoBehaviour
     public float moveSpeed = 2f;
     public float waitTime = .1f;
 
+    Animator anim;
+
     public enum State
 	{
         Idle, 
@@ -30,6 +32,7 @@ public class Patrol : MonoBehaviour
 		}
         
         state = State.Patrol;
+        anim = GetComponent<Animator>();
 
         StartCoroutine(FollowPath(waypoints));
     }
@@ -43,10 +46,12 @@ public class Patrol : MonoBehaviour
         while(true)
 		{
             transform.position = Vector2.MoveTowards(transform.position, targetWaypoint, moveSpeed * Time.deltaTime);
-            print(targetWaypoint);
+            anim.SetTrigger("Patrol");
 
             if (transform.position == targetWaypoint)
 			{
+                anim.SetTrigger("Idle");
+
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 targetWaypoint = waypoints[targetWaypointIndex];
 

@@ -61,10 +61,10 @@ public class PostProcessController : MonoBehaviour
 
     IEnumerator AttackFx()
 	{
-        //chrom.active = true;
-        colorAdj.active = true;
-        bloom.active = true;
-        bloom.intensity = AttackBloomIntensity;
+        chrom.active = true;
+        //colorAdj.active = true;
+        //bloom.active = true;
+        //bloom.intensity = AttackBloomIntensity;
         
         yield return new WaitForSeconds(.2f);
 

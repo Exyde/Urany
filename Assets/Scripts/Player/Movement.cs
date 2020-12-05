@@ -500,22 +500,32 @@ public class Movement : MonoBehaviour
 		{
             HitSavant(other);
 		}
+
+        if (other.gameObject.tag == "Guard")
+		{
+            HitGuard(other);
+		}
 	}
 
-    public void HitSavant(Collision2D other)
+    public void HitGuard(Collision2D other)
 	{
-        Savant savant = other.gameObject.GetComponent<Savant>();
-        Vector3 direction = (savant.transform.position - transform.position);
+        Guard guard = other.gameObject.GetComponent<Guard>();
+        Vector3 direction = (guard.transform.position - transform.position);
 
         StartCoroutine(DisableMovementOnHit(.12f));
         anim.SetTrigger("hurt");
 
         rb.velocity = Vector2.zero;
         direction.y = Mathf.Sign(direction.y) / 2;
-        rb.AddForce(-direction * savant.hitForce, ForceMode2D.Impulse);
+        rb.AddForce(-direction * guard.hitForce, ForceMode2D.Impulse);
 
-        GetComponent<Health>().LooseLife(savant.hurtDamage);
+        GetComponent<Health>().LooseLife(guard.hurtDamage);
     }
+
+    public void HitSavant(Collision2D other)
+	{
+        return;
+	}
 
 	#region Debug
 

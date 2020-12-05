@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
         //Die Animation && fx
         anim.SetBool("isDead", true);
         GetComponent<Rigidbody2D>().isKinematic = false;
+        GetComponent<BoxCollider2D>().isTrigger = false;
         gameObject.layer = LayerMask.NameToLayer("Dead Layer");
         this.enabled = false;
 	}
