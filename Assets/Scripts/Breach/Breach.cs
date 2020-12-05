@@ -121,6 +121,7 @@ public class Breach : MonoBehaviour
         //Cleaning
         Destroy(hackingGame.gameObject);
         Destroy(GetComponent<CircleCollider2D>());
+        Destroy(this);
 	}
 
 	#region Gizmos
@@ -140,6 +141,7 @@ public class Breach : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        
         //Breach Acces Range
         Gizmos.color = new Color(255, 69, 0, 120);
         Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);

@@ -8,18 +8,20 @@ public class Game1 : HackingGame
     [Header ("Game 1")]
     public float speed;
     public GameObject hackPlayerPrefab;
+    public Color currentPointColor;
+    public Color defaultColor;
+    //public LineRenderer lr;
 
     [Space]
 
     public Transform points;
     Transform[] path;
     int currentIndex;
-
     public Transform playerHolder;
 
-
     void Start()
-    { 
+    {
+        //lr = GetComponent<LineRenderer>();
         GameInit();
     }
 
@@ -30,80 +32,99 @@ public class Game1 : HackingGame
 
 	void Update()
     {
-
         if (currentIndex == path.Length)
 		{
-            WinGame();
-		}
-
-        if (InputLB())
+            StartCoroutine(Win(.2f));
+		} 
+        else
 		{
-            //iconDisplayerLeft.LB();
-            //iconDisplayerRight.Empty();
 
-            if ( path[currentIndex].localPosition.x  == 0)
-			{
-                currentIndex++;
+            path[currentIndex].GetComponent<SpriteRenderer>().color = currentPointColor;
+            if (InputLB())
+            {
+                //iconDisplayerLeft.LB();
+                //iconDisplayerRight.Empty();
 
-                if (currentIndex < path.Length)
+                if (path[currentIndex].localPosition.x == 0)
                 {
-                    //hackPlayer.position = path[currentIndex].position;
-                    GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex - 1].position, Quaternion.identity);
-                    playerPrefab.transform.parent = playerHolder;
+
+                    if (currentIndex < path.Length)
+                    {
+                        //hackPlayer.position = path[currentIndex].position;
+                        GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex].position, Quaternion.identity);
+                        playerPrefab.transform.parent = playerHolder;
+                        currentIndex++;
+                    }
+                }
+                else
+                {
+                    LooseGame();
+                }
+            }
+
+            else if (InputRB())
+            {
+
+                //iconDisplayerLeft.Empty();
+                //iconDisplayerRight.RB();
+
+
+                if (path[currentIndex].localPosition.x == 1)
+                {
+
+
+                    if (currentIndex < path.Length)
+                    {
+                        //hackPlayer.position = path[currentIndex].position;
+                        GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex].position, Quaternion.identity);
+                        playerPrefab.transform.parent = playerHolder;
+                        currentIndex++;
+
+                    }
 
                 }
-            } 
-            else
-			{
-                LooseGame();
-			}
- 
-        }
-
-        else if (InputRB())
-		{
-
-            //iconDisplayerLeft.Empty();
-            //iconDisplayerRight.RB();
-
-
-            if (path[currentIndex].localPosition.x == 1)
-            {
-                currentIndex++;
-
-                if (currentIndex < path.Length)
+                else
                 {
-                    //hackPlayer.position = path[currentIndex].position;
-                    GameObject playerPrefab =  Instantiate(hackPlayerPrefab, path[currentIndex - 1].position, Quaternion.identity);
-                    playerPrefab.transform.parent = playerHolder;
-
+                    LooseGame();
                 }
 
             }
-            else
-            {
-                LooseGame();
-            }
-
         }
     }
 
+    IEnumerator Win(float delay)
+	{
+        yield return new WaitForSeconds(delay);
+        WinGame();
+    }
     public void GameInit()
 	{
         currentIndex = 0;
         path = new Transform[points.childCount];
+       //lr.positionCount = points.childCount;
 
+        //Set the path
         for (int i = 0; i < path.Length; i++)
 		{
             path[i] = points.GetChild(i);
+            path[i].GetComponent<SpriteRenderer>().color = defaultColor;
+
 		}
 
-        //hackPlayer.position = path[currentIndex].position;
-
+        //Remove all player instances.
         for (int i = 0; i < playerHolder.childCount; i++)
 		{
             Destroy(playerHolder.GetChild(i).gameObject);
 		}
+
+        //Line Renderer stuff 
+        /*
+        for (int i = 0; i < lr.positionCount; i++)
+        {
+            lr.SetPosition(i, path[i].position);
+        }
+
+        */
     }
 
     protected override void LooseGame()
@@ -135,9 +156,5 @@ public class Game1 : HackingGame
             Gizmos.DrawLine(previousPos, t.position);
             previousPos = t.position;
         }
-
-        Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(hackPlayer.position, .1f);
-        //Gizmos.DrawLine(previousPos, startPos);
     }
 }
