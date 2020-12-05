@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class RandomPosition : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        int posX = Random.Range(0, 2);
+        transform.localPosition = new Vector3(posX, transform.localPosition.y, 0); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+	private void OnEnable()
+	{
+        int posX = Random.Range(0, 2);
+        transform.localPosition = new Vector3(posX, transform.localPosition.y, 0);
     }
 }

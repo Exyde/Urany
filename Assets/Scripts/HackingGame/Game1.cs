@@ -6,15 +6,16 @@ public class Game1 : HackingGame
 {
 
     [Header ("Game 1")]
-    
-    public Transform hackPlayer;
     public float speed;
+    public GameObject hackPlayerPrefab;
 
     [Space]
 
     public Transform points;
     Transform[] path;
     int currentIndex;
+
+    public Transform playerHolder;
 
 
     void Start()
@@ -46,7 +47,10 @@ public class Game1 : HackingGame
 
                 if (currentIndex < path.Length)
                 {
-                    hackPlayer.position = path[currentIndex].position;
+                    //hackPlayer.position = path[currentIndex].position;
+                    GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex - 1].position, Quaternion.identity);
+                    playerPrefab.transform.parent = playerHolder;
+
                 }
             } 
             else
@@ -69,7 +73,10 @@ public class Game1 : HackingGame
 
                 if (currentIndex < path.Length)
                 {
-                    hackPlayer.position = path[currentIndex].position;
+                    //hackPlayer.position = path[currentIndex].position;
+                    GameObject playerPrefab =  Instantiate(hackPlayerPrefab, path[currentIndex - 1].position, Quaternion.identity);
+                    playerPrefab.transform.parent = playerHolder;
+
                 }
 
             }
@@ -91,8 +98,12 @@ public class Game1 : HackingGame
             path[i] = points.GetChild(i);
 		}
 
-        hackPlayer.position = path[currentIndex].position;
+        //hackPlayer.position = path[currentIndex].position;
 
+        for (int i = 0; i < playerHolder.childCount; i++)
+		{
+            Destroy(playerHolder.GetChild(i).gameObject);
+		}
     }
 
     protected override void LooseGame()
@@ -126,7 +137,7 @@ public class Game1 : HackingGame
         }
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(hackPlayer.position, .1f);
+        //Gizmos.DrawWireSphere(hackPlayer.position, .1f);
         //Gizmos.DrawLine(previousPos, startPos);
     }
 }
