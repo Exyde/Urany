@@ -14,6 +14,7 @@ public class Guard : Enemy
 	public float detectionRadius = .3f;
 	public LayerMask playerLayer;
 
+
 	Patrol patrol;
 
 	override protected void Start()
@@ -24,21 +25,23 @@ public class Guard : Enemy
 
 	private void Update()
 	{
-		detectionPoint.localPosition= new Vector3(patrol.dir / 2f, detectionPoint.localPosition.y, detectionPoint.localPosition.z);
-
-		if (!isAlive)
+		if (isAlive)
 		{
-			patrol.Stop();
+			detectionPoint.localPosition= new Vector3(patrol.dir / 2f, detectionPoint.localPosition.y, detectionPoint.localPosition.z);
 		}
 
 		if (state == State.Patrol)
 		{
-			Collider2D player = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, playerLayer);
-
-			if (player != null)
+			if (detectionPoint != null)
 			{
-				StartCoroutine(Attack(player.transform));
+				Collider2D player = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, playerLayer);
+
+				if (player != null)
+				{
+					StartCoroutine(Attack(player.transform));
+				}
 			}
+
 		}
 
 		if (isMoving)
@@ -50,6 +53,22 @@ public class Guard : Enemy
 		}
 	}
 
+	public override void TakeDamage(int amount)
+	{
+		base.TakeDamage(amount);
+		StopAllCoroutines();
+		patrol.isPaused = false;
+		//state = State.Patrol;
+		isAttacking = false;
+
+		StartCoroutine(BackToPatrol(.4f));
+	}
+
+	IEnumerator BackToPatrol(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		state = State.Patrol;
+	}
 	IEnumerator Attack(Transform player)
 	{
 		anim.SetTrigger("attack");
@@ -61,12 +80,15 @@ public class Guard : Enemy
 
 		patrol.isPaused = false;
 		state = State.Patrol;
-		isAttacking = false;
+		isAttacking = false;      
 	}
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.color = Color.cyan;
-		Gizmos.DrawWireSphere(detectionPoint.position, detectionRadius);
+		if (detectionPoint != null)
+		{
+			Gizmos.color = Color.cyan;
+			Gizmos.DrawWireSphere(detectionPoint.position, detectionRadius);
+		}
 	}
 }

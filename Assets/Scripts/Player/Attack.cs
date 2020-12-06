@@ -21,6 +21,7 @@ public class Attack : MonoBehaviour
     public float sideAttackRange = .5f;
     public int sideAttackDamage = 50;
     public float sideAttackForce;
+    public float verticalPushForce = 3f;
 
     [Header("Down Attack Data")]
     public Transform downAttackBottomLeft;
@@ -114,7 +115,10 @@ public class Attack : MonoBehaviour
 
     public void PushEnemy(Transform enemy)
 	{
-        enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(-(transform.position - enemy.transform.position).normalized.x * sideAttackForce, .2f), ForceMode2D.Impulse);
+        float verticalForce = verticalPushForce;
+        float horizontalForce = -1 * (transform.position - enemy.transform.position).normalized.x * sideAttackForce;
+
+        enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(horizontalForce, verticalForce), ForceMode2D.Impulse);
     }
 
     private void OnDrawGizmos()

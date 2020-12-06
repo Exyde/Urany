@@ -25,12 +25,6 @@ public class Interactable : MonoBehaviour
 	[Header("Custom Event")]
 	public UnityEvent customEvent;
 
-	private void Reset()
-	{
-		GetComponent<Collider2D>().isTrigger = true;
-		gameObject.layer = 9;
-	}
-
 	public void Interact()
 	{
 		InteractionSystem interractionSystem = FindObjectOfType<InteractionSystem>();
@@ -54,6 +48,11 @@ public class Interactable : MonoBehaviour
 			case InteractionType.Talk:
 				GetComponent<Talking>().TriggerDialogue();
 				break;
+
+			case InteractionType.NONE:
+				Debug.Log("None !");
+				break;
+
 			default:
 				Debug.Log("Null item");
 				break;

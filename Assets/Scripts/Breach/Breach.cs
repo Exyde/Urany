@@ -87,6 +87,8 @@ public class Breach : MonoBehaviour
         //Frontend
         sr.color = defaultColor;
         inputDisplayer.Empty();
+        FindObjectOfType<PostProcessController>().ResetPostProcess();
+
     }
 
     public void StartHackGame()
@@ -96,6 +98,7 @@ public class Breach : MonoBehaviour
 
 
         //Front
+        FindObjectOfType<PostProcessController>().SetDashPostProcess();
         inputDisplayer.Empty();
     }
 
@@ -131,7 +134,7 @@ public class Breach : MonoBehaviour
 		{
             //Breach Acces Range
             Gizmos.color = new Color(255, 69, 0, 120);
-            Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
+            //Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
 
             //Hack Limit Range
             Gizmos.color = Color.white;
@@ -144,7 +147,7 @@ public class Breach : MonoBehaviour
         
         //Breach Acces Range
         Gizmos.color = new Color(255, 69, 0, 120);
-        Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
+        //Gizmos.DrawWireSphere((Vector2)transform.position, GetComponent<CircleCollider2D>().radius);
 
         //Hack Limit Range
         Gizmos.color = Color.white;

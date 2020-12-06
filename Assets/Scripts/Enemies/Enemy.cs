@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     public bool isMoving;
     public bool isAttacking;
 
+    public bool isHackable;
+
+
     public State state;
 
     public enum State
@@ -58,11 +61,26 @@ public class Enemy : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = false;
         gameObject.layer = LayerMask.NameToLayer("Dead Layer");
 
-        //States
+        if (isHackable)
+		{
+            Destroy(GetComponent<Breach>());
+            Destroy(GetComponent<Interactable>());
+        }
+
+    //States
         state = State.Dead;
         isAlive = false;
         isMoving = false;
         isAttacking = false;
+
+        GetComponent<Patrol>().Stop();
+
+        for (int i= 0; i < transform.childCount; i++)
+		{
+            Destroy(transform.GetChild(i).gameObject);
+		}
+
+        //Destroy(GetComponent<Patrol>());
 
         //this.enabled = false;
 	}
