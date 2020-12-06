@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalScene/TitleScreen.unity
     guid: b928301a86d6c9c4cbc80b10be3d8fa1
   - enabled: 1
-    path: Assets/Scenes/ProtoSceneYounes.unity
-    guid: dbccbf0cb45cfd44f84a17317fbb98fc
+    path: Assets/Scenes/FinalScene/HubCentral.unity
+    guid: 79b8ab8188fc1f542b667e2093969a02
+  - enabled: 1
+    path: Assets/Scenes/FinalScene/RegionUranie.unity
+    guid: cf8ecc9caf2d4ec4bafe76a0aae902e0
+  - enabled: 1
+    path: Assets/Scenes/FinalScene/UranyFightScene.unity
+    guid: 63e158c19c51a91498df1aeefb8fee29
   m_configObjects: {}

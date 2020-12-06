@@ -8,6 +8,7 @@ public class LevelLoader : MonoBehaviour
 {
 	public Animator transition;
 	public float transitionTime = 1f;
+	public Movement movement;
 
 	public void OnNextLevel(int levelIndex)
 	{
@@ -17,6 +18,7 @@ public class LevelLoader : MonoBehaviour
 	IEnumerator LoadLevel(int levelIndex)
 	{
 		transition.SetTrigger("Start");
+		if (movement) movement.canMove = false;
 		yield return new WaitForSeconds(transitionTime);
 		SceneManager.LoadScene(levelIndex);
 
