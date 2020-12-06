@@ -16,7 +16,7 @@ public class PostProcessController : MonoBehaviour
     ChromaticAberration chrom;
     ColorAdjustments colorAdj;
     LensDistortion lensDist;
-
+    Vignette vignette;
 
     [Header("Base Values")]
     MinFloatParameter startBloomIntensity;
@@ -32,6 +32,7 @@ public class PostProcessController : MonoBehaviour
         volume.profile.TryGet(out chrom);
         volume.profile.TryGet(out colorAdj);
         volume.profile.TryGet(out lensDist);
+        volume.profile.TryGet(out vignette);
     }
 
 	private void Start()
@@ -57,6 +58,7 @@ public class PostProcessController : MonoBehaviour
         bloom.intensity = startBloomIntensity;
 
         lensDist.active = false;
+        vignette.active = false;
 	}
 
     IEnumerator AttackFx()
@@ -79,4 +81,11 @@ public class PostProcessController : MonoBehaviour
 
         lensDist.active = true;
 	}
+
+    public void SetHackPostProcess()
+	{
+        vignette.active = true;
+        //lensDist.active = true;
+
+    }
 }

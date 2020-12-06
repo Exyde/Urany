@@ -87,7 +87,6 @@ public class Breach : MonoBehaviour
         //Frontend
         sr.color = defaultColor;
         inputDisplayer.Empty();
-        FindObjectOfType<PostProcessController>().ResetPostProcess();
 
     }
 
@@ -98,7 +97,6 @@ public class Breach : MonoBehaviour
 
 
         //Front
-        FindObjectOfType<PostProcessController>().SetDashPostProcess();
         inputDisplayer.Empty();
     }
 

@@ -11,6 +11,7 @@ public class Game1 : HackingGame
     public Color currentPointColor;
     public Color defaultColor;
     //public LineRenderer lr;
+    public PostProcessController pp;
 
     [Space]
 
@@ -28,6 +29,11 @@ public class Game1 : HackingGame
 	private void OnEnable()
 	{
         GameInit();
+	}
+
+	private void OnDisable()
+	{
+        pp.ResetPostProcess();
 	}
 
 	void Update()
@@ -101,7 +107,8 @@ public class Game1 : HackingGame
 	{
         currentIndex = 0;
         path = new Transform[points.childCount];
-       //lr.positionCount = points.childCount;
+        //lr.positionCount = points.childCount;
+        pp.SetHackPostProcess();
 
         //Set the path
         for (int i = 0; i < path.Length; i++)

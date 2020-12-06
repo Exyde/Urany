@@ -3235,6 +3235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7328514171272627048, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
+      propertyPath: pp
+      value: 
+      objectReference: {fileID: 1239456953}
     - target: {fileID: 7328514172038204417, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: player
       value: 
@@ -4700,6 +4704,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
+--- !u!1 &1843711347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3585223128048288110, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+  m_PrefabInstance: {fileID: 3585223129564285981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1843711357
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843711347}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.015865324, y: 0.03172209}
+  m_Size: {x: 1.6510572, y: 1.0166024}
+  m_Direction: 1
 --- !u!1001 &1870957496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5394,10 +5419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreachPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 991976020448285658, guid: 42a641214f941d94c85f864542d52845, type: 3}
-      propertyPath: m_Name
-      value: HackingGame1
-      objectReference: {fileID: 0}
+    - target: {fileID: 991976020448285652, guid: 42a641214f941d94c85f864542d52845, type: 3}
+      propertyPath: pp
+      value: 
+      objectReference: {fileID: 1239456953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a641214f941d94c85f864542d52845, type: 3}
 --- !u!1001 &1225069236529164756
@@ -5537,6 +5562,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1546736438}
+    - target: {fileID: 3585223128048288102, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: isHackable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288103, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.24
@@ -5587,8 +5616,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288110, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8205675195848428089, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: pp
+      value: 
+      objectReference: {fileID: 1239456953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
 --- !u!1001 &4158962674557935557
