@@ -507,6 +507,23 @@ public class Movement : MonoBehaviour
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D other)
+	{
+        if (other.gameObject.tag == "Mnemo")
+		{
+            FindObjectOfType<CameraFollow>().Dezoom();
+            //Add Lerp
+		}
+	}
+
+    void OnTriggerExit2D(Collider2D other)
+	{
+        if (other.gameObject.tag == "Mnemo")
+        {
+            FindObjectOfType<CameraFollow>().FocusPlayer();
+            //Add Lerp
+        }
+    }
     public void HitGuard(Collision2D other)
 	{
         Guard guard = other.gameObject.GetComponent<Guard>();

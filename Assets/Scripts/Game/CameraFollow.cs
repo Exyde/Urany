@@ -16,6 +16,9 @@ public class CameraFollow : MonoBehaviour
     public float lookSmoothTimeX;
     public float verticalSmoothTime;
 
+    private float mnemoOffset = 3.3f;
+    private float startOffset;
+
     //Current look and target we want to smooth to.
     float currentLookAheadX;
     float targetLookAheadX;
@@ -29,8 +32,40 @@ public class CameraFollow : MonoBehaviour
 	private void Start()
 	{
         bounds = target.GetComponent<BoxCollider2D>().bounds;
-        focusArea = new FocusArea(bounds, focusAreaSize); 
+        focusArea = new FocusArea(bounds, focusAreaSize);
+        startOffset = verticalOffset;
 	}
+
+    public void Dezoom()
+	{
+        // verticalOffset = mnemoOffset;
+        StopAllCoroutines();
+        StartCoroutine(ChangeOffset(mnemoOffset));
+	}
+
+    public void FocusPlayer()
+	{
+        // verticalOffset = startOffset;
+        StopAllCoroutines();
+        StartCoroutine(ChangeOffset(startOffset));
+	}
+
+    IEnumerator ChangeOffset (float target)
+	{
+
+        float lerpDuration = 10f;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < lerpDuration)
+		{
+            verticalOffset = Mathf.Lerp(verticalOffset, target, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        verticalOffset = target;
+
+    }
 
 	private void LateUpdate()
 	{

@@ -7,7 +7,7 @@ public class Guard : Enemy
 	[Header ("Attack Data")]
 	public float hitForce;
 	public int hurtDamage = 1;
-	public float attackDelay = .2f;
+	public float attackDelay = .5f;
 
 	[Header ("Detection Data")]
 	public Transform detectionPoint;
@@ -24,6 +24,8 @@ public class Guard : Enemy
 
 	private void Update()
 	{
+		detectionPoint.localPosition= new Vector3(patrol.dir / 2f, detectionPoint.localPosition.y, detectionPoint.localPosition.z);
+
 		if (!isAlive)
 		{
 			patrol.Stop();
@@ -51,11 +53,15 @@ public class Guard : Enemy
 	IEnumerator Attack(Transform player)
 	{
 		anim.SetTrigger("attack");
-		patrol.Stop();
+		patrol.isPaused = true;
+		state = State.Attack;
+		isAttacking = true;
 
 		yield return new WaitForSeconds(attackDelay);
 
-		patrol.StartPatrol();
+		patrol.isPaused = false;
+		state = State.Patrol;
+		isAttacking = false;
 	}
 
 	private void OnDrawGizmos()

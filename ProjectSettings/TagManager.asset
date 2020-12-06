@@ -12,6 +12,7 @@ TagManager:
   - Savant
   - Interaction Point
   - Guard
+  - Mnemo
   layers:
   - Default
   - TransparentFX

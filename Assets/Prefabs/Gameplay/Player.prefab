@@ -9873,8 +9873,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2295878027690152530, guid: d3eef152af0ec8c44b4754320e6e7ef9, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -3591626046260579067, guid: 4b8d7abbbecdabf47a94c06fc64c8d47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14827,9 +14827,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5715453491550591346}
+  - component: {fileID: 347807013}
   m_Layer: 0
   m_Name: InterractionPoint
-  m_TagString: Untagged
+  m_TagString: Interaction Point
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14842,12 +14843,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715453491550591345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.572, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5715453491751003754}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &347807013
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5715453491550591345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5715453491751003752
 GameObject:
   m_ObjectHideFlags: 0
@@ -14903,7 +14920,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.0462327}
+  m_Offset: {x: 0, y: -0.0462327}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14976,6 +14993,8 @@ MonoBehaviour:
   jumpSmoke: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
   wallJumpSmoke: {fileID: 5269667359378706991, guid: 74ff02d68b71e2e4a95b39acae58d130, type: 3}
   groundImpactSmoke: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+  wallSlideSmoke: {fileID: 225430177194099038, guid: 6fa968e2d791d7b449cbc80f2dd354c2, type: 3}
+  wallSlideSmokeInstance: {fileID: 0}
   inputs: {x: 0, y: 0}
 --- !u!114 &5715453491751003750
 MonoBehaviour:
@@ -15000,10 +15019,10 @@ MonoBehaviour:
   onWallTop: 0
   collisionRadius: 0.1
   bottomOffset: {x: 0, y: -0.4}
-  rightOffset: {x: 0.2, y: 0}
-  leftOffset: {x: -0.2, y: 0}
-  rightTopOffset: {x: 0.2, y: 0.1}
-  leftTopOffset: {x: -0.2, y: 0.1}
+  rightOffset: {x: 0.1, y: 0}
+  leftOffset: {x: -0.1, y: 0}
+  rightTopOffset: {x: 0.1, y: 0.1}
+  leftTopOffset: {x: -0.1, y: 0.1}
   verticalOffset: {x: 0, y: -0.3}
 --- !u!114 &5715453491751003751
 MonoBehaviour:
@@ -15037,14 +15056,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   currentObject: {fileID: 0}
-  ui: {fileID: 0}
   pp: {fileID: 0}
   examineWindow: {fileID: 0}
   examineImage: {fileID: 0}
   examineText: {fileID: 0}
   isExamining: 0
-  isHacking: 0
   onBreach: 0
+  isHacking: 0
   currentBreach: {fileID: 0}
 --- !u!114 &5715453491751003745
 MonoBehaviour:
@@ -15083,6 +15101,7 @@ MonoBehaviour:
   sideAttackTopRight: {fileID: 5715453492648686244}
   sideAttackRange: 0.5
   sideAttackDamage: 50
+  sideAttackForce: 6
   downAttackBottomLeft: {fileID: 5715453491162685202}
   downAttackTopRight: {fileID: 5715453490953894787}
   downAttackRange: 0.5
@@ -15227,7 +15246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715453492648686251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.822, y: 0.395, z: 0}
+  m_LocalPosition: {x: 1.155, y: 0.395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5715453492435077117}

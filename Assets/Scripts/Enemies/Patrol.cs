@@ -10,6 +10,9 @@ public class Patrol : MonoBehaviour
 
     public float moveSpeed = 2f;
     public float waitTime = .1f;
+    public float dir;
+
+    public bool isPaused;
 
     Enemy entity;
 
@@ -38,6 +41,11 @@ public class Patrol : MonoBehaviour
 
         while (true)
 		{
+            while (isPaused)
+			{
+                yield return null;
+			}
+
             transform.position = Vector2.MoveTowards(transform.position, targetWaypoint, moveSpeed * Time.deltaTime);
             entity.isMoving = true;
 
@@ -71,6 +79,7 @@ public class Patrol : MonoBehaviour
     {
         Vector3 side = (target - transform.position).normalized;
         GetComponent<SpriteRenderer>().flipX = (side.x == 1) ? true : false;
+        dir = side.x;
     }
         
 	private void OnDrawGizmos()
