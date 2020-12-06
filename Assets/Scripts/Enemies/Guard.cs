@@ -50,7 +50,14 @@ public class Guard : Enemy
 		} else
 		{
 			anim.SetBool("isMoving", false);
+
 		}
+	}
+
+	public void SetIdle()
+	{
+		anim.SetBool("isMoving", false);
+		isMoving = false;
 	}
 
 	public override void TakeDamage(int amount)
@@ -81,6 +88,14 @@ public class Guard : Enemy
 		patrol.isPaused = false;
 		state = State.Patrol;
 		isAttacking = false;      
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Player")
+		{
+			print("Hit");
+		}
 	}
 
 	private void OnDrawGizmos()
