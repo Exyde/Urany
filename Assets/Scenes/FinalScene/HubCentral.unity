@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 799328023}
     - target: {fileID: 9055447331294733472, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
       propertyPath: verticalOffset
-      value: -1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9055447331294733474, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
       propertyPath: m_LocalPosition.x

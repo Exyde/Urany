@@ -6,10 +6,13 @@ public class HackMove : MonoBehaviour
 {
     bool isHacked;
     public Transform target;
-    Vector3 targetPos;
 
     public float speed = 1f;
     Rigidbody2D rb;
+
+    public float lerpDuration = 5f;
+    Vector3 startPos;
+    Vector3 targetPos;
 
     void Start()
     {
@@ -27,12 +30,30 @@ public class HackMove : MonoBehaviour
 
         if (Vector2.Distance (transform.position, targetPos) < .02f)
 		{
+            transform.position = targetPos;
             Destroy(this);
 		}
 
     }
     public void IsHacked()
 	{
-        isHacked = true;
+        //isHacked = true;
+        StartCoroutine(LerpPosition());
+	}
+
+    
+    public IEnumerator LerpPosition()
+	{
+        float timeElapsed = 0;
+
+        while (timeElapsed < lerpDuration)
+		{
+            transform.position = Vector2.Lerp(transform.position, targetPos, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+		}
+
+        transform.position = targetPos;
 	}
 }
