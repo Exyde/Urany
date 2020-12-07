@@ -13,4 +13,9 @@ public class Attack1 : MonoBehaviour
     {
         
     }
+
+    public void AttackPhase1()
+	{
+
+	}
 }
