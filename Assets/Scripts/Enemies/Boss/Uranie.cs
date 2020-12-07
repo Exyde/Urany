@@ -20,14 +20,6 @@ public class Uranie : MonoBehaviour
     private Attack2 attack2;
     private Attack3 attack3;
 
-    [Header ("Attack 1")]
-
-    public GameObject sphereAttackPrefab;
-    public float sphereSpeed;
-    public int sphereNumber;
-    public float attackDuration;
-    public float spawnRadius = 3f;
-
     [Space]
     [Header("Booleans")]
     public bool isAttacking;
@@ -106,8 +98,22 @@ public class Uranie : MonoBehaviour
 	{
         if (!isAttacking)
 		{
-            print("Yo");
-            StartCoroutine(Attack1());
+            int randAttack = Random.Range(1, 4);
+
+			switch (randAttack)
+			{
+                case 1:
+                    attack1.Attack();
+                    break;
+                case 2:
+                    attack2.Attack();
+                    break;
+                case 3:
+                    attack2.Attack();
+                    break;
+                default:
+                    break;
+			}
 		}
 	}
 
@@ -133,63 +139,11 @@ public class Uranie : MonoBehaviour
 
     IEnumerator Wait()
 	{
-        print("Waiting !");
         isWaiting = true;
 
         yield return new WaitForSeconds(waitTime);
 
         state = State.Attack;
         isWaiting = false;
-	}
-
-    IEnumerator Attack1()
-	{
-        BeginAttack();
-
-        List<GameObject> currentSpheres = new List<GameObject>();
-
-        for (int i = 0; i < sphereNumber; i++)
-		{
-            Vector2 spherePos = (Vector2) transform.position + Random.insideUnitCircle * spawnRadius;
-            GameObject sphere = Instantiate(sphereAttackPrefab, spherePos, Quaternion.identity);
-
-            currentSpheres.Add(sphere);
-
-            yield return new WaitForSeconds(attackDuration / sphereNumber);
-		}
-
-
-        yield return new WaitForSeconds(.2f);
-        //Empty currentSphere
-
-        for (int i = 0; i < sphereNumber; i++)
-        {
-            Destroy(currentSpheres[i].gameObject);
-        }
-
-        EndAttack();
-    }
-
-    public void BeginAttack()
-	{
-        print("Attack ! ");
-        isAttacking = true;
-        isMoving = false;
-        isWaiting = false;
-    }
-
-    public void EndAttack()
-	{
-        state = State.Move;
-        isAttacking = false;
-        isMoving = true;
-    }
-
-	private void OnDrawGizmos()
-	{
-        //Attack Range
-        Gizmos.color = Color.yellow;
-
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
 	}
 }

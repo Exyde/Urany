@@ -50,6 +50,7 @@ public class Health : MonoBehaviour
 
     public void CheckLife()
 	{
+        print(currentHealth);
         uiManager.SetLife(currentHealth);
 
         if (currentHealth <= 0)
