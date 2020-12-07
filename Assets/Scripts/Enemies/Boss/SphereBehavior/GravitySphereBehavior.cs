@@ -16,6 +16,7 @@ public class GravitySphereBehavior : MonoBehaviour
     Vector3 dir;
     Rigidbody2D rb;
 
+
     void Start()
     {
         //Base
@@ -32,7 +33,6 @@ public class GravitySphereBehavior : MonoBehaviour
 
     void Update()
     {
-
         if (actived)
 		{
             //MoveToPoint();

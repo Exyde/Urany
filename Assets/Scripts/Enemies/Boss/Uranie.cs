@@ -98,7 +98,7 @@ public class Uranie : MonoBehaviour
         if (!isAttacking)
 		{
             isAttacking = true;
-            int randAttack = Random.Range(1, 1);
+            int randAttack = Random.Range(3, 3);
 
             switch (randAttack)
 			{
