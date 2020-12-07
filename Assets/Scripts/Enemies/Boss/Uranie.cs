@@ -13,12 +13,12 @@ public class Uranie : MonoBehaviour
     public float speed;
     public float waitTime;
     public Transform randomPositions;
-    [SerializeField] Vector3 randomPos;
+    Vector3 randomPos;
 
     [Header ("Attack")]
-    private Attack1 attack1;
-    private Attack2 attack2;
-    private Attack3 attack3;
+    private SimpleBall simpleBall;
+    private MultipleBall multipleBall;
+    private GravityBall gravityBall;
 
     [Space]
     [Header("Booleans")]
@@ -26,17 +26,15 @@ public class Uranie : MonoBehaviour
     public bool isMoving;
     public bool isWaiting;
 
-
-    //Moving from phase to update
-    /* Update movespeed, attack damage, rate, range, intensy...
-     * Change background & sprite
-     */
+    public int maxHealth;
+    [SerializeField] int currentHealth;
 
     public enum State
 	{
         Move,
         Attack,
-        Wait
+        Wait,
+        Dead
 	}
 
     public State state;
@@ -47,9 +45,11 @@ public class Uranie : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        attack1 = GetComponent<Attack1>();
-        attack2 = GetComponent<Attack2>();
-        attack3 = GetComponent<Attack3>();
+        gravityBall = GetComponent<GravityBall>();
+        multipleBall = GetComponent<MultipleBall>();
+        simpleBall = GetComponent<SimpleBall>();
+
+        currentHealth = maxHealth;
 
         state = State.Move;
 
@@ -90,7 +90,6 @@ public class Uranie : MonoBehaviour
 
             state = State.Wait;
             isMoving = false;
-
         }
     }
 
@@ -98,18 +97,19 @@ public class Uranie : MonoBehaviour
 	{
         if (!isAttacking)
 		{
-            int randAttack = Random.Range(1, 4);
+            isAttacking = true;
+            int randAttack = Random.Range(1, 1);
 
-			switch (randAttack)
+            switch (randAttack)
 			{
                 case 1:
-                    attack1.Attack();
+                    simpleBall.Attack();
                     break;
                 case 2:
-                    attack2.Attack();
+                    multipleBall.Attack();
                     break;
                 case 3:
-                    attack2.Attack();
+                    gravityBall.Attack();
                     break;
                 default:
                     break;
@@ -146,4 +146,22 @@ public class Uranie : MonoBehaviour
         state = State.Attack;
         isWaiting = false;
 	}
+    public virtual void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        //anim.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+	{
+        state = State.Dead;
+        StopAllCoroutines();
+        print("dead");
+    }
 }

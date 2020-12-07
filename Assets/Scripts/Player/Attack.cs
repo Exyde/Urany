@@ -105,6 +105,12 @@ public class Attack : MonoBehaviour
         {
             foreach (Collider2D enemy in hitEnemies)
             {
+                if (enemy.gameObject.tag == "Uranie")
+				{
+                    enemy.GetComponent<Uranie>().TakeDamage(sideAttackDamage);
+                    return;
+				}
+
                 enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
                 PushEnemy(enemy.transform);
 

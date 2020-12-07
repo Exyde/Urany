@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 4586143569641004430}
   - component: {fileID: 4586143569641004434}
   - component: {fileID: 4586143569641004435}
+  - component: {fileID: 610565963}
+  - component: {fileID: 610565962}
+  - component: {fileID: 610565961}
   m_Layer: 9
   m_Name: UranyBoss
   m_TagString: Untagged
@@ -30,7 +33,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4586143569641004425}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -203,6 +206,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4f2ce9a244b634b9c645c4a616dcf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
-  anim: {fileID: 0}
+  speed: 3
+  waitTime: 1
+  randomPositions: {fileID: 0}
+  randomPos: {x: 0, y: 0, z: 0}
+  isAttacking: 0
+  isMoving: 0
+  isWaiting: 0
+  maxHealth: 0
+  state: 0
+--- !u!114 &610565963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586143569641004425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba756036af9ec514b9654cae58e75e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereAttackPrefab: {fileID: 4071046008816938628, guid: 30d6d2ff4327fe749ba0b0501c686f68, type: 3}
+  sphereSpeed: 2
+  sphereNumber: 3
+  attackDuration: 3
+  spawnRadius: 1.2
+--- !u!114 &610565962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586143569641004425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec134333e94fdb4fa8426ed42307aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 4071046008816938628, guid: 30d6d2ff4327fe749ba0b0501c686f68, type: 3}
+  sphereNumber: 4
+  attackDuration: 2
+  spawnRadius: 2
+--- !u!114 &610565961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586143569641004425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55248eab72f7ed74bba277a23e11a01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
