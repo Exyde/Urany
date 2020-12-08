@@ -137,7 +137,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 4
   timeUntilAttack: 0.3
-  sphereDamage: 1
+  sphereDamage: 0
   collisionLayer:
     serializedVersion: 2
     m_Bits: 0

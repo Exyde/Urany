@@ -16,12 +16,6 @@ public class SimpleBall : MonoBehaviour
 
     public float spawnRadius = 1.2f;
 
-    //Phase 2
-    // Duration : 2
-    // Sphere Number : 4
-    // 
-    //Phase 3
-
     private Uranie uranie;
 
 	void Start()

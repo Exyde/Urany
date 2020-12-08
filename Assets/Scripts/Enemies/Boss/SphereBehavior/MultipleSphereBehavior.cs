@@ -6,21 +6,17 @@ public class MultipleSphereBehavior : MonoBehaviour
 {
     public Transform player;
     public float speed = 1f;
-    public float timeUntilAttack = .3f;
     public int sphereDamage = 1;
 
-    public LayerMask collisionLayer;
-    public bool phase2 = true;
-    public bool isShooted = false;
+    public bool preFire = false;
+    public bool fire = false;
 
     Vector3 targetPos;
     Vector3 dir;
-    Rigidbody2D rb;
 
     void Start()
     {
         player = FindObjectOfType<Movement>().transform;
-        rb = GetComponent<Rigidbody2D>();
 
         SetTargetWithOffset(3.5f);
         CameraShake.Shake(.05f, .05f);
@@ -28,23 +24,39 @@ public class MultipleSphereBehavior : MonoBehaviour
 
     void Update()
     {
-        if (isShooted)
+        if (fire)
 		{
             MoveToPoint();
 		}
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == collisionLayer)
+        if (collision.gameObject.tag == "Uranie")
         {
-            //Destroy(this.gameObject);
+            print("Inside Uranie");
         }
 
-        if (collision.tag == player.tag)
+        else if (collision.gameObject.tag == "Spawner")
         {
-            //player.GetComponent<Health>().LooseLife(sphereDamage);
-            //Destroy(this.gameObject);
+            return;
+        }
+
+        else if (collision.gameObject.tag == "Attack Sphere")
+        {
+            print("attackSphere");
+        }
+
+        else if (collision.gameObject.tag == "Player")
+        {
+            player.GetComponent<Health>().LooseLife(sphereDamage);
+            CameraShake.Shake(.1f, .1f);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            print("else destroy");
+            CameraShake.Shake(.1f, .1f);
+            Destroy(this.gameObject);
         }
     }
 
@@ -61,7 +73,7 @@ public class MultipleSphereBehavior : MonoBehaviour
     public void SetFire()
 	{
         //SetTargetWithOffset(3f);
-        isShooted = true;
+        fire = true;
     }
 
     public void SetTargetWithOffset(float offset)

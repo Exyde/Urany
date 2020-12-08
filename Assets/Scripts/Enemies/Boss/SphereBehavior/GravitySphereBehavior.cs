@@ -5,16 +5,13 @@ using UnityEngine;
 public class GravitySphereBehavior : MonoBehaviour
 {
     public Transform player;
-    public float speed = 10f;
-    public float timeUntilAttack = .3f;
+    public float speed;
     public int sphereDamage = 1;
 
-    public LayerMask collisionLayer;
     bool preFire = false;
     bool fire = false;
     Vector3 targetPos;
     Vector3 dir;
-    Rigidbody2D rb;
 
     Vector3 preFireTargetPos;
 
@@ -22,10 +19,11 @@ public class GravitySphereBehavior : MonoBehaviour
     {
         //Base
         player = FindObjectOfType<Movement>().transform;
-        rb = GetComponent<Rigidbody2D>();
-
+        
+        //Set target as Ground
         targetPos = new Vector3(transform.position.x, transform.position.y - 10f, 0);
 
+        //Set prefire position above.
         preFireTargetPos = new Vector3(transform.position.x, transform.position.y + .5f, 0);
 
         preFire = true;
@@ -35,13 +33,11 @@ public class GravitySphereBehavior : MonoBehaviour
     {
         if (preFire)
 		{
-            transform.position = Vector3.Lerp(transform.position, preFireTargetPos, Time.deltaTime * speed);
+            ChargeSphere();
 		}
 
         if (fire)
 		{
-            //MoveToPoint();
-            //MoveToPlayer();
             MoveToTarget();
 		}
     }
@@ -66,6 +62,7 @@ public class GravitySphereBehavior : MonoBehaviour
         else if (collision.gameObject.tag == "Player")
         {
             //player.GetComponent<Health>().LooseLife(sphereDamage);
+            CameraShake.Shake(.1f, .1f);
             Destroy(this.gameObject);
         } else
 		{
@@ -73,10 +70,12 @@ public class GravitySphereBehavior : MonoBehaviour
             CameraShake.Shake(.1f, .1f);
             Destroy(this.gameObject);
 		}
-
-
     }
 
+    public void ChargeSphere()
+	{
+        transform.position = Vector3.Lerp(transform.position, preFireTargetPos, Time.deltaTime * speed);
+    }
     public void MoveToTarget()
     {
         transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
@@ -87,23 +86,9 @@ public class GravitySphereBehavior : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime);
     }
 
-    public void MoveToGround()
-	{
-        transform.position = Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime);
-
-    }
-
     public void SetFire()
     {
         preFire = false;
         fire = true;
-    }
-
-
-    public void SetTargetWithOffset(float offset)
-    {
-        targetPos = player.position;
-        dir = (targetPos - transform.position).normalized * offset;
-        targetPos += dir;
     }
 }

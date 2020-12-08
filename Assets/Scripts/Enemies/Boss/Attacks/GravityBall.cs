@@ -11,7 +11,6 @@ public class GravityBall : MonoBehaviour
     public int sphereNumber;
     public float sphereSpeed;
     public float attackDuration;
-    public float spawnRadius = 1.2f;
 
     private Uranie uranie;
 
@@ -66,7 +65,6 @@ public class GravityBall : MonoBehaviour
 
         }
 
-
         yield return new WaitForSeconds(.2f);
 
         foreach (GameObject sphere in currentSpheres)
@@ -74,7 +72,6 @@ public class GravityBall : MonoBehaviour
             if (sphere != null)
 			{
                 sphere.GetComponent<GravitySphereBehavior>().SetFire();
-
             }
         }
 
@@ -100,10 +97,6 @@ public class GravityBall : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Attack Range
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
-
         //Spawn Box
         Gizmos.color = Color.red;
         Gizmos.DrawCube(_center, _size);

@@ -9,17 +9,15 @@ public class SimpleSphereBehavior : MonoBehaviour
     public float timeUntilFire = .4f;
     public int sphereDamage = 1;
 
-    public LayerMask collisionLayer;
-    public bool phase2 = true;
+    public bool fire = false;
+    public bool preFire = false;
 
     Vector3 targetPos;
     Vector3 dir;
-    Rigidbody2D rb;
 
     void Start()
     {
         player = FindObjectOfType<Movement>().transform;
-        rb = GetComponent<Rigidbody2D>();
 
         SetTargetWithOffset(3);
         CameraShake.Shake(.05f, .05f);
@@ -28,6 +26,7 @@ public class SimpleSphereBehavior : MonoBehaviour
     void Update()
     {
         timeUntilFire -= Time.deltaTime;
+
         //SetTargetWithOffset(3);
 
         if (timeUntilFire <= 0)
@@ -36,20 +35,36 @@ public class SimpleSphereBehavior : MonoBehaviour
 		}
     }
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.layer == collisionLayer)
-		{
-            Destroy(this.gameObject);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Uranie")
+        {
+            print("Inside Uranie");
         }
 
-        if (collision.tag == player.tag)
-		{
+        else if (collision.gameObject.tag == "Spawner")
+        {
+            return;
+        }
+
+        else if (collision.gameObject.tag == "Attack Sphere")
+        {
+            print("attackSphere");
+        }
+
+        else if (collision.gameObject.tag == "Player")
+        {
             //player.GetComponent<Health>().LooseLife(sphereDamage);
+            CameraShake.Shake(.1f, .1f);
             Destroy(this.gameObject);
-		}
 
-
+        }
+        else
+        {
+            print("else destroy");
+            CameraShake.Shake(.1f, .1f);
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetTargetWithOffset(float  offset)

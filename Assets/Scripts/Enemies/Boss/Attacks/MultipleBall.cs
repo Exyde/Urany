@@ -46,8 +46,11 @@ public class MultipleBall : MonoBehaviour
 
        foreach (GameObject sphere in currentSpheres)
 	   {
-            sphere.GetComponent<MultipleSphereBehavior>().SetFire();
-       }
+            if (sphere != null)
+			{
+                sphere.GetComponent<MultipleSphereBehavior>().SetFire();
+            }
+        }
 
         EndAttack();
     }
