@@ -8,6 +8,7 @@ public class Uranie : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator anim;
+    private Transform player;
 
     [Header("Movement")]
     public float speed;
@@ -54,10 +55,13 @@ public class Uranie : MonoBehaviour
         state = State.Move;
 
         randomPos = GetRandomPos();
+        player = FindObjectOfType<Movement>().transform;
     }
 
     void Update()
 	{
+        LookPlayer();
+
         switch (state)
 		{
             case State.Move:
@@ -91,6 +95,13 @@ public class Uranie : MonoBehaviour
             state = State.Wait;
             isMoving = false;
         }
+    }
+
+    public void LookPlayer()
+	{
+        Vector3 dir = (player.position - transform.position).normalized;
+        float side = Mathf.Sign(dir.x);
+        sr.flipX = side == 1 ? false : true;
     }
 
     public void HandleAttack()
