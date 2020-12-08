@@ -7,6 +7,7 @@ public class GravityBall : MonoBehaviour
     [Header("Gravity Ball Attack")]
 
     public GameObject spherePrefab;
+
     public int sphereNumber;
     public float sphereSpeed;
     public float attackDuration;
@@ -37,6 +38,11 @@ public class GravityBall : MonoBehaviour
 	private void Update()
 	{
         SphereSpawnerArea.position = new Vector3( SphereSpawnerArea.position.x, transform.position.y, 0);
+        Collider2D coll = SphereSpawnerArea.GetComponent<Collider2D>();
+        Bounds bounds = coll.bounds;
+
+        _center = bounds.center;
+        _size = bounds.size;
     }
 
 	IEnumerator DoAttack()
@@ -51,10 +57,13 @@ public class GravityBall : MonoBehaviour
             Vector2 spherePos = RandomPointInBox(_center, _size);
             
             GameObject sphere = Instantiate(spherePrefab, spherePos, Quaternion.identity);
+            sphere.GetComponent<GravitySphereBehavior>().speed = sphereSpeed;
 
             currentSpheres.Add(sphere);
 
             yield return new WaitForSeconds(attackDuration / sphereNumber);
+            CameraShake.Shake(.05f, .05f);
+
         }
 
 
@@ -62,8 +71,15 @@ public class GravityBall : MonoBehaviour
 
         foreach (GameObject sphere in currentSpheres)
         {
-            sphere.GetComponent<GravitySphereBehavior>().Explode();
+            if (sphere != null)
+			{
+                sphere.GetComponent<GravitySphereBehavior>().SetFire();
+
+            }
         }
+
+        yield return new WaitForSeconds(.5f);
+
 
         EndAttack();
     }
@@ -87,6 +103,10 @@ public class GravityBall : MonoBehaviour
         //Attack Range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, spawnRadius);
+
+        //Spawn Box
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(_center, _size);
     }
 
     public Vector2 RandomPointInBox(Vector3 center, Vector3 size)

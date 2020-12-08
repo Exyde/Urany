@@ -11,7 +11,6 @@ public class MultipleSphereBehavior : MonoBehaviour
 
     public LayerMask collisionLayer;
     public bool phase2 = true;
-
     public bool isShooted = false;
 
     Vector3 targetPos;
@@ -23,10 +22,8 @@ public class MultipleSphereBehavior : MonoBehaviour
         player = FindObjectOfType<Movement>().transform;
         rb = GetComponent<Rigidbody2D>();
 
-        targetPos = player.position;
-
-        dir = (targetPos - transform.position).normalized * 3;
-        targetPos += dir;
+        SetTargetWithOffset(3.5f);
+        CameraShake.Shake(.05f, .05f);
     }
 
     void Update()
@@ -63,7 +60,7 @@ public class MultipleSphereBehavior : MonoBehaviour
 
     public void SetFire()
 	{
-        SetTargetWithOffset(3f);
+        //SetTargetWithOffset(3f);
         isShooted = true;
     }
 

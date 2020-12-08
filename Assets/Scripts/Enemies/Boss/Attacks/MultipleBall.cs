@@ -34,6 +34,7 @@ public class MultipleBall : MonoBehaviour
         {
             Vector2 spherePos = (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
             GameObject sphere = Instantiate(spherePrefab, spherePos, Quaternion.identity);
+            sphere.GetComponent<MultipleSphereBehavior>().speed = sphereSpeed;
 
             currentSpheres.Add(sphere);
 
@@ -42,10 +43,11 @@ public class MultipleBall : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
 
+
        foreach (GameObject sphere in currentSpheres)
 	   {
             sphere.GetComponent<MultipleSphereBehavior>().SetFire();
-	   }
+       }
 
         EndAttack();
     }

@@ -5,17 +5,18 @@ using UnityEngine;
 public class GravitySphereBehavior : MonoBehaviour
 {
     public Transform player;
-    public float speed = 1f;
+    public float speed = 10f;
     public float timeUntilAttack = .3f;
     public int sphereDamage = 1;
 
     public LayerMask collisionLayer;
-    public bool phase2 = true;
-    public bool actived = false;
+    bool preFire = false;
+    bool fire = false;
     Vector3 targetPos;
     Vector3 dir;
     Rigidbody2D rb;
 
+    Vector3 preFireTargetPos;
 
     void Start()
     {
@@ -23,38 +24,60 @@ public class GravitySphereBehavior : MonoBehaviour
         player = FindObjectOfType<Movement>().transform;
         rb = GetComponent<Rigidbody2D>();
 
+        targetPos = new Vector3(transform.position.x, transform.position.y - 10f, 0);
 
-        //Specific
-        targetPos = player.position;
-        dir = (targetPos - transform.position).normalized * 3;
-        targetPos += dir;
+        preFireTargetPos = new Vector3(transform.position.x, transform.position.y + .5f, 0);
 
+        preFire = true;
     }
 
     void Update()
     {
-        if (actived)
+        if (preFire)
+		{
+            transform.position = Vector3.Lerp(transform.position, preFireTargetPos, Time.deltaTime * speed);
+		}
+
+        if (fire)
 		{
             //MoveToPoint();
-            MoveToPlayer();
+            //MoveToPlayer();
+            MoveToTarget();
 		}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == collisionLayer)
-        {
-            //Destroy(this.gameObject);
-        }
+        if (collision.gameObject.tag == "Uranie")
+		{
+            print("Inside Uranie");
+		}
 
-        if (collision.tag == player.tag)
+        else if (collision.gameObject.tag == "Spawner")
+		{
+            return;
+		}
+
+        else if (collision.gameObject.tag == "Attack Sphere")
+		{
+            print("attackSphere");
+		}
+
+        else if (collision.gameObject.tag == "Player")
         {
             //player.GetComponent<Health>().LooseLife(sphereDamage);
-            //Destroy(this.gameObject);
-        }
+            Destroy(this.gameObject);
+        } else
+		{
+            print("else destroy");
+            CameraShake.Shake(.1f, .1f);
+            Destroy(this.gameObject);
+		}
+
+
     }
 
-    public void MoveToPoint()
+    public void MoveToTarget()
     {
         transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
     }
@@ -64,10 +87,23 @@ public class GravitySphereBehavior : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime);
     }
 
-    public void Explode()
+    public void MoveToGround()
+	{
+        transform.position = Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime);
+
+    }
+
+    public void SetFire()
     {
-         rb.isKinematic = false;
-        //MoveToPlayer();
-        //actived = true;
+        preFire = false;
+        fire = true;
+    }
+
+
+    public void SetTargetWithOffset(float offset)
+    {
+        targetPos = player.position;
+        dir = (targetPos - transform.position).normalized * offset;
+        targetPos += dir;
     }
 }

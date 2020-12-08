@@ -47,15 +47,15 @@ public class SimpleBall : MonoBehaviour
         sphereSpeed += 1f;
         sphereNumber = 4;
         attackDuration = 2f;
-        timeUntilFire = .3f;
+        timeUntilFire = .35f;
 	}
 
     public void SetPhase3()
     {
-        sphereSpeed += 1f;
+        sphereSpeed += .2f;
         sphereNumber = 6;
         attackDuration = 1.5f;
-        timeUntilFire = .2f;
+        timeUntilFire = .3f;
     }
 
     IEnumerator DoAttack()
@@ -79,7 +79,6 @@ public class SimpleBall : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         EndAttack();
-        SetPhase3();
     }
 
     public void BeginAttack()

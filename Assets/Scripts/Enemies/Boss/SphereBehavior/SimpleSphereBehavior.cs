@@ -22,6 +22,7 @@ public class SimpleSphereBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         SetTargetWithOffset(3);
+        CameraShake.Shake(.05f, .05f);
     }
 
     void Update()

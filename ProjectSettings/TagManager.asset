@@ -14,6 +14,8 @@ TagManager:
   - Guard
   - Mnemo
   - Uranie
+  - Attack Sphere
+  - Spawner
   layers:
   - Default
   - TransparentFX

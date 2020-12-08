@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3164492901369988162}
   m_Layer: 0
   m_Name: SimpleSpherePrefab
-  m_TagString: Untagged
+  m_TagString: Attack Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
