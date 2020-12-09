@@ -412,6 +412,9 @@ MonoBehaviour:
   speed: 10
   waitTime: 1.2
   randomPositions: {fileID: 0}
+  simpleBall: {fileID: 0}
+  multipleBall: {fileID: 0}
+  gravityBall: {fileID: 0}
   isAttacking: 0
   isMoving: 0
   isWaiting: 0
@@ -430,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereAttackPrefab: {fileID: 3164492901369988161, guid: 8bb5307a95fe8944e827e0eaacf191eb, type: 3}
   spawnRadius: 1.2
+  SphereHolder: {fileID: 0}
   sphereSpeed: 3
   sphereNumber: 3
   attackDuration: 3
@@ -448,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 8725614969167911146, guid: a57f51fc18733a446a1a59a6be7d4a8f, type: 3}
   spawnRadius: 1.5
+  SphereHolder: {fileID: 0}
   sphereNumber: 12
   sphereSpeed: 3.5
   attackDuration: 1
@@ -465,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 3804111643990429263, guid: e0e8e4c72d180754eb552955b8e87786, type: 3}
   SphereSpawnerArea: {fileID: 0}
+  SphereHolder: {fileID: 0}
   sphereNumber: 5
   sphereSpeed: 3
   attackDuration: 1
@@ -485,6 +491,7 @@ MonoBehaviour:
   sun: {fileID: 1407715697}
   centerPos: {fileID: 0}
   whiteScreen: {fileID: 0}
+  sphereHolder: {fileID: 0}
   blackSkyColor: {r: 0.023529412, g: 0.023529412, b: 0.03137255, a: 0}
   whiteSkyColor: {r: 0.91764706, g: 1, b: 1, a: 0}
   moveToCenterSpeed: 3

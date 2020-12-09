@@ -54,11 +54,12 @@ public class Transistor : MonoBehaviour
 	{
         uranie.StopAllCoroutines();
 
-        //uranie.simpleBall.StopAllCoroutines();
-        //uranie.multipleBall.StopAllCoroutines();
-        //uranie.gravityBall.StopAllCoroutines();
+        uranie.simpleBall.StopAllCoroutines();
+        uranie.multipleBall.StopAllCoroutines();
+        uranie.gravityBall.StopAllCoroutines();
 
         uranie.state = Uranie.State.Transition;
+        uranie.isAttacking = false;
 
         //Remove all current Spheres.
         for (int i = 0; i < sphereHolder.childCount; i++)
@@ -83,7 +84,7 @@ public class Transistor : MonoBehaviour
         yield return new WaitForSeconds(.2f);
 
         //Change music
-        AudioManager.instance.PlayPart1();
+        //²²²²AudioManager.instance.PlayPart1();
 
         //Enable the sun sprite
         sun.gameObject.SetActive(true);
@@ -135,7 +136,7 @@ public class Transistor : MonoBehaviour
         uranie.state = Uranie.State.Wait;
 
         //AudioManager.instance.PlayPart2();
-        AudioManager.instance.PlaySound(AudioManager.instance.Part2Theme, .2f);
+        //AudioManager.instance.PlaySound(AudioManager.instance.Part2Theme, .1f);
 
 
     }

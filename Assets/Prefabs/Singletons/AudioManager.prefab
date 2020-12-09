@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5987045557082197349
 Transform:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
@@ -140,4 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f079d54270d794fa540ca0b051ac9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 100
+  HubTheme: {fileID: 8300000, guid: 6aa280eed1f2b0b46bc4620a093744f6, type: 3}
+  RegionTheme: {fileID: 8300000, guid: 3307003018c72a446b13baf4b7ece227, type: 3}
+  Part1Theme: {fileID: 8300000, guid: c1137a253b83bb04dbd06529a038dcfe, type: 3}
+  Part2Theme: {fileID: 8300000, guid: 8015e700ece274642bcf426acaa4b9ae, type: 3}

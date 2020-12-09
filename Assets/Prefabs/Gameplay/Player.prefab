@@ -15054,7 +15054,7 @@ MonoBehaviour:
   interractionRadius: 0.5
   interractionLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   currentObject: {fileID: 0}
   pp: {fileID: 0}
   examineWindow: {fileID: 0}
@@ -15102,6 +15102,7 @@ MonoBehaviour:
   sideAttackRange: 0.5
   sideAttackDamage: 50
   sideAttackForce: 6
+  verticalPushForce: 3
   downAttackBottomLeft: {fileID: 5715453491162685202}
   downAttackTopRight: {fileID: 5715453490953894787}
   downAttackRange: 0.5
