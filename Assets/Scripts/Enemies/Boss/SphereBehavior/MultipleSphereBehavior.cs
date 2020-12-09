@@ -72,7 +72,7 @@ public class MultipleSphereBehavior : MonoBehaviour
 
     public void SetFire()
 	{
-        //SetTargetWithOffset(3f);
+        SetTargetWithOffset(3f);
         fire = true;
     }
 
@@ -82,4 +82,5 @@ public class MultipleSphereBehavior : MonoBehaviour
         dir = (targetPos - transform.position).normalized * offset;
         targetPos += dir;
     }
+
 }

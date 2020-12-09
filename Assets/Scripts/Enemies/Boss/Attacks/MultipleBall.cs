@@ -7,16 +7,39 @@ public class MultipleBall : MonoBehaviour
     [Header("Multiple Ball Attack")]
 
     public GameObject spherePrefab;
+    public float spawnRadius = 1.2f;
+
+    [Header ("Datas")]
     public int sphereNumber;
     public float sphereSpeed;
     public float attackDuration;
-    public float spawnRadius = 1.2f;
+
 
     private Uranie uranie;
 
     void Start()
     {
         uranie = GetComponent<Uranie>();
+    }
+
+    public void SetPhase1()
+    {
+        sphereSpeed = 2.3f;
+        sphereNumber = 6;
+        attackDuration = 2f;
+    }
+    public void SetPhase2()
+    {
+        sphereSpeed = 2.8f;
+        sphereNumber = 8;
+        attackDuration = 1.5f;
+    }
+
+    public void SetPhase3()
+    {
+        sphereSpeed = 3.5f;
+        sphereNumber = 12;
+        attackDuration = 1f;
     }
 
     public void Attack()

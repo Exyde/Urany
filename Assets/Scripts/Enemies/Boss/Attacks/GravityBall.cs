@@ -7,14 +7,15 @@ public class GravityBall : MonoBehaviour
     [Header("Gravity Ball Attack")]
 
     public GameObject spherePrefab;
+    public Transform SphereSpawnerArea;
 
+    [Header ("Datas")]
     public int sphereNumber;
     public float sphereSpeed;
     public float attackDuration;
 
     private Uranie uranie;
 
-    public Transform SphereSpawnerArea;
     Vector3 _center;
     Vector3 _size;
 
@@ -28,6 +29,26 @@ public class GravityBall : MonoBehaviour
         _center = bounds.center;
         _size = bounds.size;
     }
+    public void SetPhase1()
+    {
+        sphereSpeed = 3f;
+        sphereNumber = 5;
+        attackDuration = 1f;
+    }
+    public void SetPhase2()
+    {
+        sphereSpeed = 3.5f;
+        sphereNumber = 8;
+        attackDuration = .8f;
+    }
+
+    public void SetPhase3()
+    {
+        sphereSpeed = 4f;
+        sphereNumber = 12;
+        attackDuration = .6f;
+    }
+
 
     public void Attack()
     {

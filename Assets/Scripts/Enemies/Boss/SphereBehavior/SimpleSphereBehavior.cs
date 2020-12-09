@@ -35,6 +35,12 @@ public class SimpleSphereBehavior : MonoBehaviour
 		}
     }
 
+    public void SetData(float _speed, float _timeUntileFire)
+	{
+        speed = _speed;
+        timeUntilFire = _timeUntileFire;
+	}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Uranie")

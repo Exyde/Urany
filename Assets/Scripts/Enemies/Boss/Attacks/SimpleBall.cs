@@ -6,15 +6,15 @@ public class SimpleBall : MonoBehaviour
 {
     [Header("Simple Ball attack")]
 
-    [Header ("Phase 1")]
     public GameObject sphereAttackPrefab;
+    public float spawnRadius = 1.2f;
 
+    [Header("Datas")]
     public float sphereSpeed;
     public int sphereNumber;
     public float attackDuration;
     public float timeUntilFire;
 
-    public float spawnRadius = 1.2f;
 
     private Uranie uranie;
 
@@ -38,18 +38,18 @@ public class SimpleBall : MonoBehaviour
 	}
     public void SetPhase2()
 	{
-        sphereSpeed += 1f;
+        sphereSpeed = 3.2f;
         sphereNumber = 4;
-        attackDuration = 2f;
-        timeUntilFire = .35f;
+        attackDuration = 2.5f;
+        timeUntilFire = .3f;
 	}
 
     public void SetPhase3()
     {
-        sphereSpeed += .2f;
-        sphereNumber = 6;
-        attackDuration = 1.5f;
-        timeUntilFire = .3f;
+        sphereSpeed = 3.5f;
+        sphereNumber = 5;
+        attackDuration = 2f;
+        timeUntilFire = .2f;
     }
 
     IEnumerator DoAttack()
@@ -62,7 +62,7 @@ public class SimpleBall : MonoBehaviour
         {
             Vector2 spherePos = (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
             GameObject sphere = Instantiate(sphereAttackPrefab, spherePos, Quaternion.identity);
-            sphere.GetComponent<SimpleSphereBehavior>().speed = sphereSpeed;
+            sphere.GetComponent<SimpleSphereBehavior>().SetData(sphereSpeed, timeUntilFire);
 
             currentSpheres.Add(sphere);
 

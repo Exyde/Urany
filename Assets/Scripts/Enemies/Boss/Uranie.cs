@@ -26,6 +26,7 @@ public class Uranie : MonoBehaviour
     public bool isAttacking;
     public bool isMoving;
     public bool isWaiting;
+    public int phase = 1;
 
     public int maxHealth;
     [SerializeField] int currentHealth;
@@ -56,11 +57,13 @@ public class Uranie : MonoBehaviour
 
         randomPos = GetRandomPos();
         player = FindObjectOfType<Movement>().transform;
+
     }
 
     void Update()
 	{
         LookPlayer();
+        SetPhase(phase);
 
         switch (state)
 		{
@@ -175,4 +178,46 @@ public class Uranie : MonoBehaviour
         StopAllCoroutines();
         print("dead");
     }
+
+    void SetPhase(int phase)
+	{
+        switch (phase)
+		{
+            case 1:
+
+                //Urany
+                speed = 8f;
+                waitTime = 1.2f;
+
+                //Attacks
+                simpleBall.SetPhase1();
+                multipleBall.SetPhase1();
+                gravityBall.SetPhase1();
+                break;
+
+            case 2:
+
+                //Urany
+                speed =  9f;
+                waitTime = 1f;
+
+                //Attacks
+                simpleBall.SetPhase2();
+                multipleBall.SetPhase2();
+                gravityBall.SetPhase2();
+                break;
+
+            case 3:
+
+                //Urany
+                speed = 10f;
+                waitTime = .8f;
+
+                //Attacks
+                simpleBall.SetPhase3();
+                multipleBall.SetPhase3();
+                gravityBall.SetPhase3();
+                break;
+        }
+	}
 }

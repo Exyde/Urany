@@ -1891,7 +1891,7 @@ PrefabInstance:
       objectReference: {fileID: 8725614969167911146, guid: a57f51fc18733a446a1a59a6be7d4a8f, type: 3}
     - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: sphereNumber
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: attackDuration
@@ -1920,6 +1920,10 @@ PrefabInstance:
     - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: attackDuration
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: timeUntilFire
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Name
@@ -1999,7 +2003,11 @@ PrefabInstance:
       objectReference: {fileID: 1039358593}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: waitTime
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
