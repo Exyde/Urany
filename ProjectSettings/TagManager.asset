@@ -16,6 +16,7 @@ TagManager:
   - Uranie
   - Attack Sphere
   - Spawner
+  - Destroyable
   layers:
   - Default
   - TransparentFX

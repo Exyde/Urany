@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HackMove : MonoBehaviour
 {
-    bool isHacked;
+    //bool isHacked;
     public Transform target;
 
     public float speed = 1f;
@@ -23,17 +23,14 @@ public class HackMove : MonoBehaviour
     void Update()
     {
 
-        if (isHacked)
-		{
-            transform.position = Vector2.Lerp(transform.position, targetPos, speed * Time.deltaTime);
-		}
-
+        /*
         if (Vector2.Distance (transform.position, targetPos) < .02f)
 		{
             transform.position = targetPos;
             Destroy(this);
 		}
 
+        */
     }
     public void IsHacked()
 	{

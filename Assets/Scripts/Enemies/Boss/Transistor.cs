@@ -30,7 +30,6 @@ public class Transistor : MonoBehaviour
 
         sun.gameObject.SetActive(false);
         moon.gameObject.SetActive(false);
-
     }
 
 	private void Update()
@@ -61,7 +60,7 @@ public class Transistor : MonoBehaviour
 
         uranie.state = Uranie.State.Transition;
 
-
+        //Remove all current Spheres.
         for (int i = 0; i < sphereHolder.childCount; i++)
 		{
             if (sphereHolder.GetChild(i) != null)
@@ -74,7 +73,6 @@ public class Transistor : MonoBehaviour
         player.canMove = false;
 
         //Move Uranie to center
-        //uranie.transform.position = centerPos.position;
         moving = true;
 
         yield return new WaitForSeconds(1.2f);
@@ -84,11 +82,8 @@ public class Transistor : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
 
-
         //Change music
-
-        //Disable white screen
-        whiteScreen.gameObject.SetActive(false);
+        AudioManager.instance.PlayPart1();
 
         //Enable the sun sprite
         sun.gameObject.SetActive(true);
@@ -99,10 +94,13 @@ public class Transistor : MonoBehaviour
         //Change uranie anims to dark ones
         uranie.GetComponent<Animator>().SetTrigger("phase2");
 
+        //Disable white screen
+        whiteScreen.gameObject.SetActive(false);
 
         //Re enable player move
         player.canMove = true;
 
+        //Set good uranie State !
         uranie.state = Uranie.State.Wait;
     }
 
@@ -135,6 +133,10 @@ public class Transistor : MonoBehaviour
         //Re enable player move
         player.canMove = true;
         uranie.state = Uranie.State.Wait;
+
+        //AudioManager.instance.PlayPart2();
+        AudioManager.instance.PlaySound(AudioManager.instance.Part2Theme, .2f);
+
 
     }
 }

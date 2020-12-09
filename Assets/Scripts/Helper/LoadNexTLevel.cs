@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadNexTLevel : MonoBehaviour
 {
 	private LevelLoader levelLoader;
-	[SerializeField] int levelToLoad;
+	[SerializeField] int levelToLoad = default;
     void Start()
     {
 		levelLoader = FindObjectOfType<LevelLoader>();

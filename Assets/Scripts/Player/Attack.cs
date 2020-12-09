@@ -113,6 +113,13 @@ public class Attack : MonoBehaviour
                     return;
 				}
 
+                if (enemy.gameObject.tag == "Destroyable")
+				{
+                    Destroy(enemy.gameObject);
+                    //Instnatiate particle 
+                    return;
+				}
+
                 enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
                 PushEnemy(enemy.transform);
 
