@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 2780f88bbda250b4c88e55fa0094855b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -404,15 +404,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4f2ce9a244b634b9c645c4a616dcf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 150
+  currentHealth: 0
+  phase: 1
+  healthTresholdPhase2: 101
+  healthTresholdPhase3: 51
   speed: 10
   waitTime: 1.2
   randomPositions: {fileID: 0}
   isAttacking: 0
   isMoving: 0
   isWaiting: 0
-  phase: 1
-  maxHealth: 50
-  currentHealth: 0
   state: 0
 --- !u!114 &610565963
 MonoBehaviour:
@@ -481,3 +483,8 @@ MonoBehaviour:
   visuals: {fileID: 3052646883607758410}
   moon: {fileID: 1619842983}
   sun: {fileID: 1407715697}
+  centerPos: {fileID: 0}
+  whiteScreen: {fileID: 0}
+  blackSkyColor: {r: 0.023529412, g: 0.023529412, b: 0.03137255, a: 0}
+  whiteSkyColor: {r: 0.91764706, g: 1, b: 1, a: 0}
+  moveToCenterSpeed: 3

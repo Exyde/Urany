@@ -26,9 +26,12 @@ public class Uranie : MonoBehaviour
     Vector3 randomPos;
 
     [Header ("Attack")]
-    private SimpleBall simpleBall;
-    private MultipleBall multipleBall;
-    private GravityBall gravityBall;
+    [HideInInspector]
+    public SimpleBall simpleBall;
+    [HideInInspector]
+    public MultipleBall multipleBall;
+    [HideInInspector]
+    public GravityBall gravityBall;
 
     [Space]
     [Header("Booleans")]
@@ -41,6 +44,7 @@ public class Uranie : MonoBehaviour
         Move,
         Attack,
         Wait,
+        Transition,
         Dead
 	}
 
@@ -64,27 +68,18 @@ public class Uranie : MonoBehaviour
         randomPos = GetRandomPos();
         player = FindObjectOfType<Movement>().transform;
 
+        phase = 1;
+        SetPhase(phase);
+
     }
 
     void Update()
 	{
-        LookPlayer();
-
-        if (currentHealth < healthTresholdPhase2 && phase == 1)
+        if (state != State.Dead)
 		{
-            SetPhase(2);
-            print("To phase 2");
-            phase = 2;
-		}
-
-        if (currentHealth < healthTresholdPhase3 && phase == 2)
-		{
-            SetPhase(3);
-            print("To phase 3");
-            phase = 3;
+            LookPlayer();
         }
-
-
+           
         switch (state)
 		{
             case State.Move:
@@ -97,6 +92,12 @@ public class Uranie : MonoBehaviour
 
             case State.Wait:
                 HandleWait();
+                break;
+
+            case State.Transition:
+                break;
+
+            case State.Dead:
                 break;
 
             default:
@@ -184,7 +185,24 @@ public class Uranie : MonoBehaviour
     {
         currentHealth -= amount;
 
-        //anim.SetTrigger("Hurt");
+        anim.SetTrigger("hurt");
+
+        if (currentHealth < healthTresholdPhase2 && phase == 1)
+        {
+            SetPhase(2);
+            print("To phase 2");
+            phase = 2;
+
+        }
+
+        if (currentHealth < healthTresholdPhase3 && phase == 2)
+        {
+            SetPhase(3);
+            print("To phase 3");
+            phase = 3;
+            anim.SetTrigger("phase3");
+
+        }
 
         if (currentHealth <= 0)
         {
@@ -195,6 +213,7 @@ public class Uranie : MonoBehaviour
     public void Die()
 	{
         state = State.Dead;
+        GetComponent<Rigidbody2D>().isKinematic = false;
         StopAllCoroutines();
         print("dead");
     }

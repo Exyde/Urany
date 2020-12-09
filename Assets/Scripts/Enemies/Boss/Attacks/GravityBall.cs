@@ -8,6 +8,7 @@ public class GravityBall : MonoBehaviour
 
     public GameObject spherePrefab;
     public Transform SphereSpawnerArea;
+    public Transform SphereHolder;
 
     [Header ("Datas")]
     public int sphereNumber;
@@ -78,6 +79,7 @@ public class GravityBall : MonoBehaviour
             
             GameObject sphere = Instantiate(spherePrefab, spherePos, Quaternion.identity);
             sphere.GetComponent<GravitySphereBehavior>().speed = sphereSpeed;
+            sphere.transform.parent = SphereHolder;
 
             currentSpheres.Add(sphere);
 

@@ -46,7 +46,7 @@ public class GravitySphereBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Uranie")
 		{
-            print("Inside Uranie");
+            //print("Inside Uranie");
 		}
 
         else if (collision.gameObject.tag == "Spawner")
@@ -56,7 +56,7 @@ public class GravitySphereBehavior : MonoBehaviour
 
         else if (collision.gameObject.tag == "Attack Sphere")
 		{
-            print("attackSphere");
+            //print("attackSphere");
 		}
 
         else if (collision.gameObject.tag == "Player")
@@ -66,7 +66,7 @@ public class GravitySphereBehavior : MonoBehaviour
             Destroy(this.gameObject);
         } else
 		{
-            print("else destroy");
+            //print("else destroy");
             CameraShake.Shake(.1f, .1f);
             Destroy(this.gameObject);
 		}

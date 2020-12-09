@@ -21,6 +21,8 @@ public class SimpleSphereBehavior : MonoBehaviour
 
         SetTargetWithOffset(3);
         CameraShake.Shake(.05f, .05f);
+
+        Destroy(this.gameObject, 3f);
     }
 
     void Update()
@@ -45,7 +47,7 @@ public class SimpleSphereBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Uranie")
         {
-            print("Inside Uranie");
+            //print("Inside Uranie");
         }
 
         else if (collision.gameObject.tag == "Spawner")
@@ -55,7 +57,7 @@ public class SimpleSphereBehavior : MonoBehaviour
 
         else if (collision.gameObject.tag == "Attack Sphere")
         {
-            print("attackSphere");
+            //print("attackSphere");
         }
 
         else if (collision.gameObject.tag == "Player")
@@ -67,7 +69,7 @@ public class SimpleSphereBehavior : MonoBehaviour
         }
         else
         {
-            print("else destroy");
+            //print("else destroy");
             CameraShake.Shake(.1f, .1f);
             Destroy(this.gameObject);
         }

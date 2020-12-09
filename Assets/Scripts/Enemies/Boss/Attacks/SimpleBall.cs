@@ -8,6 +8,8 @@ public class SimpleBall : MonoBehaviour
 
     public GameObject sphereAttackPrefab;
     public float spawnRadius = 1.2f;
+    public Transform SphereHolder;
+
 
     [Header("Datas")]
     public float sphereSpeed;
@@ -63,6 +65,7 @@ public class SimpleBall : MonoBehaviour
             Vector2 spherePos = (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
             GameObject sphere = Instantiate(sphereAttackPrefab, spherePos, Quaternion.identity);
             sphere.GetComponent<SimpleSphereBehavior>().SetData(sphereSpeed, timeUntilFire);
+            sphere.transform.parent = SphereHolder;
 
             currentSpheres.Add(sphere);
 

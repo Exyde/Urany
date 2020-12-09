@@ -8,17 +8,17 @@ public class Transistor : MonoBehaviour
     public Transform moon;
     public Transform sun;
     public Transform centerPos;
+    public Transform whiteScreen;
+    public Transform sphereHolder;
 
     private Uranie uranie;
     private Movement player;
 
+    private bool moving;
 
-
-    [Header("Phase 2")]
-    public Color blackSkyColor = new Color(6,6,8,1); //Black
-
-    [Header("Phase 3")]
-    public Color whiteSkyColor = new Color(234, 255, 255, 1);
+    public Color blackSkyColor;
+    public Color whiteSkyColor;
+    public float moveToCenterSpeed;
 
     private Camera cam;
 
@@ -33,7 +33,15 @@ public class Transistor : MonoBehaviour
 
     }
 
-    public void toPhase2()
+	private void Update()
+	{
+		if (moving)
+		{
+            transform.position = Vector2.MoveTowards(transform.position, centerPos.position, Time.deltaTime * moveToCenterSpeed);
+		}
+	}
+
+	public void toPhase2()
 	{
         StartCoroutine(Phase2());
     }
@@ -45,15 +53,42 @@ public class Transistor : MonoBehaviour
 
     IEnumerator Phase2()
 	{
-        //Move Uranie to center
-        uranie.transform.position = centerPos.position;
+        uranie.StopAllCoroutines();
+
+        //uranie.simpleBall.StopAllCoroutines();
+        //uranie.multipleBall.StopAllCoroutines();
+        //uranie.gravityBall.StopAllCoroutines();
+
+        uranie.state = Uranie.State.Transition;
+
+
+        for (int i = 0; i < sphereHolder.childCount; i++)
+		{
+            if (sphereHolder.GetChild(i) != null)
+			{
+                Destroy(sphereHolder.GetChild(i).gameObject);
+			}
+		}
 
         //Disable player movement
         player.canMove = false;
 
-        //Flash Screen in White
+        //Move Uranie to center
+        //uranie.transform.position = centerPos.position;
+        moving = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
+        //Enable White Scree
+        whiteScreen.gameObject.SetActive(true);
+        moving = false;
+
+        yield return new WaitForSeconds(.2f);
+
+
+        //Change music
+
+        //Disable white screen
+        whiteScreen.gameObject.SetActive(false);
 
         //Enable the sun sprite
         sun.gameObject.SetActive(true);
@@ -62,14 +97,19 @@ public class Transistor : MonoBehaviour
         cam.backgroundColor = blackSkyColor;
 
         //Change uranie anims to dark ones
+        uranie.GetComponent<Animator>().SetTrigger("phase2");
+
 
         //Re enable player move
         player.canMove = true;
 
+        uranie.state = Uranie.State.Wait;
     }
 
     IEnumerator Phase3()
 	{
+        uranie.state = Uranie.State.Transition;
+        uranie.StopAllCoroutines();
         //Move Uranie to center
         uranie.transform.position = centerPos.position;
 
@@ -77,8 +117,11 @@ public class Transistor : MonoBehaviour
         player.canMove = false;
 
         //Flash Screen in White
+        whiteScreen.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
+
+        whiteScreen.gameObject.SetActive(false);
 
         //Enable the sun sprite
         moon.gameObject.SetActive(true);
@@ -87,8 +130,11 @@ public class Transistor : MonoBehaviour
         cam.backgroundColor = whiteSkyColor;
 
         //Change uranie anims to dark ones
+        uranie.GetComponent<Animator>().SetTrigger("phase3");
 
         //Re enable player move
         player.canMove = true;
+        uranie.state = Uranie.State.Wait;
+
     }
 }
