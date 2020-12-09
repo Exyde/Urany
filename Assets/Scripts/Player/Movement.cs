@@ -486,7 +486,7 @@ public class Movement : MonoBehaviour
         //groundImpactPS.Play();
 
         // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
-        Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+        Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);  
 
         GameObject smoke = Instantiate(groundImpactSmoke, temp, Quaternion.identity);
         //GameObject smoke = Instantiate(groundImpactSmoke, transform.position, Quaternion.identity);

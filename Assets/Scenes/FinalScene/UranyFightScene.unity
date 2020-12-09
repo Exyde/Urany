@@ -429,6 +429,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 50.773712
       objectReference: {fileID: 0}
+    - target: {fileID: 5174923351213593570, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174923351229130950, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5174923351939503159, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 4.423401
@@ -459,6 +467,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5174923352260785149, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174923352330308484, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -655,6 +667,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9055447331294733405, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055447331294733405, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055447331294733405, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2830189
+      objectReference: {fileID: 0}
     - target: {fileID: 9055447331294733406, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1721,6 +1745,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1b03c24aca52e24d97386327c996911, type: 3}
+--- !u!1 &2017788120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2017788121}
+  m_Layer: 10
+  m_Name: CenterPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2017788121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017788120}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2024125297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1858,84 +1912,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: spherePrefab
-      value: 
-      objectReference: {fileID: 3804111643990429263, guid: e0e8e4c72d180754eb552955b8e87786, type: 3}
-    - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereNumber
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: attackDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: GravitySphereSpawnerArea
-      value: 
-      objectReference: {fileID: 1039358593}
-    - target: {fileID: 610565961, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: SphereSpawnerArea
       value: 
       objectReference: {fileID: 1039358593}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: exploseSpherePrefab
+    - target: {fileID: 1407715698, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: centerPos
       value: 
+      objectReference: {fileID: 2017788121}
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: blackSkyColor.r
+      value: 0.023529412
       objectReference: {fileID: 0}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: spherePrefab
-      value: 
-      objectReference: {fileID: 8725614969167911146, guid: a57f51fc18733a446a1a59a6be7d4a8f, type: 3}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereNumber
-      value: 10
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: blackSkyColor.g
+      value: 0.023529412
       objectReference: {fileID: 0}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: attackDuration
-      value: 2
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: blackSkyColor.b
+      value: 0.03137255
       objectReference: {fileID: 0}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: spawnRadius
-      value: 1.5
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: whiteSkyColor.r
+      value: 0.91764706
       objectReference: {fileID: 0}
-    - target: {fileID: 610565962, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereSpeed
-      value: 2
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: whiteSkyColor.g
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereAttackPrefab
-      value: 
-      objectReference: {fileID: 3164492901369988161, guid: 8bb5307a95fe8944e827e0eaacf191eb, type: 3}
-    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: sphereNumber
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: attackDuration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 610565963, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: timeUntilFire
-      value: 0.4
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: whiteSkyColor.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Name
       value: UranyBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: m_TagString
-      value: Uranie
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004428, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1981,33 +1995,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4586143569641004431, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: randomPositions
       value: 
       objectReference: {fileID: 1690882889}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: GravitySphereSpawnerArea
-      value: 
-      objectReference: {fileID: 1039358593}
-    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: healthTresholdPhase2
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
-      propertyPath: waitTime
-      value: 1.2
+      propertyPath: healthTresholdPhase3
+      value: 51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}

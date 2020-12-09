@@ -9,6 +9,15 @@ public class Uranie : MonoBehaviour
     private SpriteRenderer sr;
     private Animator anim;
     private Transform player;
+    private Transistor transistor;
+
+    [Header ("Phases")]
+    public int maxHealth;
+    [SerializeField] int currentHealth;
+    public int phase = 1;
+    public int healthTresholdPhase2;
+    public int healthTresholdPhase3;
+
 
     [Header("Movement")]
     public float speed;
@@ -26,10 +35,6 @@ public class Uranie : MonoBehaviour
     public bool isAttacking;
     public bool isMoving;
     public bool isWaiting;
-    public int phase = 1;
-
-    public int maxHealth;
-    [SerializeField] int currentHealth;
 
     public enum State
 	{
@@ -46,6 +51,7 @@ public class Uranie : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        transistor = GetComponent<Transistor>();
 
         gravityBall = GetComponent<GravityBall>();
         multipleBall = GetComponent<MultipleBall>();
@@ -63,7 +69,21 @@ public class Uranie : MonoBehaviour
     void Update()
 	{
         LookPlayer();
-        SetPhase(phase);
+
+        if (currentHealth < healthTresholdPhase2 && phase == 1)
+		{
+            SetPhase(2);
+            print("To phase 2");
+            phase = 2;
+		}
+
+        if (currentHealth < healthTresholdPhase3 && phase == 2)
+		{
+            SetPhase(3);
+            print("To phase 3");
+            phase = 3;
+        }
+
 
         switch (state)
 		{
@@ -193,9 +213,13 @@ public class Uranie : MonoBehaviour
                 simpleBall.SetPhase1();
                 multipleBall.SetPhase1();
                 gravityBall.SetPhase1();
+
+                phase = 1;
                 break;
 
             case 2:
+
+                transistor.toPhase2();
 
                 //Urany
                 speed =  9f;
@@ -205,9 +229,12 @@ public class Uranie : MonoBehaviour
                 simpleBall.SetPhase2();
                 multipleBall.SetPhase2();
                 gravityBall.SetPhase2();
+
                 break;
 
             case 3:
+
+                transistor.toPhase3();
 
                 //Urany
                 speed = 10f;
@@ -217,6 +244,7 @@ public class Uranie : MonoBehaviour
                 simpleBall.SetPhase3();
                 multipleBall.SetPhase3();
                 gravityBall.SetPhase3();
+
                 break;
         }
 	}
