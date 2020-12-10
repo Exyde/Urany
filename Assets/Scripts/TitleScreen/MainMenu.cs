@@ -13,7 +13,8 @@ public class MainMenu : MonoBehaviour
 	}
 	public void PlayGame()
 	{
-		levelLoader.OnNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+		//levelLoader.OnNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+		levelLoader.OnNextLevel(4); //Video scene
 	}
 
 	public void QuitGame()

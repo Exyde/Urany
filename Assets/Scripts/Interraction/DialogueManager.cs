@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     public Text npcNameText;
     public Text dialogueText;
+    public Image npcImage;
 
     public Animator anim;
     public float typeSpeed = .2f;
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
             FindObjectOfType<Movement>().canMove = false;
             isTalking = true;
             npcNameText.text = dialogue.npcName;
+            npcImage.sprite = dialogue.npcSprite;
             sentences.Clear();
 
             foreach (string sentence in dialogue.sentences)

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScene/UranyFightScene.unity
     guid: 63e158c19c51a91498df1aeefb8fee29
+  - enabled: 1
+    path: Assets/Scenes/FinalScene/VideoIntro.unity
+    guid: 65fc076fbb02a7647a01505114366f86
   m_configObjects: {}
