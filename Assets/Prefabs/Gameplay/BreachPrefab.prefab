@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7a6b91a48c16131459a17ac24ff3d6b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputDisplayer: {fileID: 841236543580018543}
   player: {fileID: 0}
-  hackingGame: {fileID: 0}
+  hackingGame: {fileID: 991976020448285652}
   maxHackRange: 5
   onBreachColor: {r: 0.7924528, g: 0.38159448, b: 0.10840159, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
@@ -163,18 +163,6 @@ MonoBehaviour:
   customEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HackMove, Assembly-CSharp
-        m_MethodName: IsHacked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HackMove, Assembly-CSharp
         m_MethodName: IsHacked
@@ -271,6 +259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HackingGame1
       objectReference: {fileID: 0}
+    - target: {fileID: 4621026841823722436, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4621026841823722437, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -315,6 +307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4621026841823722440, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4621026841823722442, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
       propertyPath: breach
       value: 
@@ -326,3 +322,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4621026841823722437, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
   m_PrefabInstance: {fileID: 5612922758849898526}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &991976020448285652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4621026841823722442, guid: 43522b3768d6a6341a53c4395578b07f, type: 3}
+  m_PrefabInstance: {fileID: 5612922758849898526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e11f98ac9f887a4797018bc73786f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
