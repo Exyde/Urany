@@ -310,7 +310,16 @@ public class Movement : MonoBehaviour
         //particle.Play();
 
         if(!wall) {
-            Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+
+            float yTempDecalage = (int)Math.Round(transform.position.y) - transform.position.y;
+            Vector3 temp;
+            if(yTempDecalage > 0.25f) {
+                temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y) - 0.5f, transform.position.z);
+            } else if((yTempDecalage <= 0.25f && yTempDecalage >= 0) || (yTempDecalage >= -0.25f && yTempDecalage <= 0)) {
+                temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+            } else {
+                temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y) + 0.5f, transform.position.z);
+            }
 
             GameObject smoke = Instantiate(jumpSmoke, temp, Quaternion.identity);
             smoke.transform.localScale = new Vector3(side, 1, 1); 
@@ -319,7 +328,7 @@ public class Movement : MonoBehaviour
             Vector3 temp = new Vector3((int)Math.Round(transform.position.x), transform.position.y, transform.position.z);
             float height = GetComponentInChildren<SpriteRenderer>().sprite.rect.y;
 
-            temp = new Vector3(transform.position.x, transform.position.y + height / 2, 0);
+            //temp = new Vector3(transform.position.x, transform.position.y + height / 2, 0);
 
 
             GameObject smoke = Instantiate(wallJumpSmoke, temp, Quaternion.identity);
@@ -491,9 +500,20 @@ public class Movement : MonoBehaviour
 
         // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
         float height = GetComponentInChildren<SpriteRenderer>().sprite.rect.y;
-        Vector3 temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
 
-        temp = new Vector3(transform.position.x, transform.position.y + height / 2, 0);
+        float yTempDecalage = (int)Math.Round(transform.position.y) - transform.position.y;
+        Vector3 temp;
+        if(yTempDecalage > 0.25f) {
+            temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y) - 0.5f, transform.position.z);
+        } else if((yTempDecalage <= 0.25f && yTempDecalage >= 0) || (yTempDecalage >= -0.25f && yTempDecalage <= 0)) {
+            temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y), transform.position.z);
+        } else {
+            temp = new Vector3(transform.position.x, (int)Math.Round(transform.position.y) + 0.5f, transform.position.z);
+        }
+
+        
+
+        //temp = new Vector3(transform.position.x, transform.position.y + height / 2, 0);
         GameObject smoke = Instantiate(groundImpactSmoke, temp, Quaternion.identity);
         //GameObject smoke = Instantiate(groundImpactSmoke, transform.position, Quaternion.identity);
 
