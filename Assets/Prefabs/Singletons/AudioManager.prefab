@@ -144,3 +144,4 @@ MonoBehaviour:
   RegionTheme: {fileID: 8300000, guid: 3307003018c72a446b13baf4b7ece227, type: 3}
   Part1Theme: {fileID: 8300000, guid: c1137a253b83bb04dbd06529a038dcfe, type: 3}
   Part2Theme: {fileID: 8300000, guid: 8015e700ece274642bcf426acaa4b9ae, type: 3}
+  Typo: {fileID: 8300000, guid: e855636d05be7bd4ca36a599ce08e56b, type: 3}

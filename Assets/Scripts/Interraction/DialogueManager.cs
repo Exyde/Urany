@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
 		{
             dialogueText.text += c;
-            //Play sound fx
+            AudioManager.instance.TypoFX();
             yield return new WaitForSeconds (typeSpeed);
 
 		}

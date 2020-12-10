@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Part1Theme;
     public AudioClip Part2Theme;
 
+    public AudioClip Typo;
     //Sounds
     //TODO : List all sounds fx needed for the game.
     
@@ -81,4 +82,9 @@ public class AudioManager : MonoBehaviour
         GameObject.Destroy(go, audioSource.clip.length + 0.10f);
        // return clip.length;
     }
+
+    public void TypoFX()
+	{
+        PlaySound(Typo, .2f);
+	}
 }
