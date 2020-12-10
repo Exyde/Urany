@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
     public float lookSmoothTimeX;
     public float verticalSmoothTime;
 
-    private float mnemoOffset = 2.8f;
+    public float mnemoOffset = 2.5f;
     private float startOffset;
 
     //Current look and target we want to smooth to.

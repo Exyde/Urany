@@ -2071,6 +2071,10 @@ PrefabInstance:
       propertyPath: sphereHolder
       value: 
       objectReference: {fileID: 1548086672}
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: moonSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Name
       value: UranyBoss
