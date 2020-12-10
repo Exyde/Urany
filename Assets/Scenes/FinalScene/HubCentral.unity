@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270478658}
   - component: {fileID: 270478659}
+  - component: {fileID: 270478660}
   m_Layer: 0
   m_Name: Mnemosyne_Pillars
   m_TagString: Untagged
@@ -279,6 +280,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &270478660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270478657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733a7b72910528844b9dd143090607c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxEffect: 0.05
 --- !u!1 &392296226
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +401,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 12
+  m_PointLightOuterRadius: 5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -408,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518708421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2809148, y: 5.04479, z: 9.549235}
+  m_LocalPosition: {x: 1.2809148, y: -1.55, z: 9.549235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1192520007}
@@ -432,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 9055447331294733405, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.03137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055447331294733405, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9055447331294733406, guid: 205b454ee8da1bf4f81c1256fb2fbf94, type: 3}
       propertyPath: m_Name
@@ -505,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622869378}
   - component: {fileID: 622869379}
+  - component: {fileID: 622869380}
   m_Layer: 0
   m_Name: Mnemosyne_Background
   m_TagString: Untagged
@@ -577,6 +596,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &622869380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622869377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733a7b72910528844b9dd143090607c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxEffect: 0
 --- !u!1001 &750556430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -803,7 +835,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -1352,6 +1384,7 @@ GameObject:
   - component: {fileID: 1525985808}
   - component: {fileID: 1525985807}
   - component: {fileID: 1525985809}
+  - component: {fileID: 1525985810}
   m_Layer: 0
   m_Name: Mnemosyne
   m_TagString: Mnemo
@@ -1450,6 +1483,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.783951, y: 2.8190842}
   m_EdgeRadius: 0
+--- !u!114 &1525985810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525985806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733a7b72910528844b9dd143090607c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxEffect: 0.1
 --- !u!1001 &1546218530
 PrefabInstance:
   m_ObjectHideFlags: 0

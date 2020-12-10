@@ -61,6 +61,15 @@ public class AudioManager : MonoBehaviour
         musicPlayer.Stop();
 	}
 
+    public void PlayMusic (string level)
+	{
+        if (level == "Region")
+		{
+            musicPlayer.clip = RegionTheme;
+            musicPlayer.Play();
+		}
+	}
+
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
         GameObject go = new GameObject();
