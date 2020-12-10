@@ -1,20 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
     public LevelLoader loader;
+    public float startDelay = 1.5f;
+    bool playing = false;
+
+    public float timer;
+    public VideoPlayer Player;
+
+	private void Start()
+	{
+        timer = (float)Player.clip.length;
+        //Player = GetComponent<VideoPlayer>();
+        print(Player);
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        startDelay -= Time.deltaTime;
+
+        if (startDelay <= 0 && !playing)
 		{
-            loader.OnNextLevel(1);
+            Player.Play();
+            playing = true;
 		}
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (playing) timer -= Time.deltaTime;
+
+        if (timer <= 0 && playing)
 		{
+            loader.OnNextLevel(1);
+        }
+
+        HandleInputs();
+    }
+
+    public void HandleInputs()
+	{
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            loader.OnNextLevel(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
             loader.OnNextLevel(0);
         }
     }
