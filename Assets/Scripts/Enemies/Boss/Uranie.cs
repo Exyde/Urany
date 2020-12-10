@@ -63,13 +63,15 @@ public class Uranie : MonoBehaviour
 
         currentHealth = maxHealth;
 
-        state = State.Move;
+        state = State.Transition;
 
         randomPos = GetRandomPos();
         player = FindObjectOfType<Movement>().transform;
 
         phase = 1;
         SetPhase(phase);
+
+        
 
     }
 
@@ -183,6 +185,8 @@ public class Uranie : MonoBehaviour
 	}
     public virtual void TakeDamage(int amount)
     {
+        if (state == State.Transition) return;
+
         currentHealth -= amount;
 
         anim.SetTrigger("hurt");
@@ -224,6 +228,7 @@ public class Uranie : MonoBehaviour
 		{
             case 1:
 
+                transistor.toPhase1();
                 //Urany
                 speed = 8f;
                 waitTime = 1.2f;

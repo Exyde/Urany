@@ -41,7 +41,11 @@ public class Transistor : MonoBehaviour
 		}
 	}
 
-	public void toPhase2()
+    public void toPhase1()
+    {
+        StartCoroutine(Phase1());
+    }
+    public void toPhase2()
 	{
         StartCoroutine(Phase2());
     }
@@ -74,6 +78,48 @@ public class Transistor : MonoBehaviour
             }
         }
     }
+
+    IEnumerator Phase1()
+    {
+        PrepareUranie();
+        //DestroySpheres();
+
+        //Stop music
+        AudioManager.instance.StopMusic();
+
+        //Disable player movement
+        player.canMove = false;
+
+        //Move Uranie to center
+        moving = true;
+
+        while (Vector2.Distance(transform.position, centerPos.position) > .2f)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(.2f);
+
+        //Enable White Screen
+        whiteScreen.gameObject.SetActive(true);
+        moving = false;
+
+        yield return new WaitForSeconds(.2f);
+
+        //Change music
+        AudioManager.instance.PlayPart1();
+
+        //Disable white screen
+        whiteScreen.gameObject.SetActive(false);
+
+        //Re enable player move
+        player.canMove = true;
+
+        //Set good uranie State !
+        uranie.state = Uranie.State.Wait;
+    }
+
+
 
     IEnumerator Phase2()
 	{

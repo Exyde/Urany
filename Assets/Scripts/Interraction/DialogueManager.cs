@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     public bool isTalking;
     public bool textIsWriting;
 
+    public bool endDialogue = false;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -72,7 +74,9 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
 		{
             dialogueText.text += c;
+            //Play sound fx
             yield return new WaitForSeconds (typeSpeed);
+
 		}
 
         textIsWriting = false;
@@ -82,6 +86,9 @@ public class DialogueManager : MonoBehaviour
         anim.SetBool("isOpen", false);
         FindObjectOfType<Movement>().canMove = true;
         isTalking = false;
+        endDialogue = true;
+
+
     }
 
     private void Update()
