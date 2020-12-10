@@ -19,6 +19,7 @@ public class Transistor : MonoBehaviour
     public Color blackSkyColor;
     public Color whiteSkyColor;
     public float moveToCenterSpeed;
+    public float moonSpeed = 2f;
 
     private Camera cam;
 
@@ -50,7 +51,7 @@ public class Transistor : MonoBehaviour
         StartCoroutine(Phase3());
     }
 
-    IEnumerator Phase2()
+    public void PrepareUranie()
 	{
         uranie.StopAllCoroutines();
 
@@ -60,15 +61,27 @@ public class Transistor : MonoBehaviour
 
         uranie.state = Uranie.State.Transition;
         uranie.isAttacking = false;
+    }
 
+    public void DestroySpheres()
+	{
         //Remove all current Spheres.
         for (int i = 0; i < sphereHolder.childCount; i++)
-		{
+        {
             if (sphereHolder.GetChild(i) != null)
-			{
+            {
                 Destroy(sphereHolder.GetChild(i).gameObject);
-			}
-		}
+            }
+        }
+    }
+
+    IEnumerator Phase2()
+	{
+        PrepareUranie();
+        DestroySpheres();
+
+        //Stop music
+        AudioManager.instance.StopMusic();
 
         //Disable player movement
         player.canMove = false;
@@ -76,15 +89,22 @@ public class Transistor : MonoBehaviour
         //Move Uranie to center
         moving = true;
 
-        yield return new WaitForSeconds(1.2f);
-        //Enable White Scree
+        while (Vector2.Distance (transform.position, centerPos.position) > .2f)
+		{
+            yield return null;
+		}
+
+        yield return new WaitForSeconds(.2f);
+
+
+        //Enable White Screen
         whiteScreen.gameObject.SetActive(true);
         moving = false;
 
         yield return new WaitForSeconds(.2f);
 
         //Change music
-        //²²²²AudioManager.instance.PlayPart1();
+        AudioManager.instance.PlayPart1();
 
         //Enable the sun sprite
         sun.gameObject.SetActive(true);
@@ -107,23 +127,49 @@ public class Transistor : MonoBehaviour
 
     IEnumerator Phase3()
 	{
-        uranie.state = Uranie.State.Transition;
-        uranie.StopAllCoroutines();
-        //Move Uranie to center
-        uranie.transform.position = centerPos.position;
+        PrepareUranie();
+        DestroySpheres();
+
+        //Stop music
+        AudioManager.instance.StopMusic();
 
         //Disable player movement
         player.canMove = false;
 
+        //Move Uranie to center
+        moving = true;
+
+        while (Vector2.Distance(transform.position, centerPos.position) > .2f)
+        {
+            yield return null;
+        }
+
+
+        yield return new WaitForSeconds(.2f);
+
+        //Moon Rising Part
+        //Enable the moon sprite
+        moon.gameObject.SetActive(true);
+
+        //Move the moon to it spots
+
+        while (Vector2.Distance(transform.position, moon.position) > .2f)
+        {
+            moon.position = Vector2.Lerp(moon.position, transform.position, moonSpeed * Time.deltaTime);
+
+            //yield return new WaitForSeconds(.1f);
+            yield return null;
+        }
+
+        moon.position = transform.position;
+
         //Flash Screen in White
         whiteScreen.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
 
+        //Disable white screen
         whiteScreen.gameObject.SetActive(false);
-
-        //Enable the sun sprite
-        moon.gameObject.SetActive(true);
 
         //Change camera or background color
         cam.backgroundColor = whiteSkyColor;
@@ -135,9 +181,7 @@ public class Transistor : MonoBehaviour
         player.canMove = true;
         uranie.state = Uranie.State.Wait;
 
-        //AudioManager.instance.PlayPart2();
+        AudioManager.instance.PlayPart2();
         //AudioManager.instance.PlaySound(AudioManager.instance.Part2Theme, .1f);
-
-
     }
 }

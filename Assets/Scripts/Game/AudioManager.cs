@@ -55,6 +55,11 @@ public class AudioManager : MonoBehaviour
         musicPlayer.clip = Part2Theme;
         musicPlayer.Play();
     }
+    
+    public void StopMusic()
+	{
+        musicPlayer.Stop();
+	}
 
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
