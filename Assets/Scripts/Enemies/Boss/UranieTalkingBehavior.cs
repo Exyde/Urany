@@ -5,18 +5,19 @@ using UnityEngine;
 public class UranieTalkingBehavior : MonoBehaviour
 {
     public GameObject uranieBoss;
-    DialogueManager dm;
+    public DialogueManager dm;
 
     void Start()
     {
-        dm = FindObjectOfType<DialogueManager>();
+        //dm = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
     {
         if (dm.endDialogue)
 		{
-            uranieBoss.SetActive(true);
+            //uranieBoss.SetActive(true);
+            uranieBoss.GetComponent<Uranie>().enabled = true;
             Destroy(this.gameObject);
 		}
     }

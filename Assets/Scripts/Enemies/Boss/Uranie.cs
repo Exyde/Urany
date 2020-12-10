@@ -70,12 +70,31 @@ public class Uranie : MonoBehaviour
 
         phase = 1;
         SetPhase(phase);
-
-        
-
     }
 
-    void Update()
+	private void OnEnable()
+	{
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        transistor = GetComponent<Transistor>();
+
+        gravityBall = GetComponent<GravityBall>();
+        multipleBall = GetComponent<MultipleBall>();
+        simpleBall = GetComponent<SimpleBall>();
+
+        currentHealth = maxHealth;
+
+        state = State.Transition;
+
+        randomPos = GetRandomPos();
+        player = FindObjectOfType<Movement>().transform;
+
+        phase = 1;
+        SetPhase(phase);
+    }
+
+	void Update()
 	{
         if (state != State.Dead)
 		{
@@ -228,7 +247,6 @@ public class Uranie : MonoBehaviour
 		{
             case 1:
 
-                transistor.toPhase1();
                 //Urany
                 speed = 8f;
                 waitTime = 1.2f;
@@ -239,6 +257,9 @@ public class Uranie : MonoBehaviour
                 gravityBall.SetPhase1();
 
                 phase = 1;
+
+                transistor.toPhase1();
+
                 break;
 
             case 2:

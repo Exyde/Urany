@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
             npcNameText.text = dialogue.npcName;
             npcImage.sprite = dialogue.npcSprite;
             sentences.Clear();
+            endDialogue = false;
 
             foreach (string sentence in dialogue.sentences)
             {
@@ -87,8 +88,6 @@ public class DialogueManager : MonoBehaviour
         FindObjectOfType<Movement>().canMove = true;
         isTalking = false;
         endDialogue = true;
-
-
     }
 
     private void Update()

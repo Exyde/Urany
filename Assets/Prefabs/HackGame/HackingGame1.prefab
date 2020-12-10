@@ -101,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 410
   m_Sprite: {fileID: 21300000, guid: 7a6b91a48c16131459a17ac24ff3d6b1, type: 3}
   m_Color: {r: 0.044455323, g: 0.254717, b: 0.2527198, a: 1}
   m_FlipX: 0
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 410
   m_Sprite: {fileID: 21300000, guid: 7a6b91a48c16131459a17ac24ff3d6b1, type: 3}
   m_Color: {r: 0.044455323, g: 0.254717, b: 0.2527198, a: 1}
   m_FlipX: 0
@@ -362,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 400
   m_Sprite: {fileID: 21300000, guid: e905ed103f73a7542aabcee36c5749e8, type: 3}
   m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_FlipX: 0
@@ -420,6 +420,7 @@ MonoBehaviour:
   hackPlayerPrefab: {fileID: 945004223807163736, guid: 1de5a83e89441ad4188d4a8a0b4eeb36, type: 3}
   currentPointColor: {r: 0.5294118, g: 0.23529412, b: 0.15294118, a: 0.80784315}
   defaultColor: {r: 0.043137256, g: 0.25490198, b: 0.2509804, a: 1}
+  pp: {fileID: 0}
   points: {fileID: 4621026841253476458}
   playerHolder: {fileID: 4621026840150212844}
 --- !u!120 &4621026841823722441
@@ -589,7 +590,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 410
   m_Sprite: {fileID: 21300000, guid: 7a6b91a48c16131459a17ac24ff3d6b1, type: 3}
   m_Color: {r: 0.044455323, g: 0.254717, b: 0.2527198, a: 1}
   m_FlipX: 0
@@ -684,7 +685,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 410
   m_Sprite: {fileID: 21300000, guid: 7a6b91a48c16131459a17ac24ff3d6b1, type: 3}
   m_Color: {r: 0.044455323, g: 0.254717, b: 0.2527198, a: 1}
   m_FlipX: 0
@@ -721,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4190134840218400997, guid: be45d240621714b45a69aaa4c37d3b78, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 4190134840218400997, guid: be45d240621714b45a69aaa4c37d3b78, type: 3}
       propertyPath: m_Sprite
@@ -806,7 +807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4190134840218400997, guid: be45d240621714b45a69aaa4c37d3b78, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 4190134840218400997, guid: be45d240621714b45a69aaa4c37d3b78, type: 3}
       propertyPath: m_Sprite

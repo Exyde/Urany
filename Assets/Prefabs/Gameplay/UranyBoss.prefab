@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619842982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3052646883607758410}
@@ -209,8 +209,6 @@ GameObject:
   - component: {fileID: 4586143569641004432}
   - component: {fileID: 4586143569641004429}
   - component: {fileID: 4586143569641004433}
-  - component: {fileID: 4586143569641004430}
-  - component: {fileID: 4586143569641004434}
   - component: {fileID: 4586143569641004435}
   - component: {fileID: 610565963}
   - component: {fileID: 610565962}
@@ -222,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4586143569641004428
 Transform:
   m_ObjectHideFlags: 0
@@ -355,43 +353,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4586143569641004430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586143569641004425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionType: 4
-  descriptionText: Hey !
-  image: {fileID: -1139117753031669639, guid: 8ce16e952c77d24459daea98b29f52d6, type: 3}
-  customEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4586143569641004434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586143569641004425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    npcName: Uranie
-    sentences:
-    - So... I see what we got here...
-    - She's alive, isn't it ? I can feel here aura of power and sorow...
-    - And I guess that you choosed her side, humph ?
-    - Poor creature... I'm so sad that we have to finish it here !
 --- !u!114 &4586143569641004435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,3 +456,4 @@ MonoBehaviour:
   blackSkyColor: {r: 0.023529412, g: 0.023529412, b: 0.03137255, a: 0}
   whiteSkyColor: {r: 0.91764706, g: 1, b: 1, a: 0}
   moveToCenterSpeed: 3
+  moonSpeed: 3

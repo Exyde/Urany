@@ -81,7 +81,7 @@ public class Transistor : MonoBehaviour
 
     IEnumerator Phase1()
     {
-        PrepareUranie();
+        //PrepareUranie();
         //DestroySpheres();
 
         //Stop music
