@@ -704,11 +704,12 @@ MonoBehaviour:
     npcName: Calliope
     npcSprite: {fileID: 21300000, guid: eae0c95d41db968409f1e06935941169, type: 3}
     sentences:
-    - Yo
-    - "\xE7a gaze ?"
-    - Chill ?
-    - Ok ok
-    - Bon, aller, go decouper
+    - 'Enfin ! '
+    - "J'ai r\xE9ussi..."
+    - "Regarde Mn\xE9mosyne ! Le peuple sera \xE0 nouveau r\xE9uni autour d\u2019une
+      m\xEAme muse.\n"
+    - "Toi petit \xEAtre, tu vas m\u2019aider \xE0 effacer l\u2019origine des faiblesses
+      de ce monde."
 --- !u!114 &710091497
 MonoBehaviour:
   m_ObjectHideFlags: 0
