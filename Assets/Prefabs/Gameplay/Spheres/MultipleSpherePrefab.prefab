@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8725614969167911144}
   - component: {fileID: 1413444535510603186}
   - component: {fileID: 8725614969167911147}
+  - component: {fileID: 7615879001825718064}
   m_Layer: 0
   m_Name: MultipleSpherePrefab
   m_TagString: Attack Sphere
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8bab3b6ec6aa4084f943fdcae3d126c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe933b2615f4f224190e167017a9d220, type: 3}
   m_Color: {r: 0.3584906, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,3 +140,23 @@ MonoBehaviour:
   sphereDamage: 0
   preFire: 0
   fire: 0
+  explosionPrefab: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+--- !u!95 &7615879001825718064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8725614969167911146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 922b89b48dd212d4c892fc750fe4d75f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

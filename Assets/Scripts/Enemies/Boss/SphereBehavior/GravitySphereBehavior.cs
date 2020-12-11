@@ -15,6 +15,9 @@ public class GravitySphereBehavior : MonoBehaviour
 
     Vector3 preFireTargetPos;
 
+    public GameObject explosionPrefab;
+
+
     void Start()
     {
         //Base
@@ -42,6 +45,12 @@ public class GravitySphereBehavior : MonoBehaviour
 		}
     }
 
+
+    public void InstantiateExplosion()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Uranie")
@@ -63,11 +72,15 @@ public class GravitySphereBehavior : MonoBehaviour
         {
             //player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
+
             Destroy(this.gameObject);
         } else
 		{
             //print("else destroy");
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
+
             Destroy(this.gameObject);
 		}
     }
@@ -90,5 +103,7 @@ public class GravitySphereBehavior : MonoBehaviour
     {
         preFire = false;
         fire = true;
+        GetComponent<Animator>().SetTrigger("release");
+
     }
 }

@@ -12,6 +12,8 @@ public class SimpleSphereBehavior : MonoBehaviour
     public bool fire = false;
     public bool preFire = false;
 
+    public GameObject explosionPrefab;
+
     Vector3 targetPos;
     Vector3 dir;
 
@@ -30,6 +32,13 @@ public class SimpleSphereBehavior : MonoBehaviour
         timeUntilFire -= Time.deltaTime;
 
         //SetTargetWithOffset(3);
+
+        if (timeUntilFire <=  0 && !fire)
+		{
+            fire = true;
+            GetComponent<Animator>().SetTrigger("release");
+
+        }
 
         if (timeUntilFire <= 0)
 		{
@@ -64,6 +73,7 @@ public class SimpleSphereBehavior : MonoBehaviour
         {
             //player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
             Destroy(this.gameObject);
 
         }
@@ -71,6 +81,7 @@ public class SimpleSphereBehavior : MonoBehaviour
         {
             //print("else destroy");
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
             Destroy(this.gameObject);
         }
     }
@@ -91,4 +102,9 @@ public class SimpleSphereBehavior : MonoBehaviour
 	{
         transform.position = Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime);
     }
+
+    public void InstantiateExplosion()
+	{
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+	}
 }

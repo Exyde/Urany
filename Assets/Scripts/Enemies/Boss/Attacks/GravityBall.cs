@@ -20,6 +20,9 @@ public class GravityBall : MonoBehaviour
     Vector3 _center;
     Vector3 _size;
 
+    public GameObject explosionPrefab;
+
+
     void Start()
     {
         uranie = GetComponent<Uranie>();

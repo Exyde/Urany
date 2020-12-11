@@ -14,6 +14,8 @@ public class MultipleSphereBehavior : MonoBehaviour
     Vector3 targetPos;
     Vector3 dir;
 
+    public GameObject explosionPrefab;
+
     void Start()
     {
         player = FindObjectOfType<Movement>().transform;
@@ -53,12 +55,16 @@ public class MultipleSphereBehavior : MonoBehaviour
         {
             player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
+
             Destroy(this.gameObject);
         }
         else
         {
             //print("else destroy");
             CameraShake.Shake(.1f, .1f);
+            InstantiateExplosion();
+
             Destroy(this.gameObject);
         }
     }
@@ -77,6 +83,7 @@ public class MultipleSphereBehavior : MonoBehaviour
 	{
         SetTargetWithOffset(3f);
         fire = true;
+        GetComponent<Animator>().SetTrigger("release");
     }
 
     public void SetTargetWithOffset(float offset)
@@ -84,6 +91,10 @@ public class MultipleSphereBehavior : MonoBehaviour
         targetPos = player.position;
         dir = (targetPos - transform.position).normalized * offset;
         targetPos += dir;
+    }
+    public void InstantiateExplosion()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
     }
 
 }

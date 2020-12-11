@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3804111643990429260}
   - component: {fileID: 3804111643990429261}
   - component: {fileID: 3804111643990429262}
+  - component: {fileID: 3333717401696031547}
   m_Layer: 8
   m_Name: GravitySpherePrefab
   m_TagString: Attack Sphere
@@ -137,3 +138,23 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 1
   sphereDamage: 1
+  explosionPrefab: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+--- !u!95 &3333717401696031547
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804111643990429263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 922b89b48dd212d4c892fc750fe4d75f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
