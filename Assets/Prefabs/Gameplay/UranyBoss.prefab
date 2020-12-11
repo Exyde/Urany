@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4586143569641004428
 Transform:
   m_ObjectHideFlags: 0
@@ -435,6 +435,7 @@ MonoBehaviour:
   sphereNumber: 5
   sphereSpeed: 3
   attackDuration: 1
+  explosionPrefab: {fileID: 0}
 --- !u!114 &2076760800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +454,7 @@ MonoBehaviour:
   centerPos: {fileID: 0}
   whiteScreen: {fileID: 0}
   sphereHolder: {fileID: 0}
+  player: {fileID: 0}
   blackSkyColor: {r: 0.023529412, g: 0.023529412, b: 0.03137255, a: 0}
   whiteSkyColor: {r: 0.91764706, g: 1, b: 1, a: 0}
   moveToCenterSpeed: 3

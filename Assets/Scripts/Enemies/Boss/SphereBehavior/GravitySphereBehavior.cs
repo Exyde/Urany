@@ -78,7 +78,7 @@ public class GravitySphereBehavior : MonoBehaviour
         } else
 		{
             //print("else destroy");
-            CameraShake.Shake(.1f, .1f);
+            CameraShake.Shake(.15f, .25f);
             InstantiateExplosion();
 
             Destroy(this.gameObject);
