@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 879357700441229640}
   - component: {fileID: 879357700441229641}
   - component: {fileID: 879357700441229642}
-  m_Layer: 0
+  - component: {fileID: -1970164431156194659}
+  - component: {fileID: -9107237724610933670}
+  m_Layer: 9
   m_Name: map4_element_terminalHack3_0
-  m_TagString: Untagged
+  m_TagString: Breach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +104,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1970164431156194659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879357700441229643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 0
+  descriptionText: 
+  image: {fileID: 0}
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-9107237724610933670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879357700441229643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b38270358b20446bba5eb2f6b32514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputDisplayer: {fileID: 0}
+  player: {fileID: 0}
+  hackingGame: {fileID: 0}
+  maxHackRange: 5
+  onBreachColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  hackColor: {r: 0, g: 0, b: 0, a: 0}
+  alwaysDrawGizmos: 0
