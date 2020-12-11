@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3705700016245157080}
   - component: {fileID: 9044252724048886362}
   - component: {fileID: -417423008003073911}
+  - component: {fileID: 686037672}
   m_Layer: 9
   m_Name: map3_element_terminalInteract_0
   m_TagString: Untagged
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 2
+  interactionType: 4
   descriptionText: 'Examination '
   image: {fileID: 21300000, guid: 355c5ab679394c44cb5cece8154eb636, type: 3}
   customEvent:
@@ -162,6 +163,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e41ea85545db3f488c6f6a658d5c2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &686037672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167541685980312008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Ancien terminal
+    npcSprite: {fileID: 4323123385741041587, guid: f148b8a92e024ea43a668ebe51099892, type: 3}
+    sentences:
+    - "- Analyse des donn\xE9es du terrain -"
+    - "pr\xE9sence de failles"
 --- !u!1001 &82635285566892746
 PrefabInstance:
   m_ObjectHideFlags: 0

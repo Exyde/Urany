@@ -3903,6 +3903,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.2613134
       objectReference: {fileID: 0}
+    - target: {fileID: 4371270341313790263, guid: 97711c7a10a303f478168887302e2499, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4650902998793500068, guid: 97711c7a10a303f478168887302e2499, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3946,6 +3950,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 682338608201305224, guid: 97711c7a10a303f478168887302e2499, type: 3}
   m_PrefabInstance: {fileID: 434543987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &434543989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8427391829200536162, guid: 97711c7a10a303f478168887302e2499, type: 3}
+  m_PrefabInstance: {fileID: 434543987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &434543990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434543989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Statue d'Uranie
+    npcSprite: {fileID: 21300000, guid: 3fa8d7d883bdf0b43b74f889af4b9fa4, type: 3}
+    sentences:
+    - "Uranie - par del\xE0 les astres"
 --- !u!1001 &444058653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6078,6 +6104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9044252724048886362, guid: d02369d030e5e01468baa22e80eff70d, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d02369d030e5e01468baa22e80eff70d, type: 3}
 --- !u!4 &686037670 stripped
@@ -6085,6 +6115,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6167541685980312011, guid: d02369d030e5e01468baa22e80eff70d, type: 3}
   m_PrefabInstance: {fileID: 686037669}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &686037671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6167541685980312008, guid: d02369d030e5e01468baa22e80eff70d, type: 3}
+  m_PrefabInstance: {fileID: 686037669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &686037672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686037671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Ancien terminal
+    npcSprite: {fileID: 4323123385741041587, guid: f148b8a92e024ea43a668ebe51099892, type: 3}
+    sentences:
+    - "- Analyse des donn\xE9es du terrain -"
+    - "pr\xE9sence de failles"
 --- !u!1 &697728707
 GameObject:
   m_ObjectHideFlags: 0
@@ -12113,9 +12166,9 @@ MonoBehaviour:
     npcName: "Statue Cass\xE9e"
     npcSprite: {fileID: 21300000, guid: 4ed803a783e4a6242a4a35181f63547a, type: 3}
     sentences:
-    - Yo
-    - "je suis cass\xE9e"
-    - aie
+    - "Clame Eug\xE9nie Ta M\xE9lodie, Terrible Et Polonaise, Uphonie Calcul\xE9e
+      G..."
+    - "le reste a \xE9t\xE9 effac\xE9 par le temps"
 --- !u!1001 &1374664059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13531,6 +13584,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8400954831943541584, guid: 3097f70f4dca69a42abf6a7638504b80, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3097f70f4dca69a42abf6a7638504b80, type: 3}
 --- !u!4 &1532043343 stripped
@@ -13538,6 +13595,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1884676599716484601, guid: 3097f70f4dca69a42abf6a7638504b80, type: 3}
   m_PrefabInstance: {fileID: 1532043342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1532043344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884676599716484358, guid: 3097f70f4dca69a42abf6a7638504b80, type: 3}
+  m_PrefabInstance: {fileID: 1532043342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532043345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532043344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Terminal
+    npcSprite: {fileID: -8680053147695460073, guid: cadc6ec2d4b25164c8cfb0ae8051c14c, type: 3}
+    sentences:
+    - Distanciation de la muse originelle
+    - appropriation des informations partielle
 --- !u!1001 &1557816476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14414,6 +14494,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492900341}
     m_Modifications:
+    - target: {fileID: -151072218962085195, guid: dc357d74b3dd2d54abce2611227c022a, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1654485973476052340, guid: dc357d74b3dd2d54abce2611227c022a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.25
@@ -14469,6 +14553,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1654485973476052340, guid: dc357d74b3dd2d54abce2611227c022a, type: 3}
   m_PrefabInstance: {fileID: 1619076310}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1619076312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3578855338418949947, guid: dc357d74b3dd2d54abce2611227c022a, type: 3}
+  m_PrefabInstance: {fileID: 1619076310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1619076313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619076312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: "\xC9cran d'analyse"
+    npcSprite: {fileID: 0}
+    sentences: []
 --- !u!1001 &1624316269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16144,6 +16249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492900341}
     m_Modifications:
+    - target: {fileID: -5781239957989539706, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3075194793947908900, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
       propertyPath: m_Name
       value: map4_element_terminalInteract3_0
@@ -16199,6 +16308,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4646408225488662273, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
   m_PrefabInstance: {fileID: 1799478465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1799478467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3075194793947908900, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
+  m_PrefabInstance: {fileID: 1799478465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1799478468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799478467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Serveur
+    npcSprite: {fileID: 0}
+    sentences: []
 --- !u!1001 &1802649199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19521,6 +19651,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9050933740041382328, guid: e0f951be973284944bdb68be2e23c682, type: 3}
+      propertyPath: dialogue.npcName
+      value: Terminal de construction
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f951be973284944bdb68be2e23c682, type: 3}
 --- !u!4 &5634985004582489866 stripped
@@ -19641,6 +19775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5316124814257698646, guid: 661ddab44fe1f374fa7d9fb0a6c6e2b9, type: 3}
+      propertyPath: interactionType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8758259513812770904, guid: 661ddab44fe1f374fa7d9fb0a6c6e2b9, type: 3}
       propertyPath: m_Name
       value: map4_element_terminalInteract4_0
@@ -19652,3 +19790,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4997183541076185303, guid: 661ddab44fe1f374fa7d9fb0a6c6e2b9, type: 3}
   m_PrefabInstance: {fileID: 6788798261634234692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6788798261634234694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8758259513812770904, guid: 661ddab44fe1f374fa7d9fb0a6c6e2b9, type: 3}
+  m_PrefabInstance: {fileID: 6788798261634234692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6788798261634234695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788798261634234694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: "Capsule de d\xE9fenseurs"
+    npcSprite: {fileID: 2923085921723056385, guid: e851f2beb4b25f7439270c6c7639cf2c, type: 3}
+    sentences:
+    - Zone de reproduction
+    - "\xE9volution du g\xE9nome : r\xE9sultats positifs"

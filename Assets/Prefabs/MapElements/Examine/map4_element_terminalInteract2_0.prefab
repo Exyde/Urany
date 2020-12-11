@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -151072218962085195}
   - component: {fileID: 9220265997307841384}
   - component: {fileID: 7522822758991116541}
+  - component: {fileID: 1619076313}
   m_Layer: 9
   m_Name: map4_element_terminalInteract2_0
   m_TagString: Untagged
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 2
+  interactionType: 4
   descriptionText: 'Examination '
   image: {fileID: 21300000, guid: 355c5ab679394c44cb5cece8154eb636, type: 3}
   customEvent:
@@ -181,6 +182,22 @@ MonoBehaviour:
     sentences:
     - 'Origine du virus : inconnue'
     - "Pr\xE9sence d\u2019incoh\xE9rences analys\xE9es dans l\u2019alimentation originelle"
+--- !u!114 &1619076313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578855338418949947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: "\xC9cran d'analyse"
+    npcSprite: {fileID: 0}
+    sentences: []
 --- !u!1001 &692905466266540076
 PrefabInstance:
   m_ObjectHideFlags: 0
