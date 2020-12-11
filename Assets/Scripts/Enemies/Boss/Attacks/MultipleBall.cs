@@ -29,6 +29,7 @@ public class MultipleBall : MonoBehaviour
         sphereSpeed = 2.3f;
         sphereNumber = 6;
         attackDuration = 2f;
+
     }
     public void SetPhase2()
     {
