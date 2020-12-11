@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4510207878966374517}
   - component: {fileID: -151072218962085195}
   - component: {fileID: 9220265997307841384}
+  - component: {fileID: 7522822758991116541}
   m_Layer: 9
   m_Name: map4_element_terminalInteract2_0
   m_TagString: Untagged
@@ -162,6 +163,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e41ea85545db3f488c6f6a658d5c2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7522822758991116541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578855338418949947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: "\xC9cran d'analyse "
+    npcSprite: {fileID: -7785298239576929533, guid: fd19aa9ef344d0d48b8a0d3946285879, type: 3}
+    sentences:
+    - 'Origine du virus : inconnue'
+    - "Pr\xE9sence d\u2019incoh\xE9rences analys\xE9es dans l\u2019alimentation originelle"
 --- !u!1001 &692905466266540076
 PrefabInstance:
   m_ObjectHideFlags: 0

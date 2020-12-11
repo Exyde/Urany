@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 1212475680723859866}
   - component: {fileID: 6225914148146217291}
   - component: {fileID: 9127601310266614766}
-  m_Layer: 0
+  - component: {fileID: 9050933740041382328}
+  - component: {fileID: 3321326333793377930}
+  - component: {fileID: 7119982465308724636}
+  m_Layer: 9
   m_Name: map4_background_terminal8_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,3 +105,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9050933740041382328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206366155010199318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: Terminal de construction
+    npcSprite: {fileID: 6012234839309663957, guid: c068fa4b8221a5a4cbc3f0e59dd5cad4, type: 3}
+    sentences:
+    - "\xC9dification zone naissance des collecteurs"
+    - '- En cours -'
+--- !u!114 &3321326333793377930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206366155010199318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 4
+  descriptionText: 
+  image: {fileID: 0}
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!61 &7119982465308724636
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206366155010199318}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.120306015, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 1}
+    newSize: {x: 2, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.240612, y: 1}
+  m_EdgeRadius: 0
