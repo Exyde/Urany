@@ -7,7 +7,6 @@ public class HackingGame : MonoBehaviour
 
     [Header ("BASE")]
     public Breach breach;
-    public int bpm;
 
     [Header ("Display")]
     public InputDisplayer iconDisplayerLeft;

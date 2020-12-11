@@ -6,6 +6,7 @@ public class Game1 : HackingGame
 {
 
     [Header ("Game 1")]
+    //public Breach breach;
     public float speed;
     public GameObject hackPlayerPrefab;
     public Color currentPointColor;
@@ -22,6 +23,7 @@ public class Game1 : HackingGame
 
     void Start()
     {
+        
         //lr = GetComponent<LineRenderer>();
         GameInit();
     }
@@ -44,7 +46,6 @@ public class Game1 : HackingGame
 		} 
         else
 		{
-
             path[currentIndex].GetComponent<SpriteRenderer>().color = currentPointColor;
             if (InputLB())
             {

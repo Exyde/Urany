@@ -16,10 +16,10 @@ public class Breach : MonoBehaviour
     public float maxHackRange = 5f;
     bool hackDone = false;
 
-    [Header ("Colors")]
-    public Color onBreachColor;
-    public Color defaultColor;
-    public Color hackColor;
+    [Header("Colors")]
+    public Color onBreachColor = new Color(255, 255, 255, 1);
+    public Color defaultColor= new Color(255, 255, 255, 1);
+    public Color hackColor = new Color(255, 255, 255, 1);
 
     [Space]
     public bool alwaysDrawGizmos;
@@ -27,6 +27,7 @@ public class Breach : MonoBehaviour
     void Start()
     {
         //hackingGame = GetComponentInChildren<HackingGame>();
+        print(hackingGame);
         sr = GetComponent<SpriteRenderer>();
         interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +39,7 @@ public class Breach : MonoBehaviour
         // If player is hacking and too far from the limit range, disable the hack game.
         if (!hackDone)
 		{
-            if (hackingGame.gameObject.activeSelf == true)
+            if (hackingGame != null && hackingGame.gameObject.activeSelf == true)
             {
                 if (Vector3.Distance(transform.position, player.transform.position) > maxHackRange)
                 {
