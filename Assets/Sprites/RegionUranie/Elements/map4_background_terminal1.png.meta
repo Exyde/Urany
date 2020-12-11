@@ -1,0 +1,682 @@
+fileFormatVersion: 2
+guid: a81a2d7615695eb489f5c96aa72c5fcb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8554667381853228320
+    second: map4_background_terminal1_0
+  - first:
+      213: -989630125254169078
+    second: map4_background_terminal1_1
+  - first:
+      213: 8051388689957832329
+    second: map4_background_terminal1_2
+  - first:
+      213: 985019535216071806
+    second: map4_background_terminal1_3
+  - first:
+      213: -6514499040224500005
+    second: map4_background_terminal1_4
+  - first:
+      213: 8464873380018359731
+    second: map4_background_terminal1_5
+  - first:
+      213: 3181161571214639181
+    second: map4_background_terminal1_6
+  - first:
+      213: 232949098226898607
+    second: map4_background_terminal1_7
+  - first:
+      213: -6765434989269290115
+    second: map4_background_terminal1_8
+  - first:
+      213: 6155509770760417335
+    second: map4_background_terminal1_9
+  - first:
+      213: 5809109443055014245
+    second: map4_background_terminal1_10
+  - first:
+      213: 2506932076144545150
+    second: map4_background_terminal1_11
+  - first:
+      213: 8736622124140118770
+    second: map4_background_terminal1_12
+  - first:
+      213: 8368633342863096192
+    second: map4_background_terminal1_13
+  - first:
+      213: -5264503078129987599
+    second: map4_background_terminal1_14
+  - first:
+      213: -3853246700238897474
+    second: map4_background_terminal1_15
+  - first:
+      213: -1734140124837210061
+    second: map4_background_terminal1_16
+  - first:
+      213: -2841583623942754313
+    second: map4_background_terminal1_17
+  - first:
+      213: -360202999345277250
+    second: map4_background_terminal1_18
+  - first:
+      213: 1106916303607218687
+    second: map4_background_terminal1_19
+  - first:
+      213: 5861475653651384853
+    second: map4_background_terminal1_20
+  - first:
+      213: 9115577814092760809
+    second: map4_background_terminal1_21
+  - first:
+      213: 807260971968601782
+    second: map4_background_terminal1_22
+  - first:
+      213: -3814145291080510548
+    second: map4_background_terminal1_23
+  - first:
+      213: 7604820817054539646
+    second: map4_background_terminal1_24
+  - first:
+      213: 111543576700564770
+    second: map4_background_terminal1_25
+  - first:
+      213: 5284390957562436746
+    second: map4_background_terminal1_26
+  - first:
+      213: -3496235210696564419
+    second: map4_background_terminal1_27
+  - first:
+      213: 468190414175343132
+    second: map4_background_terminal1_28
+  - first:
+      213: -1314640294045428143
+    second: map4_background_terminal1_29
+  - first:
+      213: -8473340960153760150
+    second: map4_background_terminal1_30
+  - first:
+      213: -8186101905212283676
+    second: map4_background_terminal1_31
+  - first:
+      213: -420317636305662351
+    second: map4_background_terminal1_32
+  - first:
+      213: -9043775105920013953
+    second: map4_background_terminal1_33
+  - first:
+      213: -6410095154622795383
+    second: map4_background_terminal1_34
+  - first:
+      213: 593880864503144029
+    second: map4_background_terminal1_35
+  - first:
+      213: 4981986844358619613
+    second: map4_background_terminal1_36
+  - first:
+      213: -6599406847486380599
+    second: map4_background_terminal1_37
+  - first:
+      213: 2026028789185987773
+    second: map4_background_terminal1_38
+  - first:
+      213: 6103028143589684032
+    second: map4_background_terminal1_39
+  - first:
+      213: -2439569408116525523
+    second: map4_background_terminal1_40
+  - first:
+      213: -714514442552499337
+    second: map4_background_terminal1_41
+  - first:
+      213: -3235234192605742822
+    second: map4_background_terminal1_42
+  - first:
+      213: -3964894548614146518
+    second: map4_background_terminal1_43
+  - first:
+      213: -7060356419085316507
+    second: map4_background_terminal1_44
+  - first:
+      213: 1619650783506399690
+    second: map4_background_terminal1_45
+  - first:
+      213: -91948706790781757
+    second: map4_background_terminal1_46
+  - first:
+      213: 1978976207065016427
+    second: map4_background_terminal1_47
+  - first:
+      213: -9210128082836175991
+    second: map4_background_terminal1_48
+  - first:
+      213: 140232389807582844
+    second: map4_background_terminal1_49
+  - first:
+      213: 7063610729917943470
+    second: map4_background_terminal1_50
+  - first:
+      213: -2309145672181382420
+    second: map4_background_terminal1_51
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: map4_background_terminal1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2740d3757b74980800000000000000
+      internalID: -8554667381853228320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e2335f4a02442f0800000000000000
+      internalID: -989630125254169078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986c88dfa574cbf60800000000000000
+      internalID: 8051388689957832329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74df556c0e7bad00800000000000000
+      internalID: 985019535216071806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6abc163a9d795a0800000000000000
+      internalID: -6514499040224500005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd87a48d75497570800000000000000
+      internalID: 8464873380018359731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d404f513891c52c20800000000000000
+      internalID: 3181161571214639181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6df8a78f99b3300800000000000000
+      internalID: 232949098226898607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73fa99d8b85c12a0800000000000000
+      internalID: -6765434989269290115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730fe91f583cc6550800000000000000
+      internalID: 6155509770760417335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56159aea24a1e9050800000000000000
+      internalID: 5809109443055014245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dc0a2e0796ac220800000000000000
+      internalID: 2506932076144545150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2c0368887be3970800000000000000
+      internalID: 8736622124140118770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08938d8bfab532470800000000000000
+      internalID: 8368633342863096192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff8c1dc75ab0f6b0800000000000000
+      internalID: -5264503078129987599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe7050aa84868ac0800000000000000
+      internalID: -3853246700238897474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338935c8eb81fe7e0800000000000000
+      internalID: -1734140124837210061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff2357dfbaa098d0800000000000000
+      internalID: -2841583623942754313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb69ef0d74d400bf0800000000000000
+      internalID: -360202999345277250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map4_background_terminal1_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1c890738e8c5f00800000000000000
+      internalID: 1106916303607218687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
