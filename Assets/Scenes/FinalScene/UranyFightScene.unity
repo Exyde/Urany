@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &232079076
 Animator:
   serializedVersion: 3
@@ -2174,6 +2174,10 @@ PrefabInstance:
       propertyPath: sphereHolder
       value: 
       objectReference: {fileID: 1548086672}
+    - target: {fileID: 2076760800, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 33818604}
     - target: {fileID: 4586143569641004425, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Name
       value: UranyBoss
@@ -2232,7 +2236,7 @@ PrefabInstance:
       objectReference: {fileID: 1690882889}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}

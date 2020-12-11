@@ -12,7 +12,7 @@ public class Transistor : MonoBehaviour
     public Transform sphereHolder;
 
     private Uranie uranie;
-    private Movement player;
+    public Movement player;
 
     private bool moving;
 
@@ -27,7 +27,7 @@ public class Transistor : MonoBehaviour
     {
         cam = Camera.main;
         uranie = GetComponent<Uranie>();
-        player = FindObjectOfType<Movement>();
+        //player = FindObjectOfType<Movement>();
 
         sun.gameObject.SetActive(false);
         moon.gameObject.SetActive(false);

@@ -222,13 +222,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breach: {fileID: 7328514172038204417}
-  bpm: 120
   iconDisplayerLeft: {fileID: 7328514172254665314}
   iconDisplayerRight: {fileID: 7328514172133981682}
   speed: 0.1
   hackPlayerPrefab: {fileID: 945004223807163736, guid: 1de5a83e89441ad4188d4a8a0b4eeb36, type: 3}
   currentPointColor: {r: 0.5294118, g: 0.23529412, b: 0.15294118, a: 0.80784315}
   defaultColor: {r: 0.043137256, g: 0.25490198, b: 0.2509804, a: 1}
+  pp: {fileID: 0}
   points: {fileID: 7328514172847597946}
   playerHolder: {fileID: 7328514171845111950}
 --- !u!120 &7328514171272627050
@@ -687,7 +687,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 40
   m_Sprite: {fileID: -2241308326198778928, guid: 373722270a6c80d4ab401bb25138a941, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
