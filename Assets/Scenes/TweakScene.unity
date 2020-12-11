@@ -4439,13 +4439,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: map3_element_wallHack_0
       objectReference: {fileID: 0}
+    - target: {fileID: 1075819742012499936, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
+      propertyPath: m_TagString
+      value: Breach
+      objectReference: {fileID: 0}
     - target: {fileID: 1075819742012499939, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.765137
+      value: -18.265137
       objectReference: {fileID: 0}
     - target: {fileID: 1075819742012499939, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.975889
+      value: -1.9758892
       objectReference: {fileID: 0}
     - target: {fileID: 1075819742012499939, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4483,7 +4487,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3946441031246669802, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
+      propertyPath: interactionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290633527375795585, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1546736438}
+    - target: {fileID: 9138655918680659923, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
+      propertyPath: pp
+      value: 
+      objectReference: {fileID: 1239456953}
+    - target: {fileID: 9138655918680659933, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9138655918680659920, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77514dfcbfe1a1b46aa924b1548e040b, type: 3}
 --- !u!4 &775685723969788759 stripped
 Transform:
