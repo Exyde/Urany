@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1490626117818324133}
   - component: {fileID: -4805898489720402271}
   - component: {fileID: 6628634362754944053}
+  - component: {fileID: 1372617263}
   m_Layer: 9
   m_Name: map2_element_statueMnemosyne
   m_TagString: Untagged
@@ -124,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d550d4074412854389866947d06b7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 2
-  descriptionText: 'Examination '
+  interactionType: 4
+  descriptionText: Long time ago
   image: {fileID: 21300000, guid: 355c5ab679394c44cb5cece8154eb636, type: 3}
   customEvent:
     m_PersistentCalls:
@@ -142,6 +143,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e41ea85545db3f488c6f6a658d5c2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1372617263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557829496028081796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: "Statue Cass\xE9e"
+    npcSprite: {fileID: 21300000, guid: 4ed803a783e4a6242a4a35181f63547a, type: 3}
+    sentences:
+    - "Clame Eug\xE9nie Ta M\xE9lodie, Terrible Et Polonaise, Uphonie Calcul\xE9e
+      G..."
+    - "le reste a \xE9t\xE9 effac\xE9 par le temps"
 --- !u!1001 &4486146726633399079
 PrefabInstance:
   m_ObjectHideFlags: 0
