@@ -161,7 +161,7 @@ MonoBehaviour:
     sentences:
     - "Clame Eug\xE9nie Ta M\xE9lodie, Terrible Et Polonaise, Uphonie Calcul\xE9e
       G..."
-    - "le reste a \xE9t\xE9 effac\xE9 par le temps"
+    - "Le reste a \xE9t\xE9 effac\xE9 par le temps..."
 --- !u!1001 &4486146726633399079
 PrefabInstance:
   m_ObjectHideFlags: 0

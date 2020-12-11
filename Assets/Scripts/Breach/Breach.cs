@@ -27,7 +27,6 @@ public class Breach : MonoBehaviour
     void Start()
     {
         //hackingGame = GetComponentInChildren<HackingGame>();
-        print(hackingGame);
         sr = GetComponent<SpriteRenderer>();
         interactionSystem = player.GetComponent<InteractionSystem>();
         rb = GetComponent<Rigidbody2D>();

@@ -907,11 +907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.62
+      value: 18.79
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.43
+      value: 19.95
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3255,22 +3255,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1310772793}
     m_Modifications:
-    - target: {fileID: 7328514171272627048, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: pp
-      value: 
-      objectReference: {fileID: 33296223}
-    - target: {fileID: 7328514171272627049, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
+    - target: {fileID: 1320724315635185105, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7328514171275341757, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328514171727626130, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 1320724315635185119, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
+      propertyPath: pp
+      value: 
+      objectReference: {fileID: 33296223}
     - target: {fileID: 7328514172038204417, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: player
       value: 
@@ -3278,14 +3270,6 @@ PrefabInstance:
     - target: {fileID: 7328514172038204422, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: m_Name
       value: SavantPrefabHackable
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328514172038204473, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: waitTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328514172038204473, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: moveSpeed
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7328514172038204479, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3330,10 +3314,6 @@ PrefabInstance:
     - target: {fileID: 7328514172038204479, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328514172433288549, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d542b260a0b04ac4dbff3a7bbc8ac7a4, type: 3}
@@ -4482,14 +4462,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492900341}
     m_Modifications:
-    - target: {fileID: -4805898489720402271, guid: 9c951ee80444b994d8e16530330937e0, type: 3}
-      propertyPath: descriptionText
-      value: Long time ago
-      objectReference: {fileID: 0}
-    - target: {fileID: -4805898489720402271, guid: 9c951ee80444b994d8e16530330937e0, type: 3}
-      propertyPath: interactionType
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1557829496028081796, guid: 9c951ee80444b994d8e16530330937e0, type: 3}
       propertyPath: m_Name
       value: map2_element_statueMnemosyne
@@ -4916,7 +4888,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 0d80d9604aca8524b9f8b84eaa8c3d07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12145,30 +12117,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2574808340849569013, guid: 721a3eced9ac3d04a84143e9a6f1b3a3, type: 3}
   m_PrefabInstance: {fileID: 1372481060}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1372617262 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1557829496028081796, guid: 9c951ee80444b994d8e16530330937e0, type: 3}
-  m_PrefabInstance: {fileID: 501265463}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1372617263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372617262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    npcName: "Statue Cass\xE9e"
-    npcSprite: {fileID: 21300000, guid: 4ed803a783e4a6242a4a35181f63547a, type: 3}
-    sentences:
-    - "Clame Eug\xE9nie Ta M\xE9lodie, Terrible Et Polonaise, Uphonie Calcul\xE9e
-      G..."
-    - "le reste a \xE9t\xE9 effac\xE9 par le temps"
 --- !u!1001 &1374664059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17064,6 +17012,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543376542, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.385467
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543376542, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 293.0206
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543376542, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -159.38957
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543376542, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 53.02083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543376543, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5174923350378392688, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_RenderMode
       value: 0
@@ -19650,10 +19618,6 @@ PrefabInstance:
     - target: {fileID: 1212475680723859866, guid: e0f951be973284944bdb68be2e23c682, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9050933740041382328, guid: e0f951be973284944bdb68be2e23c682, type: 3}
-      propertyPath: dialogue.npcName
-      value: Terminal de construction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f951be973284944bdb68be2e23c682, type: 3}

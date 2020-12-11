@@ -5,16 +5,30 @@ using UnityEngine;
 public class Examine : MonoBehaviour
 {
     InputDisplayer ip;
+    DialogueManager dm;
+
+    bool set = false;
 
     void Start()
     {
         ip = GetComponentInChildren<InputDisplayer>();
+        dm = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (dm.isTalking && !set)
+        {
+            ip.X();
+            set = true;
+        }
 
+        if (dm.endDialogue && set)
+		{
+            ip.Empty();
+            set = false;
+		}
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
