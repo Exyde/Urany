@@ -122,16 +122,12 @@ public class Attack : MonoBehaviour
 				{
                     Destroy(enemy.gameObject);
                     AudioManager.instance.CableBreak();
-
-
                     //Instnatiate particle 
                     return;
 				}
 
                 enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
                 PushEnemy(enemy.transform);
-
-
                 pp.SetAttackPostProcess();
             }
         }

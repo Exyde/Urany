@@ -138,7 +138,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 1
   sphereDamage: 1
-  explosionPrefab: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+  explosionPrefab: {fileID: 4549686209738243294, guid: 065c1a69b583198438fa4abb8ad7ca04, type: 3}
 --- !u!95 &3333717401696031547
 Animator:
   serializedVersion: 3

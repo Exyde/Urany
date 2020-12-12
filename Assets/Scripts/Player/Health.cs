@@ -14,6 +14,8 @@ public class Health : MonoBehaviour
     public int startHealth = 4;
     public int currentHealth;
 
+    bool alive;
+
 
     [Header ("Checkpoint Data")]
     public Transform currentCheckpoint;
@@ -22,6 +24,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = startHealth;
         uiManager = FindObjectOfType<UIManager>();
+        alive = true;
     }
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -53,7 +56,7 @@ public class Health : MonoBehaviour
         //print(currentHealth);
         uiManager.SetLife(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && alive)
 		{
             StartCoroutine(PlayerDie());
             //SceneManager.LoadScene(0);
@@ -62,6 +65,8 @@ public class Health : MonoBehaviour
 
     IEnumerator PlayerDie()
 	{
+        alive = false;
+
         Movement player = GetComponent<Movement>();
         player.canMove = false;
         player.enabled = false;
@@ -74,7 +79,7 @@ public class Health : MonoBehaviour
 
         uiManager.SetLife(currentHealth);
 
-        GetComponentInChildren<Animator>().SetBool("Dead", true);
+        GetComponentInChildren<Animator>().SetTrigger("Dead");
         AudioManager.instance.StopMusic();
 
         yield return new WaitForSeconds(2f);

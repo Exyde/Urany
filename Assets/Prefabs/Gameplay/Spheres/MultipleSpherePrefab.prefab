@@ -140,7 +140,7 @@ MonoBehaviour:
   sphereDamage: 1
   preFire: 0
   fire: 0
-  explosionPrefab: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
+  explosionPrefab: {fileID: 8613578964174295205, guid: d0f9f0e23e854104096930e7fa0d207d, type: 3}
 --- !u!95 &7615879001825718064
 Animator:
   serializedVersion: 3
