@@ -907,11 +907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.36
+      value: -43.92
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45.83
+      value: -32.26
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17505,6 +17505,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8986339842276604584, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: 'Comportement : inconnu'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986339842276604584, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "Agressivit\xE9 : inconnue"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 753b25e4b1e60af4980f8d4faf525e0e, type: 3}
 --- !u!4 &1799478466 stripped
@@ -18386,7 +18394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5174923350378392693, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5174923352260785148, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_AnchoredPosition.x
