@@ -132,7 +132,6 @@ public class Movement : MonoBehaviour
         if (yRaw < 0) yRaw = -1f;
 
         //print(inputs);
-
     }
 
     IEnumerator ClimbWallTop()

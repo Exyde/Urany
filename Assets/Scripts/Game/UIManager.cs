@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
     [Header("Health Bar")]
     public Image healthBar;
     public Image life1;
     public Image life2;
     public Image life3;
     public Image life4;
-
 
     public void SetLife(int hp)
 	{

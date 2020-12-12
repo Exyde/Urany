@@ -107,6 +107,7 @@ public class Attack : MonoBehaviour
             {
                 if (enemy.gameObject.tag == "Uranie")
 				{
+                    //TryGet.
                     enemy.GetComponent<Uranie>().TakeDamage(sideAttackDamage);
                     pp.SetAttackPostProcess();
 

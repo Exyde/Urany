@@ -17,7 +17,6 @@ public class GravitySphereBehavior : MonoBehaviour
 
     public GameObject explosionPrefab;
 
-
     void Start()
     {
         //Base
@@ -44,7 +43,6 @@ public class GravitySphereBehavior : MonoBehaviour
             MoveToTarget();
 		}
     }
-
 
     public void InstantiateExplosion()
     {
@@ -104,6 +102,5 @@ public class GravitySphereBehavior : MonoBehaviour
         preFire = false;
         fire = true;
         GetComponent<Animator>().SetTrigger("release");
-
     }
 }

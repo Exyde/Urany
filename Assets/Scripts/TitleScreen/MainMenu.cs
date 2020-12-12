@@ -17,6 +17,14 @@ public class MainMenu : MonoBehaviour
 		levelLoader.OnNextLevel(4); //Video scene
 	}
 
+	private void Update()
+	{
+		if (Input.GetButtonDown("Attack"))
+		{
+			levelLoader.OnNextLevel(4); //Video scene
+		}
+	}
+
 	public void QuitGame()
 	{
 		Debug.Log("Leaving Game...");

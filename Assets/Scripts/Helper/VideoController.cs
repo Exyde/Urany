@@ -50,5 +50,10 @@ public class VideoController : MonoBehaviour
         {
             loader.OnNextLevel(0);
         }
+
+        if (Input.GetButtonDown("Attack"))
+        {
+            loader.OnNextLevel(1);
+        }
     }
 }
