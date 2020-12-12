@@ -55,8 +55,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
 		{
-            //StartCoroutine(PlayerDie());
-            SceneManager.LoadScene(0);
+            StartCoroutine(PlayerDie());
+            //SceneManager.LoadScene(0);
         }
     }
 
@@ -75,10 +75,11 @@ public class Health : MonoBehaviour
         uiManager.SetLife(currentHealth);
 
         GetComponentInChildren<Animator>().SetBool("Dead", true);
+        AudioManager.instance.StopMusic();
 
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

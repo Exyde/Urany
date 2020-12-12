@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 768868846024501299}
   - component: {fileID: 768868846024501309}
   - component: {fileID: 768868846024501298}
+  - component: {fileID: 1562257246190978443}
   m_Layer: 10
   m_Name: GuardPrefab
   m_TagString: Guard
@@ -345,3 +346,19 @@ MonoBehaviour:
   customEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!70 &1562257246190978443
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768868846024501301}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.021477e-10, y: -0.0075677643}
+  m_Size: {x: 2.0000005, y: 1.1071209}
+  m_Direction: 1
