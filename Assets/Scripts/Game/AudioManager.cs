@@ -102,4 +102,59 @@ public class AudioManager : MonoBehaviour
 	{
         PlaySound(Typo, .2f);
 	}
+
+	#region PlayerSounds
+	public void Jump()
+	{
+        PlaySound(playerJump, 1f);
+	}
+
+    public void Dash()
+    {
+        PlaySound(playerDash, 1f);
+    }
+
+    public void Land()
+	{
+        PlaySound(playerLand, 1f);
+    }
+
+    //Run
+
+    public void Attack()
+	{
+        PlaySound(playerAttack, 1f);
+	}
+    public void PlayerHit()
+    {
+        PlaySound(playerHit, 1f);
+    }
+
+    #endregion
+
+    #region Uranie
+
+    public void UranieAttackCast()
+    {
+        PlaySound(uranieAttackCharge, 1f);
+    }
+
+    public void UranieAttackRelease()
+    {
+        PlaySound(uranieAttackRelease, 1f);
+    }
+    public void UranieAttackImpact()
+    {
+        PlaySound(uranieAttackImpact, 1f);
+    }
+    public void UranieHit()
+	{
+        PlaySound(uranieHit, 1f);
+	}
+
+    public void UranieDeath()
+	{
+        PlaySound(uranieDeath, 1f);
+    }
+    #endregion
 }

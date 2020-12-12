@@ -99,6 +99,8 @@ public class Attack : MonoBehaviour
     public void SideAttack()
 	{
         anim.SetTrigger("sideAttack");
+        AudioManager.instance.Attack();
+
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(sideAttackBottomLeft.position, sideAttackTopRight.position, enemyLayer);
 
         if (hitEnemies.Length > 0)

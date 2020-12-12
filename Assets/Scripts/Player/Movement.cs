@@ -300,6 +300,7 @@ public class Movement : MonoBehaviour
         //particle.transform.localScale = new Vector3(side, 1, 1);
 
         anim.SetTrigger("jump");
+        AudioManager.instance.Jump();
 
         //Can adjust the force if wallAttached
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -415,6 +416,7 @@ public class Movement : MonoBehaviour
 
         hasDashed = true; 
         anim.SetTrigger("dash");
+        AudioManager.instance.Dash();
 
         //Velocity
         rb.velocity = Vector2.zero;
@@ -497,6 +499,8 @@ public class Movement : MonoBehaviour
         side = anim.sr.flipX ? -1 : 1;
         //groundImpactPS.Play();
 
+        AudioManager.instance.Land();
+
         // This is a dirty temp fix for the landing bug (which makes the landings coordinates sometimes under the ground)
         float height = GetComponentInChildren<SpriteRenderer>().sprite.rect.y;
 
@@ -556,6 +560,7 @@ public class Movement : MonoBehaviour
 
         StartCoroutine(DisableMovementOnHit(.12f));
         anim.SetTrigger("hurt");
+        AudioManager.instance.PlayerHit();
 
         rb.velocity = Vector2.zero;
         direction.y = Mathf.Sign(direction.y) / 2;
