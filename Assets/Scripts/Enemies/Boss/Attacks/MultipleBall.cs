@@ -71,6 +71,8 @@ public class MultipleBall : MonoBehaviour
             yield return new WaitForSeconds(attackDuration / sphereNumber);
         }
 
+        uranie.GetComponent<Animator>().SetTrigger("release");
+
         yield return new WaitForSeconds(.2f);
 
 
@@ -80,9 +82,10 @@ public class MultipleBall : MonoBehaviour
 			{
                 sphere.GetComponent<MultipleSphereBehavior>().SetFire();
             }
-        }
+       }
 
-        EndAttack();
+       yield return new WaitForSeconds(1f);
+       EndAttack();
     }
 
     public void BeginAttack()
@@ -90,6 +93,9 @@ public class MultipleBall : MonoBehaviour
         uranie.isAttacking = true;
         uranie.isMoving = false;
         uranie.isWaiting = false;
+
+        uranie.GetComponent<Animator>().SetTrigger("cast");
+
     }
 
     public void EndAttack()

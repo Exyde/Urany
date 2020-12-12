@@ -12,6 +12,7 @@ public class Transistor : MonoBehaviour
     public Transform sphereHolder;
 
     private Uranie uranie;
+    private Animator animator;
     public Movement player;
 
     private bool moving;
@@ -27,6 +28,7 @@ public class Transistor : MonoBehaviour
     {
         cam = Camera.main;
         uranie = GetComponent<Uranie>();
+        animator = uranie.GetComponent<Animator>();
         //player = FindObjectOfType<Movement>();
 
         sun.gameObject.SetActive(false);
@@ -107,7 +109,7 @@ public class Transistor : MonoBehaviour
         yield return new WaitForSeconds(.2f);
 
         //Change music
-        AudioManager.instance.PlayPart1();
+        AudioManager.instance.PlayPart0();
 
         //Disable white screen
         whiteScreen.gameObject.SetActive(false);
@@ -159,7 +161,10 @@ public class Transistor : MonoBehaviour
         cam.backgroundColor = blackSkyColor;
 
         //Change uranie anims to dark ones
-        uranie.GetComponent<Animator>().SetTrigger("phase2");
+        //uranie.GetComponent<Animator>().SetTrigger("phase2");
+        animator.runtimeAnimatorController = uranie.AnimatorControllerBlack;
+        animator.SetTrigger("idle");
+
 
         //Disable white screen
         whiteScreen.gameObject.SetActive(false);
@@ -221,13 +226,15 @@ public class Transistor : MonoBehaviour
         cam.backgroundColor = whiteSkyColor;
 
         //Change uranie anims to dark ones
-        uranie.GetComponent<Animator>().SetTrigger("phase3");
+        //uranie.GetComponent<Animator>().SetTrigger("phase3");
+        animator.runtimeAnimatorController = uranie.AnimatorControllerWhite;
+        animator.SetTrigger("idle");
+
 
         //Re enable player move
         player.canMove = true;
         uranie.state = Uranie.State.Wait;
 
         AudioManager.instance.PlayPart2();
-        //AudioManager.instance.PlaySound(AudioManager.instance.Part2Theme, .1f);
     }
 }

@@ -39,6 +39,11 @@ public class Uranie : MonoBehaviour
     public bool isMoving;
     public bool isWaiting;
 
+    [Header ("Animators")]
+    public RuntimeAnimatorController AnimatorControllerBlack;
+    public RuntimeAnimatorController AnimatorControllerWhite;
+
+
     public enum State
 	{
         Move,
@@ -224,7 +229,7 @@ public class Uranie : MonoBehaviour
             SetPhase(3);
             print("To phase 3");
             phase = 3;
-            anim.SetTrigger("phase3");
+           // anim.SetTrigger("phase3");
 
         }
 
@@ -238,6 +243,7 @@ public class Uranie : MonoBehaviour
 	{
         state = State.Dead;
         GetComponent<Rigidbody2D>().isKinematic = false;
+        AudioManager.instance.StopMusic();
         AudioManager.instance.UranieDeath();
 
         StopAllCoroutines();

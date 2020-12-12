@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip HubTheme;
     public AudioClip RegionTheme;
+    public AudioClip part0;
     public AudioClip Part1Theme;
     public AudioClip Part2Theme;
 
@@ -59,6 +60,12 @@ public class AudioManager : MonoBehaviour
 
         musicPlayer = GetComponent<AudioSource>();
     }
+
+    public void PlayPart0()
+	{
+        musicPlayer.clip = part0;
+        musicPlayer.Play();
+	}
 
     public void PlayPart1()
 	{

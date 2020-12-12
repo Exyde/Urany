@@ -62,6 +62,8 @@ public class SimpleBall : MonoBehaviour
 
         for (int i = 0; i < sphereNumber; i++)
         {
+            uranie.GetComponent<Animator>().SetTrigger("cast");
+
             Vector2 spherePos = (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
             GameObject sphere = Instantiate(sphereAttackPrefab, spherePos, Quaternion.identity);
             sphere.GetComponent<SimpleSphereBehavior>().SetData(sphereSpeed, timeUntilFire);
@@ -69,8 +71,12 @@ public class SimpleBall : MonoBehaviour
 
             currentSpheres.Add(sphere);
 
+            uranie.GetComponent<Animator>().SetTrigger("release");
+
             yield return new WaitForSeconds(attackDuration / sphereNumber);
+            
         }
+
 
         //Wait a Brief time.
         yield return new WaitForSeconds(1f);
@@ -83,6 +89,7 @@ public class SimpleBall : MonoBehaviour
         uranie.isAttacking = true;
         uranie.isMoving = false;
         uranie.isWaiting = false;
+
     }
 
     public void EndAttack()

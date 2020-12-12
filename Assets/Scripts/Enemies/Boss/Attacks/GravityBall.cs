@@ -92,7 +92,9 @@ public class GravityBall : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(.2f);
+        uranie.GetComponent<Animator>().SetTrigger("release");
+        yield return new WaitForSeconds(.35f);
+
 
         foreach (GameObject sphere in currentSpheres)
         {
@@ -102,7 +104,7 @@ public class GravityBall : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.8f);
 
 
         EndAttack();
@@ -113,6 +115,9 @@ public class GravityBall : MonoBehaviour
         uranie.isAttacking = true;
         uranie.isMoving = false;
         uranie.isWaiting = false;
+
+        uranie.GetComponent<Animator>().SetTrigger("cast");
+
     }
 
     public void EndAttack()
