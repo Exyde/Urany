@@ -8,6 +8,7 @@ public class Guard : Enemy
 	public float hitForce;
 	public int hurtDamage = 1;
 	public float attackDelay = .5f;
+	public bool hacked = false;
 
 	[Header ("Detection Data")]
 	public Transform detectionPoint;
@@ -30,7 +31,7 @@ public class Guard : Enemy
 			detectionPoint.localPosition= new Vector3(patrol.dir / 2f, detectionPoint.localPosition.y, detectionPoint.localPosition.z);
 		}
 
-		if (state == State.Patrol)
+		if (state == State.Patrol && !hacked)
 		{
 			if (detectionPoint != null)
 			{
@@ -106,5 +107,10 @@ public class Guard : Enemy
 			Gizmos.color = Color.cyan;
 			Gizmos.DrawWireSphere(detectionPoint.position, detectionRadius);
 		}
+	}
+
+	public void SetHacked()
+	{
+		hacked = true;
 	}
 }
