@@ -2324,5 +2324,17 @@ PrefabInstance:
       propertyPath: AnimatorControllerWhite
       value: 
       objectReference: {fileID: 9100000, guid: 87955bca614335b47b1fe1c6f9e7c40b, type: 2}
+    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: maxHealth
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: healthTresholdPhase2
+      value: 401
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
+      propertyPath: healthTresholdPhase3
+      value: 201
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}

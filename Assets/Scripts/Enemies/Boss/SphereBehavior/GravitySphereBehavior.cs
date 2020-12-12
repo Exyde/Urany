@@ -68,7 +68,7 @@ public class GravitySphereBehavior : MonoBehaviour
 
         else if (collision.gameObject.tag == "Player")
         {
-            //player.GetComponent<Health>().LooseLife(sphereDamage);
+            player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
             InstantiateExplosion();
             AudioManager.instance.UranieAttackImpact();

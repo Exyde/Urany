@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 4
-  sphereDamage: 0
+  sphereDamage: 1
   preFire: 0
   fire: 0
   explosionPrefab: {fileID: 8936885806955445178, guid: 6e2213dfa5327d043b74b2bdc133f2b5, type: 3}
