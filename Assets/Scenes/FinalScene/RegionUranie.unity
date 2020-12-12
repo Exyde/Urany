@@ -901,17 +901,21 @@ PrefabInstance:
       propertyPath: examineText
       value: 
       objectReference: {fileID: 283010683}
+    - target: {fileID: 5715453491751003746, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
+      propertyPath: sideAttackForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003752, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.92
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.26
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.z

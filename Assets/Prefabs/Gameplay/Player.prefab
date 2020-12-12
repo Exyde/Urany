@@ -15101,7 +15101,7 @@ MonoBehaviour:
   sideAttackTopRight: {fileID: 5715453492648686244}
   sideAttackRange: 0.5
   sideAttackDamage: 50
-  sideAttackForce: 6
+  sideAttackForce: 3
   verticalPushForce: 3
   downAttackBottomLeft: {fileID: 5715453491162685202}
   downAttackTopRight: {fileID: 5715453490953894787}
