@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3307003018c72a446b13baf4b7ece227, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -144,4 +144,22 @@ MonoBehaviour:
   RegionTheme: {fileID: 8300000, guid: 3307003018c72a446b13baf4b7ece227, type: 3}
   Part1Theme: {fileID: 8300000, guid: c1137a253b83bb04dbd06529a038dcfe, type: 3}
   Part2Theme: {fileID: 8300000, guid: 8015e700ece274642bcf426acaa4b9ae, type: 3}
+  playerJump: {fileID: 8300000, guid: e80b7e3c35c5e24469c5cb46a76d752c, type: 3}
+  playerDash: {fileID: 8300000, guid: f23f6ab73d70b564aa860bc44e193e2d, type: 3}
+  playerLand: {fileID: 8300000, guid: b74c7b89e2939a347b9304516c139187, type: 3}
+  playerRun: {fileID: 8300000, guid: 14b4c2965e94cc0439d0d895ca344022, type: 3}
+  playerAttack: {fileID: 8300000, guid: 82cf6660c6201664b953e3bc2f7e68d7, type: 3}
+  playerHit: {fileID: 8300000, guid: 56925a8c06e710548a4bb14cc97389bf, type: 3}
+  uranieAttackCharge: {fileID: 8300000, guid: f3a1be7b1fe19964a9d727eeeaa94dca, type: 3}
+  uranieAttackRelease: {fileID: 8300000, guid: b50c1afb786b31d40b3a0a6a1bcd8b68, type: 3}
+  uranieAttackImpact: {fileID: 8300000, guid: b52d4e3205cf6ae47950653d66fe9382, type: 3}
+  uranieHit: {fileID: 8300000, guid: 3cba1063ecf79fe4a8140b6c0750c99f, type: 3}
+  uranieDeath: {fileID: 8300000, guid: a44ae2e6a736db545a911f804cb81afe, type: 3}
+  hackSucces: {fileID: 8300000, guid: 625ab42671432d14891550d897d4bf0c, type: 3}
+  hackFail: {fileID: 8300000, guid: e1811b24b3447d243b9d7e911a6ad020, type: 3}
+  hackFeedback: {fileID: 8300000, guid: 77e8aa2a3b96c434385232d6dc9aff66, type: 3}
+  cableBreak: {fileID: 8300000, guid: 8cb983357b2c0214283635f336e32b88, type: 3}
   Typo: {fileID: 8300000, guid: e855636d05be7bd4ca36a599ce08e56b, type: 3}
+  pnjDeath: {fileID: 8300000, guid: 2ed48e432c5e7a54595bd2d314690652, type: 3}
+  pnjAttack: {fileID: 8300000, guid: 6333d1d3f7efa144d99865a034c82f77, type: 3}
+  pnjHit: {fileID: 8300000, guid: 9eba3824a53346f41a218d323ab58e79, type: 3}

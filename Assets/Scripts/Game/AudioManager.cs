@@ -14,21 +14,36 @@ public class AudioManager : MonoBehaviour
     public AudioClip Part1Theme;
     public AudioClip Part2Theme;
 
+
+
+    [Header("Player")]
+    public AudioClip playerJump;
+    public AudioClip playerDash;
+    public AudioClip playerLand;
+    public AudioClip playerRun;
+    public AudioClip playerAttack;
+    public AudioClip playerHit;
+
+    [Header("Uranie")]
+    public AudioClip uranieAttackCharge;
+    public AudioClip uranieAttackRelease;
+    public AudioClip uranieAttackImpact;
+    public AudioClip uranieHit;
+    public AudioClip uranieDeath;
+
+    [Header("Hacks")]
+    public AudioClip hackSucces;
+    public AudioClip hackFail;
+    public AudioClip hackFeedback;
+
+    [Header("Misc")]
+    public AudioClip cableBreak;
     public AudioClip Typo;
-    //Sounds
-    //TODO : List all sounds fx needed for the game.
-    
-    //Urany attack
-    //Charge
-    //Fire
-    //Hit
 
-    //Player
-
-    //Ennemys
-
-    //
-
+    [Header("Pnj 1")]
+    public AudioClip pnjDeath;
+    public AudioClip pnjAttack;
+    public AudioClip pnjHit;
 
     void Awake()
     {
