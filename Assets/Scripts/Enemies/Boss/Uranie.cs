@@ -209,6 +209,7 @@ public class Uranie : MonoBehaviour
         currentHealth -= amount;
 
         anim.SetTrigger("hurt");
+        AudioManager.instance.UranieHit();
 
         if (currentHealth < healthTresholdPhase2 && phase == 1)
         {
@@ -237,6 +238,8 @@ public class Uranie : MonoBehaviour
 	{
         state = State.Dead;
         GetComponent<Rigidbody2D>().isKinematic = false;
+        AudioManager.instance.UranieDeath();
+
         StopAllCoroutines();
         print("dead");
     }

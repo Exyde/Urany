@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Part1Theme;
     public AudioClip Part2Theme;
 
-
+    public float fxVolume = .2f;
 
     [Header("Player")]
     public AudioClip playerJump;
@@ -86,6 +86,19 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+    public float PlaySteps()
+    {
+        GameObject go = new GameObject();
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.clip = playerRun;
+        audioSource.Play();
+        audioSource.volume = .2f;
+        go.name = System.DateTime.Now.ToString();
+        GameObject.Destroy(go, audioSource.clip.length + 0.10f);
+
+        return playerRun.length;
+    }
+
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
         GameObject go = new GameObject();
@@ -100,34 +113,43 @@ public class AudioManager : MonoBehaviour
 
     public void TypoFX()
 	{
-        PlaySound(Typo, .2f);
+        PlaySound(Typo, fxVolume);
+	}
+
+    public void CableBreak()
+	{
+        PlaySound(cableBreak, fxVolume);
 	}
 
 	#region PlayerSounds
 	public void Jump()
 	{
-        PlaySound(playerJump, 1f);
+        PlaySound(playerJump, fxVolume);
 	}
 
     public void Dash()
     {
-        PlaySound(playerDash, 1f);
+        PlaySound(playerDash, fxVolume);
     }
 
     public void Land()
 	{
-        PlaySound(playerLand, 1f);
+        PlaySound(playerLand, fxVolume);
     }
 
     //Run
+    public void PlayerRun()
+	{
+        PlaySound(playerRun, fxVolume);
+	}
 
     public void Attack()
 	{
-        PlaySound(playerAttack, 1f);
+        PlaySound(playerAttack, fxVolume);
 	}
     public void PlayerHit()
     {
-        PlaySound(playerHit, 1f);
+        PlaySound(playerHit, fxVolume);
     }
 
     #endregion
@@ -136,25 +158,62 @@ public class AudioManager : MonoBehaviour
 
     public void UranieAttackCast()
     {
-        PlaySound(uranieAttackCharge, 1f);
+        PlaySound(uranieAttackCharge, fxVolume);
     }
 
     public void UranieAttackRelease()
     {
-        PlaySound(uranieAttackRelease, 1f);
+        PlaySound(uranieAttackRelease, fxVolume);
     }
     public void UranieAttackImpact()
     {
-        PlaySound(uranieAttackImpact, 1f);
+        PlaySound(uranieAttackImpact, fxVolume);
     }
     public void UranieHit()
 	{
-        PlaySound(uranieHit, 1f);
-	}
+        PlaySound(uranieHit, fxVolume);
+    }
 
     public void UranieDeath()
 	{
-        PlaySound(uranieDeath, 1f);
+        PlaySound(uranieDeath, fxVolume);
     }
+	#endregion
+
+	#region PNJ
+	public void PnjHit()
+	{
+        PlaySound(pnjHit, fxVolume + .2f);
+	}
+
+    public void PnjAttack()
+	{
+        PlaySound(pnjAttack, fxVolume +.1f);
+	}
+
+    public void PnjDeath()
+	{
+        PlaySound(pnjDeath, fxVolume + .2f);
+    }
+
+    #endregion
+
+    #region Hack
+
+    public void HackSucces()
+    {
+        PlaySound(hackSucces, fxVolume + .2f);
+    }
+
+    public void HackFail()
+    {
+        PlaySound(hackFail, fxVolume +.2f);
+    }
+
+    public void HackFeedback()
+    {
+        PlaySound(hackFeedback, fxVolume +.2f);
+    }
+
     #endregion
 }

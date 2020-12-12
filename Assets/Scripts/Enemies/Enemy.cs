@@ -46,6 +46,8 @@ public class Enemy : MonoBehaviour
 
         //Play hurt animation & fx
         anim.SetTrigger("Hurt");
+        AudioManager.instance.PnjHit();
+
 
         if (currentHealth <= 0)
 		{
@@ -60,6 +62,8 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = false;
         GetComponent<BoxCollider2D>().isTrigger = false;
         gameObject.layer = LayerMask.NameToLayer("Dead Layer");
+        AudioManager.instance.PnjDeath();
+
 
         if (isHackable)
 		{

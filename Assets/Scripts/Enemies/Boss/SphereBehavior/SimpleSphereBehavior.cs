@@ -37,6 +37,7 @@ public class SimpleSphereBehavior : MonoBehaviour
 		{
             fire = true;
             GetComponent<Animator>().SetTrigger("release");
+            AudioManager.instance.UranieAttackRelease();
 
         }
 
@@ -74,6 +75,8 @@ public class SimpleSphereBehavior : MonoBehaviour
             //player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
             InstantiateExplosion();
+            AudioManager.instance.UranieAttackImpact();
+
             Destroy(this.gameObject);
 
         }
@@ -82,6 +85,8 @@ public class SimpleSphereBehavior : MonoBehaviour
             //print("else destroy");
             CameraShake.Shake(.1f, .1f);
             InstantiateExplosion();
+            AudioManager.instance.UranieAttackImpact();
+
             Destroy(this.gameObject);
         }
     }

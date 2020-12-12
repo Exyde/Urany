@@ -82,6 +82,7 @@ public class Guard : Enemy
 		patrol.isPaused = true;
 		state = State.Attack;
 		isAttacking = true;
+		AudioManager.instance.PnjAttack();
 
 		yield return new WaitForSeconds(attackDelay);
 

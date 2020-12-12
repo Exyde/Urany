@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     PostProcessController pp;
+    DialogueManager dm;
     public bool drawGizmos;
 
     [Header("All Attack Stats")]
@@ -33,6 +34,7 @@ public class Attack : MonoBehaviour
     {
         anim = GetComponentInChildren<AnimationScript>();
         pp = FindObjectOfType<PostProcessController>();
+        dm = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class Attack : MonoBehaviour
 
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetButtonDown("Attack"))
+            if (Input.GetButtonDown("Attack") && !dm.isTalking)
             {
                 SideAttack();
                 nextAttackTime = Time.time + 1f / attackRate;
@@ -119,12 +121,16 @@ public class Attack : MonoBehaviour
                 if (enemy.gameObject.tag == "Destroyable")
 				{
                     Destroy(enemy.gameObject);
+                    AudioManager.instance.CableBreak();
+
+
                     //Instnatiate particle 
                     return;
 				}
 
                 enemy.GetComponent<Enemy>().TakeDamage(sideAttackDamage);
                 PushEnemy(enemy.transform);
+
 
                 pp.SetAttackPostProcess();
             }

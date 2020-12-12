@@ -71,6 +71,7 @@ public class GravitySphereBehavior : MonoBehaviour
             //player.GetComponent<Health>().LooseLife(sphereDamage);
             CameraShake.Shake(.1f, .1f);
             InstantiateExplosion();
+            AudioManager.instance.UranieAttackImpact();
 
             Destroy(this.gameObject);
         } else
@@ -78,6 +79,8 @@ public class GravitySphereBehavior : MonoBehaviour
             //print("else destroy");
             CameraShake.Shake(.15f, .25f);
             InstantiateExplosion();
+            AudioManager.instance.UranieAttackImpact();
+
 
             Destroy(this.gameObject);
 		}
@@ -102,5 +105,7 @@ public class GravitySphereBehavior : MonoBehaviour
         preFire = false;
         fire = true;
         GetComponent<Animator>().SetTrigger("release");
+        AudioManager.instance.UranieAttackRelease();
+
     }
 }

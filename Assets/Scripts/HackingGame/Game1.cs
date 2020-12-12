@@ -61,6 +61,7 @@ public class Game1 : HackingGame
                         GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex].position, Quaternion.identity);
                         playerPrefab.transform.parent = playerHolder;
                         currentIndex++;
+                        AudioManager.instance.HackFeedback();
                     }
                 }
                 else
@@ -86,6 +87,8 @@ public class Game1 : HackingGame
                         GameObject playerPrefab = Instantiate(hackPlayerPrefab, path[currentIndex].position, Quaternion.identity);
                         playerPrefab.transform.parent = playerHolder;
                         currentIndex++;
+                        AudioManager.instance.HackFeedback();
+
 
                     }
 
@@ -138,6 +141,7 @@ public class Game1 : HackingGame
     protected override void LooseGame()
 	{
         base.LooseGame();
+        AudioManager.instance.HackFail();
 	}
 
 	public override void ResetGame()
@@ -148,6 +152,8 @@ public class Game1 : HackingGame
 	protected override void WinGame()
 	{
 		base.WinGame();
+        AudioManager.instance.HackSucces();
+
         GetComponentInParent<Interactable>().InvokeEvent();
 	}
 

@@ -40,6 +40,8 @@ public class Movement : MonoBehaviour
     [Space] 
     [Header ("Debug / Cheating")]
     public bool infiniteDash = true;
+    public AudioSource SoundStep;
+    private bool stepPlaying = false;
 
     [Space]
     [Header ("Other bools")]
@@ -102,6 +104,15 @@ public class Movement : MonoBehaviour
         HandleJump();
         HandleDash();
         HandleAnim();
+
+        if (stepPlaying)
+		{
+            if (!coll.onGround || dir.x == 0)
+			{
+                SoundStep.Stop();
+                stepPlaying = false;
+			}
+		}
     }
 
 	#region Handlers
@@ -277,11 +288,18 @@ public class Movement : MonoBehaviour
     {
         anim.SetHorizontalMovement((int)xRaw, y, rb.velocity.y);
 
+
         if (!canMove)
             return;
 
         if (wallGrab)
             return;
+
+        if (movement.x != 0 && coll.onGround && !stepPlaying)
+        {
+            SoundStep.Play();
+            stepPlaying = true;
+        }
 
         if (!wallJumped)
         {

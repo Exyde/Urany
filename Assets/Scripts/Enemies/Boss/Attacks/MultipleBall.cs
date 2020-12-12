@@ -55,6 +55,8 @@ public class MultipleBall : MonoBehaviour
         BeginAttack();
 
         List<GameObject> currentSpheres = new List<GameObject>();
+        AudioManager.instance.UranieAttackCast();
+
 
         for (int i = 0; i < sphereNumber; i++)
         {
