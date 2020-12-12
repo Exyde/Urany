@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    npcName: Uranie
+    npcName: URANIE
     npcSprite: {fileID: 21300000, guid: 71dd3d2bb770c3a41b6f7da955b9523a, type: 3}
     sentences:
     - So... I see what we got here...
