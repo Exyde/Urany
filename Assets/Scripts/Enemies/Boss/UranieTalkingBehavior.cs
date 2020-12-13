@@ -17,6 +17,7 @@ public class UranieTalkingBehavior : MonoBehaviour
         if (dm.endDialogue)
 		{
             uranieBoss.gameObject.SetActive(true);
+            AudioManager.instance.StopMusic();
             //uranieBoss.GetComponent<Uranie>().enabled = true;
             Destroy(this.gameObject);
 		}

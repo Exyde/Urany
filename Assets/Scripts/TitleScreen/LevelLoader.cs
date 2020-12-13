@@ -24,7 +24,7 @@ public class LevelLoader : MonoBehaviour
 		StartCoroutine(LoadLevel(levelIndex));
 	}
 
-	public IEnumerator LoadLevel(int levelIndex)
+	IEnumerator LoadLevel(int levelIndex)
 	{
 		transition.SetTrigger("Start");
 		if (movement) movement.canMove = false;
@@ -48,6 +48,10 @@ public class LevelLoader : MonoBehaviour
 				AudioManager.instance.PlayRegion();
 				break;
 			case 3: //Boss
+				break;
+
+			case 4: // Video
+
 				break;
 
 			default:
