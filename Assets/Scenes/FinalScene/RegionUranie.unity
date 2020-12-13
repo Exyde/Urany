@@ -2995,7 +2995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: lerpDuration
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: destroyOnEnd
@@ -3338,6 +3338,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1842082620}
+    - target: {fileID: 3585223128048288102, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: isHackable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288103, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7405729
@@ -3384,7 +3388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -3413,6 +3417,30 @@ PrefabInstance:
     - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 565712801}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288110, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: m_Name
@@ -5459,6 +5487,17 @@ Transform:
   m_Father: {fileID: 1375729975}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565712801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3585223128048288097, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
+  m_PrefabInstance: {fileID: 335197119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b38270358b20446bba5eb2f6b32514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567231892
 GameObject:
   m_ObjectHideFlags: 0
@@ -12683,6 +12722,10 @@ PrefabInstance:
       propertyPath: destroyOnEnd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
+      propertyPath: lerpDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4621820617835602815, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.25
@@ -12766,6 +12809,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: destroyOnEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
+      propertyPath: lerpDuration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4621820617835602815, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
@@ -15843,6 +15890,10 @@ PrefabInstance:
       propertyPath: destroyOnEnd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
+      propertyPath: lerpDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4621820617835602815, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.25
@@ -17069,6 +17120,10 @@ PrefabInstance:
       propertyPath: destroyOnEnd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
+      propertyPath: lerpDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4621820617835602815, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.25
@@ -17996,6 +18051,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
       propertyPath: destroyOnEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909860513560069428, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
+      propertyPath: lerpDuration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4621820617835602815, guid: a49f4bd9ad714d2429b5a6d12a2d37e2, type: 3}
@@ -19259,7 +19318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5174923350378392693, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5174923352260785148, guid: 3324ef0f4dd4c8848a7e32dfe69d1b32, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -20304,7 +20363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5551652359953499636, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5551652359953499639, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
       propertyPath: m_LocalPosition.x
