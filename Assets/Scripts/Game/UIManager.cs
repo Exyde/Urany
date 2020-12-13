@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogError("Invalid hp amount");
+                //Debug.Log("Invalid hp amount");
                 break;
 		}
 	}

@@ -36,6 +36,8 @@ public class MultipleSphereBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.name);
+
         if (collision.gameObject.tag == "Uranie")
         {
             //print("Inside Uranie");
@@ -49,6 +51,11 @@ public class MultipleSphereBehavior : MonoBehaviour
         else if (collision.gameObject.tag == "Attack Sphere")
         {
            //print("attackSphere");
+        }
+
+        else if (collision.gameObject.tag == "Interaction Point")
+        {
+            return;
         }
 
         else if (collision.gameObject.tag == "Player")

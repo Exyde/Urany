@@ -610,9 +610,15 @@ MonoBehaviour:
     npcName: URANIE
     npcSprite: {fileID: 21300000, guid: 71dd3d2bb770c3a41b6f7da955b9523a, type: 3}
     sentences:
-    - 'S
-
-'
+    - "Les \xE9toiles m'auraient donc tromp\xE9e..."
+    - "Toi, l'anomalie cr\xE9\xE9e par ma soeur..."
+    - "Je sais pourquoi tu viens jusqu'\xE0 moi !"
+    - "Je ne laisserais pas Calliope reproduire les erreurs de notre m\xE8re."
+    - "Mon peuple n'est pas pr\xEAt pour une nouvelle guerre !"
+    - "Mon peuple n'est pas pr\xEAt pour une nouvelle guerre !"
+    - ...
+    - ...
+    - Ainsi soit-il ! En garde !
 --- !u!114 &232079081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +887,10 @@ PrefabInstance:
     - target: {fileID: 6758857562087442343, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
       propertyPath: m_SortingOrder
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758857562087442343, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6822636448513767881, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1559,6 +1569,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6758857562087442343, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6822636448513767881, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00000047683716
@@ -1880,6 +1894,10 @@ PrefabInstance:
     - target: {fileID: 6758857562087442343, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
       propertyPath: m_SortingOrder
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758857562087442343, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6822636448513767881, guid: d852edaa5bf0b3145af22158db1af846, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2856,6 +2874,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 8485543582114033931, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34237df2696841946a2b85ebcb425de4, type: 3}
 --- !u!1001 &2076760798
@@ -2979,15 +3001,15 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 87955bca614335b47b1fe1c6f9e7c40b, type: 2}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: maxHealth
-      value: 600
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: healthTresholdPhase2
-      value: 401
+      value: 651
       objectReference: {fileID: 0}
     - target: {fileID: 4586143569641004435, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}
       propertyPath: healthTresholdPhase3
-      value: 201
+      value: 401
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c403286ae00bfa48a0edf0238705a94, type: 3}

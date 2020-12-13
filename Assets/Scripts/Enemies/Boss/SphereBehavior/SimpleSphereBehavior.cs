@@ -55,6 +55,9 @@ public class SimpleSphereBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.name);
+
+
         if (collision.gameObject.tag == "Uranie")
         {
             //print("Inside Uranie");
@@ -69,6 +72,13 @@ public class SimpleSphereBehavior : MonoBehaviour
         {
             //print("attackSphere");
         }
+
+
+        else if (collision.gameObject.tag == "Interaction Point")
+        {
+            return;
+        }
+
 
         else if (collision.gameObject.tag == "Player")
         {

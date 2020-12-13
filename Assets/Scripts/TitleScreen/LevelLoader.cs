@@ -10,15 +10,6 @@ public class LevelLoader : MonoBehaviour
 	public float transitionTime = 1f;
 	public Movement movement;
 
-	string region, hub, boss;
-
-	private void Start()
-	{
-		region = "Region";
-		hub = "Hub";
-		boss = "Boss";
-	}
-
 	public void OnNextLevel(int levelIndex)
 	{
 		StartCoroutine(LoadLevel(levelIndex));
@@ -48,6 +39,8 @@ public class LevelLoader : MonoBehaviour
 				AudioManager.instance.PlayRegion();
 				break;
 			case 3: //Boss
+				AudioManager.instance.StopMusic();
+				//Play wind sounds
 				break;
 
 			case 4: // Video
