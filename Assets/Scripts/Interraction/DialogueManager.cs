@@ -101,7 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     bool TalkingInput()
     {
-        return (Input.GetKeyDown(KeyCode.P) ^ Input.GetButtonDown("Attack"));
+        return (Input.GetButtonDown("Attack"));
     }
 
 }

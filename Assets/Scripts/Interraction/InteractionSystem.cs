@@ -58,7 +58,7 @@ public class InteractionSystem : MonoBehaviour
 
     bool InterractInput()
 	{
-        return (Input.GetKeyDown(KeyCode.A) ^ Input.GetButtonDown("Fire1"));
+        return (Input.GetKeyDown(KeyCode.F) ^ Input.GetButtonDown("Fire1"));
     }
 
     bool DetectObject()

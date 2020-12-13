@@ -79,6 +79,7 @@ public class Movement : MonoBehaviour
 
     float grabInput;
     float dashInput;
+    bool dashKeyboardInput = false;
     bool isWallSmokeInstantiated = false;
 
 	#endregion
@@ -128,6 +129,7 @@ public class Movement : MonoBehaviour
         dir = new Vector2(x, y);
         grabInput = Input.GetAxisRaw("Grab");
         dashInput = Input.GetAxisRaw("Dash");
+        
 
         MapRaw();
         //MapX();
@@ -161,11 +163,17 @@ public class Movement : MonoBehaviour
         canMove = true;
 	}
 
-    void HandleWalls()
-	{
+    void HandleWalls() {
+
+        if(Input.GetKeyDown(KeyCode.LeftShift)) {
+            dashKeyboardInput = true;
+        } else if(Input.GetKeyUp(KeyCode.LeftShift)) {
+            dashKeyboardInput = false;
+        }
+
         //WallGrab - ButtonHold
         //if (coll.onWall && Input.GetButtonDown("Fire 3") && canMove)
-        if (coll.onWall && grabInput == 1 && canMove)
+        if (coll.onWall && (grabInput == 1 || dashKeyboardInput) && canMove)
         {
             if (side != coll.wallSide)
                 anim.Flip(side * -1);
@@ -176,7 +184,7 @@ public class Movement : MonoBehaviour
 
         //WallGrab - ButtonRelease
         //if (Input.GetButtonUp("Fire 3") || !coll.onWall || !canMove)
-        if (grabInput == 0 || !coll.onWall || !canMove)
+        if ((grabInput == 0 && !dashKeyboardInput) || !coll.onWall || !canMove)
         {
             wallGrab = false;
             wallSlide = false;
@@ -241,7 +249,7 @@ public class Movement : MonoBehaviour
     }
 	void HandleDash()
 	{
-        if ((Input.GetButtonDown("Dash") || dashInput == 1) && !hasDashed && !isDashing && canMove)
+        if ((Input.GetButtonDown("Dash") || Input.GetKeyDown(KeyCode.D) || dashInput == 1) && !hasDashed && !isDashing && canMove)
         {
             if (xRaw != 0 || yRaw != 0)
             {
