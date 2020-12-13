@@ -15,6 +15,12 @@ public class Transistor : MonoBehaviour
     private Animator animator;
     public Movement player;
 
+    [Header("Map Phases")]
+    public Transform phase1;
+    public Transform phase2;
+    public Transform phase3;
+
+
     private bool moving;
 
     public Color blackSkyColor;
@@ -33,9 +39,14 @@ public class Transistor : MonoBehaviour
 
         sun.gameObject.SetActive(false);
         moon.gameObject.SetActive(false);
+
+        phase1.gameObject.SetActive(true);
+        phase2.gameObject.SetActive(false);
+        phase3.gameObject.SetActive(false);
+
     }
 
-	private void Update()
+    private void Update()
 	{
 		if (moving)
 		{
@@ -160,6 +171,11 @@ public class Transistor : MonoBehaviour
         //Change camera or background color
         cam.backgroundColor = blackSkyColor;
 
+        //Change background
+        phase2.gameObject.SetActive(true);
+        phase1.gameObject.SetActive(false);
+
+
         //Change uranie anims to dark ones
         //uranie.GetComponent<Animator>().SetTrigger("phase2");
         animator.runtimeAnimatorController = uranie.AnimatorControllerBlack;
@@ -219,16 +235,21 @@ public class Transistor : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
 
-        //Disable white screen
-        whiteScreen.gameObject.SetActive(false);
-
         //Change camera or background color
         cam.backgroundColor = whiteSkyColor;
+
+        //Change background
+        phase3.gameObject.SetActive(true);
+        phase2.gameObject.SetActive(false);
+
 
         //Change uranie anims to dark ones
         //uranie.GetComponent<Animator>().SetTrigger("phase3");
         animator.runtimeAnimatorController = uranie.AnimatorControllerWhite;
         animator.SetTrigger("idle");
+
+        //Disable white screen
+        whiteScreen.gameObject.SetActive(false);
 
 
         //Re enable player move
