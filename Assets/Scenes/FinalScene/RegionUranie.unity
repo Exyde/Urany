@@ -907,11 +907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: 31.14
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: 45.18
       objectReference: {fileID: 0}
     - target: {fileID: 5715453491751003754, guid: 8f4a4ad29337c8c409a038759e1f6f00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3400,7 +3400,7 @@ PrefabInstance:
       objectReference: {fileID: 2006510965}
     - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetHacked
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3585223128048288105, guid: 69f7f4d9528c9f44e9a0ef98c0598751, type: 3}
       propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -20277,7 +20277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5551652359953499636, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5551652359953499639, guid: e38623f9c719e6341879682a73a9e5c8, type: 3}
       propertyPath: m_LocalPosition.x
