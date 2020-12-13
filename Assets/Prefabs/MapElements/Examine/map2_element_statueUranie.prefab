@@ -159,7 +159,7 @@ MonoBehaviour:
     npcName: Statue d'Uranie
     npcSprite: {fileID: 21300000, guid: 3fa8d7d883bdf0b43b74f889af4b9fa4, type: 3}
     sentences:
-    - "Uranie - par del\xE0 les astres"
+    - "Uranie - par del\xE0 les astres."
 --- !u!1001 &8839733519716846913
 PrefabInstance:
   m_ObjectHideFlags: 0

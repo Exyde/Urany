@@ -180,7 +180,7 @@ MonoBehaviour:
     npcSprite: {fileID: 4323123385741041587, guid: f148b8a92e024ea43a668ebe51099892, type: 3}
     sentences:
     - "- Analyse des donn\xE9es du terrain -"
-    - "pr\xE9sence de failles"
+    - "Pr\xE9sence de failles."
 --- !u!1001 &82635285566892746
 PrefabInstance:
   m_ObjectHideFlags: 0

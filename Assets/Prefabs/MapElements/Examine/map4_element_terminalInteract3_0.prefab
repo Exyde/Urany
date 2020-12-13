@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -5781239957989539706}
   - component: {fileID: 3186587020071410997}
   - component: {fileID: 8986339842276604584}
-  - component: {fileID: 1799478468}
   m_Layer: 9
   m_Name: map4_element_terminalInteract3_0
   m_TagString: Untagged
@@ -181,25 +180,9 @@ MonoBehaviour:
     npcSprite: {fileID: 6486519548024912146, guid: 582d751f1ca252a4bbfe7cc1ed6185cb, type: 3}
     sentences:
     - "- Donn\xE9es collect\xE9es sur \u201Cl\u2019anomalie\u201D -"
-    - 'Comportement : inconnu'
-    - "Agressivit\xE9 : inconnu"
-    - 'Composition : proche du virus'
---- !u!114 &1799478468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075194793947908900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18a201d73a27c044b1238c81e731a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    npcName: Serveur
-    npcSprite: {fileID: 0}
-    sentences: []
+    - 'Comportement : inconnu.'
+    - "Agressivit\xE9 : inconnue."
+    - 'Composition : proche du virus.'
 --- !u!1001 &7845265987641897764
 PrefabInstance:
   m_ObjectHideFlags: 0
