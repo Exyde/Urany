@@ -180,7 +180,7 @@ MonoBehaviour:
     npcSprite: {fileID: -8680053147695460073, guid: cadc6ec2d4b25164c8cfb0ae8051c14c, type: 3}
     sentences:
     - Distanciation de la muse originelle
-    - appropriation des informations partielle
+    - Appropriation des informations partielle.
 --- !u!1001 &5484646009800574583
 PrefabInstance:
   m_ObjectHideFlags: 0

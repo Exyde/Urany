@@ -180,7 +180,7 @@ MonoBehaviour:
     npcSprite: {fileID: 2923085921723056385, guid: e851f2beb4b25f7439270c6c7639cf2c, type: 3}
     sentences:
     - Zone de reproduction
-    - "\xE9volution du g\xE9nome : r\xE9sultats positifs"
+    - "\xC9volution du g\xE9nome : r\xE9sultats positifs."
 --- !u!1001 &4207033994112603683
 PrefabInstance:
   m_ObjectHideFlags: 0
