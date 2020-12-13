@@ -70,6 +70,7 @@ public class Health : MonoBehaviour
         Movement player = GetComponent<Movement>();
         player.canMove = false;
         player.enabled = false;
+        player.SoundStep.Stop();
 
         yield return new WaitForSeconds(1f);
 
@@ -84,7 +85,7 @@ public class Health : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<LevelLoader>().OnNextLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

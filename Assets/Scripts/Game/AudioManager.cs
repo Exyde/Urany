@@ -61,6 +61,16 @@ public class AudioManager : MonoBehaviour
         musicPlayer = GetComponent<AudioSource>();
     }
 
+    public void PlayHub()
+	{
+        musicPlayer.clip = HubTheme;
+        musicPlayer.Play();
+	}
+    public void PlayRegion()
+    {
+        musicPlayer.clip = RegionTheme;
+        musicPlayer.Play();
+    }
     public void PlayPart0()
 	{
         musicPlayer.clip = part0;

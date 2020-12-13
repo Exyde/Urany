@@ -6,6 +6,7 @@ public class HackMove : MonoBehaviour
 {
     //bool isHacked;
     public Transform target;
+    public bool destroyOnEnd = false;
 
     public float speed = 1f;
     Rigidbody2D rb;
@@ -52,5 +53,7 @@ public class HackMove : MonoBehaviour
 		}
 
         transform.position = targetPos;
+
+        if (destroyOnEnd) Destroy(this.gameObject);
 	}
 }
