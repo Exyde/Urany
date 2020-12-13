@@ -371,9 +371,9 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 1861378336}
   m_DirectAudioVolumes:
   - 0.45
   m_Url: 
@@ -459,6 +459,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa81b4613dcad0444b782d9970776878, type: 3}
+--- !u!82 &1861378336 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5987045557082197348, guid: aa81b4613dcad0444b782d9970776878, type: 3}
+  m_PrefabInstance: {fileID: 758282769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1976375445
 GameObject:
   m_ObjectHideFlags: 0
