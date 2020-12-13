@@ -107,11 +107,13 @@ public class Movement : MonoBehaviour
 
         if (stepPlaying)
 		{
-            if (!coll.onGround || dir.x == 0)
+            if ((!coll.onGround || dir.x == 0) && !wallGrab)
 			{
                 SoundStep.Stop();
                 stepPlaying = false;
 			}
+
+            
 		}
     }
 
@@ -418,6 +420,18 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
+
+        if (!stepPlaying && yRaw != 0)
+        {
+            SoundStep.Play();
+            stepPlaying = true;
+        }
+
+        if (yRaw == 0)
+		{
+            SoundStep.Stop();
+            stepPlaying = false;
+		}
 
         //float speedModifier = y > 0 ? .5f : 1;
         float _speed = yRaw > 0 ? ascentClimbSpeed : downClimbSpeed;
