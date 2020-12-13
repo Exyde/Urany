@@ -51,12 +51,19 @@ public class GravitySphereBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.name);
+
         if (collision.gameObject.tag == "Uranie")
 		{
             //print("Inside Uranie");
 		}
 
         else if (collision.gameObject.tag == "Spawner")
+		{
+            return;
+		}
+
+        else if (collision.gameObject.tag == "Interaction Point")
 		{
             return;
 		}
