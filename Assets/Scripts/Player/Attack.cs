@@ -45,7 +45,7 @@ public class Attack : MonoBehaviour
 
         if (Time.time >= nextAttackTime)
         {
-            if ((Input.GetButtonDown("Attack") || (Input.GetKeyDown(KeyCode.S))) && !dm.isTalking)
+            if (Input.GetButtonDown("Attack") && !dm.isTalking)
             {
                 SideAttack();
                 nextAttackTime = Time.time + 1f / attackRate;
