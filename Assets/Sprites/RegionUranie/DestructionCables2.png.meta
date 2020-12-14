@@ -1,43 +1,25 @@
 fileFormatVersion: 2
-guid: 142ee94fa7a0b014aae2d2d6809a9d63
+guid: c7a418971444cda4285f243ec241116c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -519775032116089297
-    second: DestructionCables_0
+      213: 5297026094357742808
+    second: DestructionCables2_0
   - first:
-      213: -4928428646276927105
-    second: DestructionCables_1
+      213: -1420685482841719470
+    second: DestructionCables2_1
   - first:
-      213: 82516547890288901
-    second: DestructionCables_2
+      213: -1298781950743511035
+    second: DestructionCables2_2
   - first:
-      213: -2417901041505419673
-    second: DestructionCables_3
+      213: 2697514699610536940
+    second: DestructionCables2_3
   - first:
-      213: -7077523194079294303
-    second: DestructionCables_4
+      213: 2294814262600504550
+    second: DestructionCables2_4
   - first:
-      213: 5208891725854389703
-    second: DestructionCables_5
-  - first:
-      213: -6301382263771033698
-    second: DestructionCables_0
-  - first:
-      213: -7170676865543754155
-    second: DestructionCables_1
-  - first:
-      213: -2835286864688880087
-    second: DestructionCables_2
-  - first:
-      213: 6829381409048018118
-    second: DestructionCables_3
-  - first:
-      213: -8837297074366735240
-    second: DestructionCables_4
-  - first:
-      213: 2025649569046978687
-    second: DestructionCables_5
+      213: 1156249326280232621
+    second: DestructionCables2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DestructionCables_0
+      name: DestructionCables2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9f0bfd973efc88a0800000000000000
-      internalID: -6301382263771033698
+      spriteID: 8d40b200b21d28940800000000000000
+      internalID: 5297026094357742808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DestructionCables_1
+      name: DestructionCables2_1
       rect:
         serializedVersion: 2
         x: 144
@@ -160,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55e2726f163ac7c90800000000000000
-      internalID: -7170676865543754155
+      spriteID: 25d3aa99416b84ce0800000000000000
+      internalID: -1420685482841719470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DestructionCables_2
+      name: DestructionCables2_2
       rect:
         serializedVersion: 2
         x: 288
@@ -181,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92663e95e9907a8d0800000000000000
-      internalID: -2835286864688880087
+      spriteID: 5008e3172bcc9fde0800000000000000
+      internalID: -1298781950743511035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DestructionCables_3
+      name: DestructionCables2_3
       rect:
         serializedVersion: 2
         x: 432
@@ -202,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ccb6f93536d6ce50800000000000000
-      internalID: 6829381409048018118
+      spriteID: ceb3ea6c35f7f6520800000000000000
+      internalID: 2697514699610536940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DestructionCables_4
+      name: DestructionCables2_4
       rect:
         serializedVersion: 2
         x: 576
@@ -223,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c95c3022d9b5580800000000000000
-      internalID: -8837297074366735240
+      spriteID: 6e49dc3d961d8df10800000000000000
+      internalID: 2294814262600504550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DestructionCables_5
+      name: DestructionCables2_5
       rect:
         serializedVersion: 2
         x: 720
@@ -244,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f70e77afc8d8c1c10800000000000000
-      internalID: 2025649569046978687
+      spriteID: daec7bcd2a2db0010800000000000000
+      internalID: 1156249326280232621
       vertices: []
       indices: 
       edges: []
