@@ -22,12 +22,13 @@ public class VideoController : MonoBehaviour
     void Update()
     {
         startDelay -= Time.deltaTime;
+        //GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, startDelay);
 
         if (startDelay <= 0 && !playing)
 		{
             Player.Play();
             playing = true;
-		}
+        }
 
         if (playing) timer -= Time.deltaTime;
 
