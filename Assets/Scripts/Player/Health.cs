@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public int startHealth = 4;
     public int currentHealth;
 
-    bool alive;
+    public bool alive;
 
 
     [Header ("Checkpoint Data")]
