@@ -37,7 +37,7 @@ public class Guard : Enemy
 			{
 				Collider2D player = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, playerLayer);
 
-				if (player != null)
+				if (player != null && player.GetComponent<Health>().alive)
 				{
 					StartCoroutine(Attack(player.transform));
 				}
