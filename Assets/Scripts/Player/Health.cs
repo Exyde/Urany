@@ -85,6 +85,7 @@ public class Health : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+        Time.timeScale = 1f;
         FindObjectOfType<LevelLoader>().OnNextLevel(SceneManager.GetActiveScene().buildIndex);
     }
 

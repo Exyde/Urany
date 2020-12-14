@@ -195,7 +195,7 @@ public class AudioManager : MonoBehaviour
     }
     public void UranieHit()
 	{
-        PlaySound(uranieHit, fxVolume);
+        PlaySound(uranieHit, fxVolume + .4f);
     }
 
     public void UranieDeath()

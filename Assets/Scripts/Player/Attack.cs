@@ -100,6 +100,12 @@ public class Attack : MonoBehaviour
 
     public void SideAttack()
 	{
+
+        Movement player = GetComponent<Movement>();
+        Health health = GetComponent<Health>();
+
+        if (player.wallGrab || player.wallSlide || !player.canMove || !health.alive) return;
+
         anim.SetTrigger("sideAttack");
         AudioManager.instance.Attack();
 

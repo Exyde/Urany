@@ -5,9 +5,16 @@ using UnityEngine;
 public class CableDestroy : MonoBehaviour
 {
 	public GameObject prefab;
+	public bool flipX = false;
 
 	private void OnDestroy()
 	{
-		Instantiate(prefab, transform.transform.position, Quaternion.identity);
+		Vector3 pos = transform.position;
+		
+		GameObject Fx = Instantiate(prefab, pos, Quaternion.identity);
+		if (flipX)
+		{
+			Fx.transform.localScale = new Vector3(-1, 1, 1);
+		}
 	}
 }

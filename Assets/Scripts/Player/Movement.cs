@@ -574,7 +574,7 @@ public class Movement : MonoBehaviour
 		{
             HitGuard(other);
 		}
-	}
+    }
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -583,7 +583,12 @@ public class Movement : MonoBehaviour
             FindObjectOfType<CameraFollow>().Dezoom();
             //Add Lerp
 		}
-	}
+
+        if (other.gameObject.tag == "Attack Sphere")
+        {
+            StartCoroutine(DisableMovementOnHit(.12f));
+        }
+    }
 
     void OnTriggerExit2D(Collider2D other)
 	{

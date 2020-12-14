@@ -21,7 +21,9 @@ public class LevelLoader : MonoBehaviour
 		if (movement) movement.canMove = false;
 		yield return new WaitForSeconds(transitionTime);
 		SetMusic(levelIndex);
+		
 		SceneManager.LoadScene(levelIndex);
+		Time.timeScale = 1f;
 
 	}
 	
@@ -29,6 +31,8 @@ public class LevelLoader : MonoBehaviour
 	{
 		yield return new WaitForSeconds(3f);
 		transition.SetTrigger("Start");
+
+		//Load Credits & Enable Credit
 	}
 
 	public void FadeToBlack()
@@ -42,6 +46,8 @@ public class LevelLoader : MonoBehaviour
 		{
 			case 0: //Title Screen
 				AudioManager.instance.StopMusic();
+				AudioManager.instance.PlayWind();
+
 				break;
 			case 1: //Hub
 				AudioManager.instance.PlayHub();
