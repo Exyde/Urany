@@ -145,6 +145,7 @@ MonoBehaviour:
   part0: {fileID: 8300000, guid: 7818d5d5bc9270e448d7b6a183e2e984, type: 3}
   Part1Theme: {fileID: 8300000, guid: c1137a253b83bb04dbd06529a038dcfe, type: 3}
   Part2Theme: {fileID: 8300000, guid: 8015e700ece274642bcf426acaa4b9ae, type: 3}
+  Wind: {fileID: 8300000, guid: c6d853c832f54e547b37016d8de41bb2, type: 3}
   fxVolume: 0.2
   playerJump: {fileID: 8300000, guid: e80b7e3c35c5e24469c5cb46a76d752c, type: 3}
   playerDash: {fileID: 8300000, guid: f23f6ab73d70b564aa860bc44e193e2d, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1425257069542135878}
   - component: {fileID: -1893886139709378899}
   - component: {fileID: -681468855293677079}
+  - component: {fileID: 7673077465576543054}
   m_Layer: 10
   m_Name: map1_element_destructibleObject
   m_TagString: Destroyable
@@ -131,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7673077465576543054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575292690317924996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd46813bec91ad46a11d011dc9698b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3093325904509563033, guid: 974286d7ca0a4a844944d9fa409a1777, type: 3}

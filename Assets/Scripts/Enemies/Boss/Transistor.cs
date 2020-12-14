@@ -140,7 +140,9 @@ public class Transistor : MonoBehaviour
         DestroySpheres();
 
         //Stop music
-        AudioManager.instance.StopMusic();
+        //AudioManager.instance.StopMusic();
+        AudioManager.instance.PlayWind();
+
 
         //Disable player movement
         player.canMove = false;
@@ -199,6 +201,8 @@ public class Transistor : MonoBehaviour
 
         //Stop music
         AudioManager.instance.StopMusic();
+	    AudioManager.instance.PlayWind();
+
 
         //Disable player movement
         player.canMove = false;

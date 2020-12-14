@@ -246,6 +246,11 @@ public class Uranie : MonoBehaviour
         AudioManager.instance.StopMusic();
         AudioManager.instance.UranieDeath();
 
+        AudioManager.instance.PlayWind();
+
+        //Temporary Ending
+        FindObjectOfType<LevelLoader>().FadeToBlack();
+
         StopAllCoroutines();
         print("dead");
     }

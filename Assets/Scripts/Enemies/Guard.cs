@@ -42,7 +42,6 @@ public class Guard : Enemy
 					StartCoroutine(Attack(player.transform));
 				}
 			}
-
 		}
 
 		if (isMoving)

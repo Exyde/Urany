@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip part0;
     public AudioClip Part1Theme;
     public AudioClip Part2Theme;
+    public AudioClip Wind;
 
     public float fxVolume = .2f;
 
@@ -88,7 +89,13 @@ public class AudioManager : MonoBehaviour
         musicPlayer.clip = Part2Theme;
         musicPlayer.Play();
     }
-    
+
+    public void PlayWind()
+	{
+        musicPlayer.clip = Wind;
+        musicPlayer.Play();
+    }
+
     public void StopMusic()
 	{
         musicPlayer.Stop();

@@ -24,6 +24,17 @@ public class LevelLoader : MonoBehaviour
 		SceneManager.LoadScene(levelIndex);
 
 	}
+	
+	IEnumerator BlackScreen()
+	{
+		yield return new WaitForSeconds(3f);
+		transition.SetTrigger("Start");
+	}
+
+	public void FadeToBlack()
+	{
+		StartCoroutine(BlackScreen());
+	}
 
 	public void SetMusic(int level) {
 
@@ -39,8 +50,8 @@ public class LevelLoader : MonoBehaviour
 				AudioManager.instance.PlayRegion();
 				break;
 			case 3: //Boss
-				AudioManager.instance.StopMusic();
-				//Play wind sounds
+				AudioManager.instance.PlayWind();
+				
 				break;
 
 			case 4: // Video
